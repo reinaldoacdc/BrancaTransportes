@@ -9,7 +9,7 @@ object frmParceiros: TfrmParceiros
     Size.Height = 81.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    Text = 'Button1'
+    Text = 'Parceiro1'
   end
   object Button2: TButton
     Position.X = 176.000000000000000000
@@ -18,7 +18,7 @@ object frmParceiros: TfrmParceiros
     Size.Height = 81.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
-    Text = 'Button1'
+    Text = 'Parceiro2'
   end
   object Button3: TButton
     Position.X = 24.000000000000000000
@@ -27,7 +27,7 @@ object frmParceiros: TfrmParceiros
     Size.Height = 81.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Text = 'Button1'
+    Text = 'Parceiro3'
   end
   object Button4: TButton
     Position.X = 176.000000000000000000
@@ -36,6 +36,6 @@ object frmParceiros: TfrmParceiros
     Size.Height = 81.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    Text = 'Button1'
+    Text = 'Parceiro4'
   end
 end

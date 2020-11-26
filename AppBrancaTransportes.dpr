@@ -3,12 +3,16 @@ program AppBrancaTransportes;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  uHome in 'uHome.pas' {Form2};
+  uLogin in 'uLogin.pas' {frmLogin},
+  uHome in 'uHome.pas' {frmHome},
+  uParceiros in 'uParceiros.pas' {frmParceiros: TFrame},
+  uInstitucional in 'uInstitucional.pas' {frmInstitucional: TFrame};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.CreateForm(TfrmHome, frmHome);
   Application.Run;
 end.

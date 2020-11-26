@@ -1,0 +1,231 @@
+object frmHome: TfrmHome
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 499
+  ClientWidth = 404
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Size.Width = 404.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object SpeedButton1: TSpeedButton
+      Align = Left
+      Images = ImageList1
+      ImageIndex = 3
+      Size.Width = 33.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object FramedVertScrollBox1: TFramedVertScrollBox
+    Align = Client
+    Size.Width = 404.000000000000000000
+    Size.Height = 458.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Viewport.Width = 400.000000000000000000
+    Viewport.Height = 454.000000000000000000
+  end
+  object MultiView1: TMultiView
+    DrawerOptions.TouchAreaSize = 15.000000000000000000
+    PopoverOptions.StyleLookup = '#FFf9f9f9'
+    PopoverOptions.PopupHeight = 220.000000000000000000
+    MasterButton = SpeedButton1
+    NavigationPaneOptions.CollapsedWidth = 121.000000000000000000
+    Size.Width = 250.000000000000000000
+    Size.Height = 490.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ListBox1: TListBox
+      Align = Client
+      Size.Width = 121.000000000000000000
+      Size.Height = 458.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'listboxstyle'
+      TabOrder = 0
+      DisableFocusEffect = True
+      ItemHeight = 40.000000000000000000
+      Images = ImageList1
+      DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      Viewport.Width = 117.000000000000000000
+      Viewport.Height = 454.000000000000000000
+      object ListBoxItem1: TListBoxItem
+        ImageIndex = 0
+        Size.Width = 117.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Carregamentos'
+      end
+      object ListBoxItem2: TListBoxItem
+        ItemData.Detail = 'Parceiros'
+        ImageIndex = 1
+        Position.Y = 40.000000000000000000
+        Size.Width = 117.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Parceiros'
+        OnClick = ListBoxItem2Click
+      end
+      object ListBoxItem3: TListBoxItem
+        ImageIndex = 2
+        Position.Y = 80.000000000000000000
+        Size.Width = 117.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Quem Somos'
+        OnClick = ListBoxItem3Click
+      end
+    end
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 36
+        MultiResBitmap.Width = 36
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 36
+            Height = 36
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+              98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              0150494441545847ED972F4FC34018870B4122100804820F80408023011438D4
+              142408245F00070EB30F31418241926021487008F09060964C809B18CFEFAEC7
+              4ADBD1961C3B08F724CFFAE6DABE797BFFD6269148648C2CE125F670E0D923AC
+              C5647A9C4215B385336A08852B681BE76C181657D0627A0C8E2BE8D7F06F0B3A
+              C6FCCADBC402217BE814E76D38645C05757023E339CEE2196ACB29A08D2BDFA5
+              3ECD6F8CD3788F3A77A20647A8217BC3567A3CC48FF914720E3DE2AE0D8BF3E9
+              A787AC8E665843F65029B1A02AFE5C41CFA86DBF8D5D357C93C67946ADB20574
+              AC63D93575AC93C7ACB209FD802E5AB3A189E51DAEA821C30BEA45EE0275FE2B
+              9AE6B9C62B1B7E660755711FB36F91CBE89E66550D15F8CA6376CC57D40DB7B8
+              8707F890B63DA1FE8BAAF095C7B08FBA29AF9EB6F43D6604BEF21834FE37A8A7
+              D4A791BE4AF4A9D4145F792291880792E41DC5BDB52E9EA5A25B000000004945
+              4E44AE426082}
+            FileName = 
+              'C:\Projetos\BrancaTransportes\res\Material\baseline_local_shippi' +
+              'ng_black_18dp.png'
+          end>
+        Name = 'baseline_local_shipping_black_18dp'
+      end
+      item
+        MultiResBitmap.Height = 36
+        MultiResBitmap.Width = 36
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 36
+            Height = 36
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+              98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              00B0494441545847ED97DB0A80201044AD1FAFBEBC12561942377545BACC7919
+              592F0C3B88E8083132890616D1163651135743BB680BD7B39A98451F83D6A155
+              D45332EED221CD10CED5D69BF9746438AE25DE50CDD048A20F4606E0FAE84333
+              8473B5F512927B7F1319BE6BF83E623DD921CD90053C37172B230B748BECB6BD
+              27B97A09C9BD8C4CD493EC9066C8029E9B8B95910578CBBAA275C8125909B83E
+              FAD00C8DE43D9159BED216F0F61162C0B903DBB24126ED5E615D000000004945
+              4E44AE426082}
+            FileName = 
+              'C:\Projetos\BrancaTransportes\res\Material\baseline_business_bla' +
+              'ck_18dp.png'
+          end>
+        Name = 'baseline_business_black_18dp'
+      end
+      item
+        MultiResBitmap.Height = 36
+        MultiResBitmap.Width = 36
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 36
+            Height = 36
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+              98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              016A494441545847ED97314EC430104503A2A0E01094942051D020E839009740
+              DA0350003D54941C06E890B6A0A0808E83B0D2EEFF8E471A2C3B9EACAD55107E
+              D25B3B59CB998CC789D2351A856CF9765D6E7C5B8357F8D277D76759517773DB
+              FC2960E1DB6A9406740ABFFA6E1DC606B4070FFAAEE30D1EC17B583D5B39CEE1
+              37FC815CEF1DA839819F30561F16CD1B84597984E104EFF0106A76E10C72F267
+              2863D9E7B9F0BCD61490642536014D658B5C4319A72FC6BE9EE3D798540D4956
+              7837FB3C918081DCC2390CB3F500ABD4562E2B29876AEB09F23F6A5EB254AD8C
+              35565BBC586CACD605244B760C3FE0953B2A83C170092FDDD14824A00B38542B
+              63E1B2E9E715DF53AC353AF8BE2A7D525B611077DE490464C61A90A43BD40A77
+              AEEC32F6B3E476418AD858D1ED1A4F6E7EEAC6FFD9252BA5EDB26A6C2A20F32E
+              DB544067506A681201996901E5985C40F229CD4263E1A5E0F323867E3D84E84F
+              E3DCFCA4CAA774E3BFD3752BB242B737738B13D50000000049454E44AE426082}
+            FileName = 
+              'C:\Projetos\BrancaTransportes\res\Material\baseline_home_work_bl' +
+              'ack_18dp.png'
+          end>
+        Name = 'baseline_home_work_black_18dp'
+      end
+      item
+        MultiResBitmap.Height = 36
+        MultiResBitmap.Width = 36
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 36
+            Height = 36
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+              98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              003E494441545847EDD4A112C0200C44C194FFFF676A22404541339D5D73F6D4
+              0B808F3DB9AB997BCBF661E4B6D1EE10FC8E0E5574084ED3A18A0E01F416F102
+              74CC03103078A6F60000000049454E44AE426082}
+            FileName = 
+              'C:\Projetos\BrancaTransportes\res\Material\baseline_menu_black_1' +
+              '8dp.png'
+          end>
+        Name = 'baseline_menu_black_18dp'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'baseline_local_shipping_black_18dp'
+            SourceRect.Right = 36.000000000000000000
+            SourceRect.Bottom = 36.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'baseline_business_black_18dp'
+            SourceRect.Right = 36.000000000000000000
+            SourceRect.Bottom = 36.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'baseline_home_work_black_18dp'
+            SourceRect.Right = 36.000000000000000000
+            SourceRect.Bottom = 36.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'baseline_menu_black_18dp'
+            SourceRect.Right = 36.000000000000000000
+            SourceRect.Bottom = 36.000000000000000000
+          end>
+      end>
+    Left = 32
+    Top = 224
+  end
+end

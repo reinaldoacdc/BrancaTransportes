@@ -8,7 +8,7 @@ uses
   FMX.Layouts, FMX.Effects, FMX.StdCtrls, FMX.Controls.Presentation, FMX.Edit;
 
 type
-  TForm2 = class(TForm)
+  TfrmLogin = class(TForm)
     LogoBackgroundRect: TRectangle;
     LogoCenterLayout: TLayout;
     LogoText: TText;
@@ -28,15 +28,21 @@ type
   end;
 
 var
-  Form2: TForm2;
+  frmLogin: TfrmLogin;
 
 implementation
 
 {$R *.fmx}
 
-procedure TForm2.SignupButtonClick(Sender: TObject);
+uses uHome;
+
+procedure TfrmLogin.SignupButtonClick(Sender: TObject);
 begin
 { TODO : Feature: Login }
+
+  frmHome := TfrmHome.Create(self);
+  frmHome.Show;
+
 end;
 
 end.

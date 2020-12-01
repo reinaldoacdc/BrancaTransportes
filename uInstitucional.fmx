@@ -3,12 +3,12 @@ object frmInstitucional: TfrmInstitucional
   Size.Height = 559.000000000000000000
   Size.PlatformDefault = False
   object Label1: TLabel
-    Position.X = 144.000000000000000000
-    Position.Y = 32.000000000000000000
-    Size.Width = 49.000000000000000000
+    Position.X = 80.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 185.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
-    Text = 'Label1'
+    Text = 'Sobre a empresa'
     TabOrder = 0
   end
   object Memo1: TMemo
@@ -61,12 +61,13 @@ object frmInstitucional: TfrmInstitucional
         ' Quisque quis arcu eget velit porta placerat. Aenean eget ipsum ' +
         'lacus.')
     Enabled = False
+    Position.X = 48.000000000000000000
     Position.Y = 168.000000000000000000
-    Size.Width = 321.000000000000000000
+    Size.Width = 249.000000000000000000
     Size.Height = 305.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Viewport.Width = 317.000000000000000000
+    Viewport.Width = 245.000000000000000000
     Viewport.Height = 285.000000000000000000
   end
 end

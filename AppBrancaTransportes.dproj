@@ -356,7 +356,6 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
         <VerInfo_Build>1</VerInfo_Build>
-        <Android_LauncherIcon36>res\Icons\mipmap-ldpi\ic_launcher.png</Android_LauncherIcon36>
         <Android_LauncherIcon48>res\Icons\mipmap-mdpi\ic_launcher.png</Android_LauncherIcon48>
         <Android_LauncherIcon72>res\Icons\mipmap-hdpi\ic_launcher.png</Android_LauncherIcon72>
         <Android_LauncherIcon96>res\Icons\mipmap-xhdpi\ic_launcher.png</Android_LauncherIcon96>

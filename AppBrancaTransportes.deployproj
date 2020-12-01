@@ -4,8 +4,8 @@
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
     <PropertyGroup>
-        <DeviceId Condition="'$(Platform)'=='Android'"/>
-        <DeviceId Condition="'$(Platform)'=='Android64'"/>
+        <DeviceId Condition="'$(Platform)'=='Android'">4200021b03b4b4ff</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android64'">4200021b03b4b4ff</DeviceId>
         <DeviceId Condition="'$(Platform)'=='iOSDevice32'"/>
         <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSSimulator'">iPhone5</DeviceId>
@@ -53,7 +53,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="res\Splash\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="res\Splash\FM_SplashImage_426x320.9.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AppBrancaTransportes\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
@@ -179,7 +179,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="res\Icons\mipmap-ldpi\ic_launcher.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="res\Icons\midmap-idpi\ic_launcher.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AppBrancaTransportes\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
@@ -233,7 +233,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="res\Splash\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Release'">
+        <DeployFile Include="res\Splash\FM_SplashImage_470x320.9.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>AppBrancaTransportes\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>

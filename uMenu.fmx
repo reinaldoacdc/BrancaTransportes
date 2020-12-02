@@ -1,16 +1,11 @@
-object frmLogin: TfrmLogin
-  Left = 0
-  Top = 0
-  ClientHeight = 608
-  ClientWidth = 334
-  FormFactor.Width = 320
-  FormFactor.Height = 480
-  FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 0
+object Frame1: TFrame1
+  Size.Width = 333.000000000000000000
+  Size.Height = 531.000000000000000000
+  Size.PlatformDefault = False
   object LogoBackgroundRect: TRectangle
     Align = Top
     Fill.Color = claWhite
-    Size.Width = 334.000000000000000000
+    Size.Width = 333.000000000000000000
     Size.Height = 273.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -926,95 +921,42 @@ object frmLogin: TfrmLogin
         Size.Height = 163.000000000000000000
         Size.PlatformDefault = False
       end
+      object Button1: TButton
+        Position.X = -64.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 81.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Carregamento'
+      end
+      object Button2: TButton
+        Position.X = 80.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 81.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Despesa'
+      end
     end
   end
-  object FormLayout: TLayout
-    Align = Top
-    Margins.Left = 25.000000000000000000
-    Margins.Top = -50.000000000000000000
-    Margins.Right = 25.000000000000000000
-    Position.X = 25.000000000000000000
-    Position.Y = 223.000000000000000000
-    Size.Width = 284.000000000000000000
-    Size.Height = 226.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 0
-    object FormBackgroundRect: TRectangle
-      Align = Contents
-      Fill.Color = claWhite
-      Size.Width = 284.000000000000000000
-      Size.Height = 226.000000000000000000
-      Size.PlatformDefault = False
-      Stroke.Kind = None
-    end
-    object NameEdit: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      Align = Top
-      TabOrder = 1
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.HorzAlign = Center
-      Position.X = 10.000000000000000000
-      Position.Y = 20.000000000000000000
-      Margins.Left = 10.000000000000000000
-      Margins.Top = 20.000000000000000000
-      Margins.Right = 10.000000000000000000
-      Margins.Bottom = 10.000000000000000000
-      Size.Width = 264.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      TextPrompt = 'Usu'#225'rio'
-      StyledSettings = [Family, Size, FontColor]
-    end
-    object PasswordEdit: TEdit
-      Touch.InteractiveGestures = [LongTap, DoubleTap]
-      Align = Top
-      TabOrder = 2
-      Password = True
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.HorzAlign = Center
-      Position.X = 10.000000000000000000
-      Position.Y = 80.000000000000000000
-      Margins.Left = 10.000000000000000000
-      Margins.Top = 10.000000000000000000
-      Margins.Right = 10.000000000000000000
-      Margins.Bottom = 10.000000000000000000
-      Size.Width = 264.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      TextPrompt = 'Senha'
-      StyledSettings = [Family, Size, FontColor]
-    end
-    object SignupButton: TButton
-      Align = Bottom
-      StyledSettings = [Family, Size, FontColor]
-      Margins.Left = 10.000000000000000000
-      Margins.Top = 10.000000000000000000
-      Margins.Right = 10.000000000000000000
-      Margins.Bottom = 10.000000000000000000
-      Position.X = 10.000000000000000000
-      Position.Y = 176.000000000000000000
-      Size.Width = 264.000000000000000000
-      Size.Height = 40.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 3
-      Text = 'Login'
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      OnClick = SignupButtonClick
-    end
-    object FormShadowEffect: TShadowEffect
-      Distance = 1.000000000000000000
-      Direction = 45.000000000000000000
-      Softness = 0.300000011920929000
-      Opacity = 0.600000023841857900
-      ShadowColor = claBlack
-    end
-  end
-  object FooterSpaceLayout: TLayout
-    Align = Top
-    Position.Y = 449.000000000000000000
-    Size.Width = 334.000000000000000000
-    Size.Height = 57.000000000000000000
+  object Button3: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
+    Text = 'Despesa Extra'
+  end
+  object Button4: TButton
+    Position.X = 176.000000000000000000
+    Position.Y = 392.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Configura'#231#245'es'
   end
 end

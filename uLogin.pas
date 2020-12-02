@@ -11,7 +11,6 @@ type
   TfrmLogin = class(TForm)
     LogoBackgroundRect: TRectangle;
     LogoCenterLayout: TLayout;
-    LogoText: TText;
     LogoImage: TImage;
     FormLayout: TLayout;
     FormBackgroundRect: TRectangle;

@@ -1,0 +1,106 @@
+object Frame2: TFrame2
+  Size.Width = 320.000000000000000000
+  Size.Height = 489.000000000000000000
+  Size.PlatformDefault = False
+  object PersonalInfoList: TListBox
+    Align = Top
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 30.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 30.000000000000000000
+    Size.Width = 310.000000000000000000
+    Size.Height = 217.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'transparentlistboxstyle'
+    TabOrder = 0
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    GroupingKind = Grouped
+    Viewport.Width = 310.000000000000000000
+    Viewport.Height = 217.000000000000000000
+    object Address: TListBoxItem
+      Size.Width = 310.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Local'
+      object infoAddress: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = VertCenter
+        TabOrder = 0
+        Position.X = 150.000000000000000000
+        Position.Y = 6.000000000000000000
+        Margins.Left = 150.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object Phone: TListBoxItem
+      Position.Y = 44.000000000000000000
+      Size.Width = 310.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Total do Frete'
+      object infoTelephone: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = VertCenter
+        TabOrder = 0
+        KeyboardType = PhonePad
+        Position.X = 150.000000000000000000
+        Position.Y = 6.000000000000000000
+        Margins.Left = 150.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object Email: TListBoxItem
+      Position.Y = 88.000000000000000000
+      Size.Width = 310.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Produto carregado'
+      object infoEmail: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = VertCenter
+        TabOrder = 0
+        KeyboardType = EmailAddress
+        Position.X = 150.000000000000000000
+        Position.Y = 6.000000000000000000
+        Margins.Left = 150.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object BirthDate: TListBoxItem
+      Position.Y = 132.000000000000000000
+      Size.Width = 310.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Data Carregamento'
+      object infoDate: TDateEdit
+        Date = 41876.000000000000000000
+        Align = VertCenter
+        Margins.Left = 150.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 150.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+    end
+  end
+end

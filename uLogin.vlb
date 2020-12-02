@@ -1,9 +1,6 @@
 ﻿[LogoCenterLayout]
 Coordinates=169,78,120,36
 
-[LogoText]
-Coordinates=91,78,68,58
-
 [LogoImage]
 Coordinates=294,10,79,58
 
@@ -33,5 +30,5 @@ Coordinates=526,1,124,36
 Coordinates=112,10,93,58
 
 []
-Coordinates=215,10,69,58
+Coordinates=91,78,68,58
 

@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation, FMX.ScrollBox, FMX.Memo;
 
 type
-  TfrmInstitucional = class(TFrame)
+  TFrameInstitucional = class(TFrame)
     Label1: TLabel;
     Memo1: TMemo;
   private

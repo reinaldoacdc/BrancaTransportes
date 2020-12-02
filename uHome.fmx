@@ -80,7 +80,6 @@ object frmHome: TfrmHome
         OnClick = btnTableClick
         object ColorAnimation4: TColorAnimation
           Duration = 0.200000002980232200
-          Inverse = True
           PropertyName = 'IconTintColor'
           StartValue = xFF009687
           StopValue = xFF009687

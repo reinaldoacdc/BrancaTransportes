@@ -8,16 +8,16 @@ uses
   uParceiros in 'uParceiros.pas' {frmParceiros: TFrame},
   uInstitucional in 'uInstitucional.pas' {frmInstitucional: TFrame},
   uCarregamentos in 'uCarregamentos.pas' {frmCarregamentos: TFrame},
-  uMenu in 'uMenu.pas' {Frame1: TFrame},
+  uMenu in 'uMenu.pas' {FrameMenu: TFrame},
   uDespesa in 'uDespesa.pas' {Frame2: TFrame},
   uDespesaExtra in 'uDespesaExtra.pas' {Frame3: TFrame},
-  uCarregamento in 'uCarregamento.pas' {Frame4: TFrame};
+  uCarregamento in 'uCarregamento.pas' {Frame4: TFrame},
+  Form.Main in 'Form.Main.pas' {FormMain};
 
 {$R *.res}
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmLogin, frmLogin);
-  Application.CreateForm(TfrmHome, frmHome);
+  Application.CreateForm(TFormMain, FormMain);
   Application.Run;
 end.

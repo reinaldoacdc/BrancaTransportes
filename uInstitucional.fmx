@@ -1,4 +1,4 @@
-object frmInstitucional: TfrmInstitucional
+object FrameInstitucional: TFrameInstitucional
   Size.Width = 334.000000000000000000
   Size.Height = 559.000000000000000000
   Size.PlatformDefault = False

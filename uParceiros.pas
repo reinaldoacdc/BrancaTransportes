@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation;
 
 type
-  TfrmParceiros = class(TFrame)
+  TFrameParceiros = class(TFrame)
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;

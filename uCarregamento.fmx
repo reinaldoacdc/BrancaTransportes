@@ -1,4 +1,4 @@
-object Frame4: TFrame4
+object FrameCarregamento: TFrameCarregamento
   Size.Width = 320.000000000000000000
   Size.Height = 490.000000000000000000
   Size.PlatformDefault = False

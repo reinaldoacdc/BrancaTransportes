@@ -9,7 +9,7 @@ uses
   FMX.Layouts;
 
 type
-  TFrame4 = class(TFrame)
+  TFrameCarregamento = class(TFrame)
     PersonalInfoList: TListBox;
     Address: TListBoxItem;
     infoAddress: TEdit;

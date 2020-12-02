@@ -64,8 +64,8 @@ end;
 
 procedure TfrmHome.FormCreate(Sender: TObject);
 begin
-  FrameParceiros := TfrmParceiros.Create(self);
-  FrameInstitucional := TfrmInstitucional.Create(self);
+  FrameParceiros := TFrameParceiros.Create(self);
+  FrameInstitucional := TFrameInstitucional.Create(self);
   FrameCarregamentos := TfrmCarregamentos.Create(self);
 end;
 

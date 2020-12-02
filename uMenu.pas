@@ -8,7 +8,7 @@ uses
   FMX.Objects, FMX.Layouts, FMX.Controls.Presentation;
 
 type
-  TFrame1 = class(TFrame)
+  TFrameMenu = class(TFrame)
     LogoBackgroundRect: TRectangle;
     LogoCenterLayout: TLayout;
     LogoImage: TImage;

@@ -73,7 +73,7 @@ object frmHome: TfrmHome
         IconTintColor = xFF009687
         Images = ImageList1
         ImageIndex = 1
-        Size.Width = 134.674255371093700000
+        Size.Width = 134.674255371093800000
         Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'actiontoolbutton'
@@ -118,8 +118,8 @@ object frmHome: TfrmHome
         Images = ImageList1
         ImageIndex = 0
         Margins.Top = -30.000000000000000000
-        Position.X = 134.674255371093700000
-        Size.Width = 134.674255371093700000
+        Position.X = 134.674255371093800000
+        Size.Width = 134.674255371093800000
         Size.Height = 60.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'actiontoolbutton'

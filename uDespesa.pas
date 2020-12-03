@@ -9,7 +9,7 @@ uses
   FMX.Layouts;
 
 type
-  TFrame2 = class(TFrame)
+  TFrameDespesas = class(TFrame)
     PersonalInfoList: TListBox;
     Address: TListBoxItem;
     infoAddress: TEdit;

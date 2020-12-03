@@ -27,10 +27,15 @@ type
     procedure ListBoxItem1Click(Sender: TObject);
     procedure ListBoxItem2Click(Sender: TObject);
     procedure ListBoxItem3Click(Sender: TObject);
+    procedure ListBoxItem4Click(Sender: TObject);
+    procedure ListBoxItem5Click(Sender: TObject);
+    procedure ListBoxItem6Click(Sender: TObject);
   private
-    procedure LoadFrame<T :TFrame>;
+    FloginSucessfull: Boolean;
+
   public
-    { Public declarations }
+    procedure LoadFrame<T :TFrame>;
+    property LoginSucessfull :Boolean read FloginSucessfull write FloginSucessfull default False;
   end;
 
 var
@@ -40,11 +45,14 @@ implementation
 
 {$R *.fmx}
 
-uses uMenu, uCarregamento, uInstitucional, uParceiros;
+uses uMenu, uCarregamento, uInstitucional, uParceiros, Frame.Login, uDespesa,
+  uDespesaExtra;
 
 procedure TFormMain.FormShow(Sender: TObject);
 begin
   LoadFrame<TFrameMenu>;
+  if not LoginSucessfull then
+    LoadFrame<TFrameLogin>;
 end;
 
 procedure TFormMain.LoadFrame<T>;
@@ -54,11 +62,14 @@ begin
   FrameStand1.HideAndCloseAll();
   LFrameInfo := FrameStand1.New<T>(Layout1);
   LFrameInfo.Show;
+  MultiView1.HideMaster;
 end;
 
 procedure TFormMain.ListBoxItem1Click(Sender: TObject);
 begin
   LoadFrame<TFrameCarregamento>;
+  if not LoginSucessfull then
+    LoadFrame<TFrameLogin>;
 end;
 
 procedure TFormMain.ListBoxItem2Click(Sender: TObject);
@@ -68,7 +79,26 @@ end;
 
 procedure TFormMain.ListBoxItem3Click(Sender: TObject);
 begin
- LoadFrame<TFrameParceiros>;
+  LoadFrame<TFrameParceiros>;
+end;
+
+procedure TFormMain.ListBoxItem4Click(Sender: TObject);
+begin
+  LoadFrame<TFrameDespesas>;
+  if not LoginSucessfull then
+    LoadFrame<TFrameLogin>;
+end;
+
+procedure TFormMain.ListBoxItem5Click(Sender: TObject);
+begin
+  LoadFrame<TFrameDespesasExtras>;
+  if not LoginSucessfull then
+    LoadFrame<TFrameLogin>;
+end;
+
+procedure TFormMain.ListBoxItem6Click(Sender: TObject);
+begin
+  LoadFrame<TFrameParceiros>;
 end;
 
 end.

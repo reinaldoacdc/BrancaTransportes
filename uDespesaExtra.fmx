@@ -1,4 +1,4 @@
-object Frame3: TFrame3
+object FrameDespesasExtras: TFrameDespesasExtras
   Size.Width = 320.000000000000000000
   Size.Height = 483.000000000000000000
   Size.PlatformDefault = False

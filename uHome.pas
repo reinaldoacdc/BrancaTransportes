@@ -39,7 +39,7 @@ implementation
 
 {$R *.fmx}
 
-uses uLogin, uParceiros, uInstitucional, uCarregamentos;
+uses uParceiros, uInstitucional, uCarregamentos;
 
 procedure TfrmHome.btnCartClick(Sender: TObject);
 begin

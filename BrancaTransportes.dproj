@@ -378,21 +378,17 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uLogin.pas">
-            <Form>frmLogin</Form>
-            <FormType>fmx</FormType>
-        </DCCReference>
         <DCCReference Include="uHome.pas">
             <Form>frmHome</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="uParceiros.pas">
-            <Form>frmParceiros</Form>
+            <Form>FrameParceiros</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="uInstitucional.pas">
-            <Form>frmInstitucional</Form>
+            <Form>FrameInstitucional</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
@@ -407,23 +403,28 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="uDespesa.pas">
-            <Form>Frame2</Form>
+            <Form>FrameDespesas</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="uDespesaExtra.pas">
-            <Form>Frame3</Form>
+            <Form>FrameDespesasExtras</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="uCarregamento.pas">
-            <Form>Frame4</Form>
+            <Form>FrameCarregamento</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Form.Main.pas">
             <Form>FormMain</Form>
             <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="Frame.Login.pas">
+            <Form>FrameLogin</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -1615,4 +1616,6 @@
     <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
     <ProjectExtensions/>
     <ProjectExtensions/>
+    <ProjectExtensions/>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
 </Project>

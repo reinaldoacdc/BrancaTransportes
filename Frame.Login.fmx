@@ -1,16 +1,11 @@
-object frmLogin: TfrmLogin
-  Left = 0
-  Top = 0
-  ClientHeight = 608
-  ClientWidth = 334
-  FormFactor.Width = 320
-  FormFactor.Height = 480
-  FormFactor.Devices = [Desktop]
-  DesignerMasterStyle = 0
+object FrameLogin: TFrameLogin
+  Size.Width = 343.000000000000000000
+  Size.Height = 583.000000000000000000
+  Size.PlatformDefault = False
   object LogoBackgroundRect: TRectangle
     Align = Top
     Fill.Color = claWhite
-    Size.Width = 334.000000000000000000
+    Size.Width = 343.000000000000000000
     Size.Height = 273.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -935,14 +930,14 @@ object frmLogin: TfrmLogin
     Margins.Right = 25.000000000000000000
     Position.X = 25.000000000000000000
     Position.Y = 223.000000000000000000
-    Size.Width = 284.000000000000000000
+    Size.Width = 293.000000000000000000
     Size.Height = 226.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object FormBackgroundRect: TRectangle
       Align = Contents
       Fill.Color = claWhite
-      Size.Width = 284.000000000000000000
+      Size.Width = 293.000000000000000000
       Size.Height = 226.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
@@ -959,7 +954,7 @@ object frmLogin: TfrmLogin
       Margins.Top = 20.000000000000000000
       Margins.Right = 10.000000000000000000
       Margins.Bottom = 10.000000000000000000
-      Size.Width = 264.000000000000000000
+      Size.Width = 273.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
       TextPrompt = 'Usu'#225'rio'
@@ -978,7 +973,7 @@ object frmLogin: TfrmLogin
       Margins.Top = 10.000000000000000000
       Margins.Right = 10.000000000000000000
       Margins.Bottom = 10.000000000000000000
-      Size.Width = 264.000000000000000000
+      Size.Width = 273.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
       TextPrompt = 'Senha'
@@ -993,7 +988,7 @@ object frmLogin: TfrmLogin
       Margins.Bottom = 10.000000000000000000
       Position.X = 10.000000000000000000
       Position.Y = 176.000000000000000000
-      Size.Width = 264.000000000000000000
+      Size.Width = 273.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
@@ -1012,7 +1007,7 @@ object frmLogin: TfrmLogin
   object FooterSpaceLayout: TLayout
     Align = Top
     Position.Y = 449.000000000000000000
-    Size.Width = 334.000000000000000000
+    Size.Width = 343.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1

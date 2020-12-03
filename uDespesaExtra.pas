@@ -8,7 +8,7 @@ uses
   FMX.Controls.Presentation, FMX.Edit, FMX.ListBox, FMX.Layouts;
 
 type
-  TFrame3 = class(TFrame)
+  TFrameDespesasExtras = class(TFrame)
     EducationList: TListBox;
     Institution: TListBoxItem;
     edInstitution: TEdit;

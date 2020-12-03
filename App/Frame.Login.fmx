@@ -1012,4 +1012,28 @@ object FrameLogin: TFrameLogin
     Size.PlatformDefault = False
     TabOrder = 1
   end
+  object Label1: TLabel
+    Position.X = 208.000000000000000000
+    Position.Y = 360.000000000000000000
+    Text = 'Label1'
+    TabOrder = 4
+  end
+  object NetHTTPClient1: TNetHTTPClient
+    Asynchronous = False
+    ConnectionTimeout = 60000
+    ResponseTimeout = 60000
+    HandleRedirects = True
+    AllowCookies = True
+    UserAgent = 'Embarcadero URI Client/1.0'
+    Left = 40
+    Top = 464
+  end
+  object NetHTTPRequest1: TNetHTTPRequest
+    Asynchronous = False
+    ConnectionTimeout = 60000
+    ResponseTimeout = 60000
+    Client = NetHTTPClient1
+    Left = 120
+    Top = 465
+  end
 end

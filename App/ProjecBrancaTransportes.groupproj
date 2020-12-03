@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5884719E-1C0D-4781-9167-AA0D327DA73E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="BrancaTransportes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Server\ServerBrancaTransportes.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="BrancaTransportes">
+        <MSBuild Projects="BrancaTransportes.dproj"/>
+    </Target>
+    <Target Name="BrancaTransportes:Clean">
+        <MSBuild Projects="BrancaTransportes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BrancaTransportes:Make">
+        <MSBuild Projects="BrancaTransportes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ServerBrancaTransportes">
+        <MSBuild Projects="..\Server\ServerBrancaTransportes.dproj"/>
+    </Target>
+    <Target Name="ServerBrancaTransportes:Clean">
+        <MSBuild Projects="..\Server\ServerBrancaTransportes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ServerBrancaTransportes:Make">
+        <MSBuild Projects="..\Server\ServerBrancaTransportes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="BrancaTransportes;ServerBrancaTransportes"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="BrancaTransportes:Clean;ServerBrancaTransportes:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="BrancaTransportes:Make;ServerBrancaTransportes:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

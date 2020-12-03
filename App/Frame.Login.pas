@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Effects, FMX.Controls.Presentation, FMX.Edit, FMX.Objects, FMX.Layouts;
+  FMX.Effects, FMX.Controls.Presentation, FMX.Edit, FMX.Objects, FMX.Layouts,
+  System.Net.URLClient, System.Net.HttpClient, System.Net.HttpClientComponent;
 
 type
   TFrameLogin = class(TFrame)
@@ -19,6 +20,9 @@ type
     SignupButton: TButton;
     FormShadowEffect: TShadowEffect;
     FooterSpaceLayout: TLayout;
+    NetHTTPClient1: TNetHTTPClient;
+    NetHTTPRequest1: TNetHTTPRequest;
+    Label1: TLabel;
     procedure SignupButtonClick(Sender: TObject);
   private
     { Private declarations }
@@ -30,15 +34,24 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main, uMenu;
+uses Form.Main, uMenu, System.JSON;
 
 procedure TFrameLogin.SignupButtonClick(Sender: TObject);
+var
+  JSonObject : TJSONObject;
+ JSonData   : String;
 begin
-  if (NameEdit.Text = 'ADMIN') and (PasswordEdit.Text = '123') then
-  begin
-    FormMain.LoginSucessfull := True;
-    FormMain.LoadFrame<TFrameMenu>;
-  end;
+  JSonData := NetHTTPRequest1.Get(Format('http://192.168.15.184:9000/login?user=%s&password=%s', [NameEdit.Text, PasswordEdit.Text])).ContentAsString;
+  JSonObject := TJSonObject.ParseJSONValue(JSonData) as TJSonObject;
+
+  label1.Text := JSonObject.GetValue('access').Value;
+
+
+//  if (NameEdit.Text = 'ADMIN') and (PasswordEdit.Text = '123') then
+//  begin
+//    FormMain.LoginSucessfull := True;
+//    FormMain.LoadFrame<TFrameMenu>;
+//  end;
 
 end;
 

@@ -959,6 +959,7 @@ object FrameLogin: TFrameLogin
       Size.PlatformDefault = False
       TextPrompt = 'Usu'#225'rio'
       StyledSettings = [Family, Size, FontColor]
+      CharCase = ecUpperCase
     end
     object PasswordEdit: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -1013,9 +1014,13 @@ object FrameLogin: TFrameLogin
     TabOrder = 1
   end
   object Label1: TLabel
-    Position.X = 208.000000000000000000
-    Position.Y = 360.000000000000000000
-    Text = 'Label1'
+    StyledSettings = [Family, Size, Style]
+    Position.X = 32.000000000000000000
+    Position.Y = 352.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.FontColor = claRed
     TabOrder = 4
   end
   object NetHTTPClient1: TNetHTTPClient

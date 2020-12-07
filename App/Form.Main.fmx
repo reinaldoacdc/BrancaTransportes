@@ -3,6 +3,7 @@ object FormMain: TFormMain
   Top = 0
   ClientHeight = 480
   ClientWidth = 503
+  Fill.Kind = Solid
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]

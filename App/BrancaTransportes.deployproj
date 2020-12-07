@@ -5,7 +5,7 @@
     </ProjectExtensions>
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'">4200021b03b4b4ff</DeviceId>
-        <DeviceId Condition="'$(Platform)'=='Android64'">0d62e12c7d29</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSDevice32'"/>
         <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSSimulator'">iPhone5</DeviceId>
@@ -144,6 +144,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BrancaTransportes\library\lib\mips\</RemoteDir>
+            <RemoteName>libBrancaTransportes.so</RemoteName>
+            <DeployClass>AndroidLibnativeMipsFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="Android\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
@@ -153,7 +162,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="C:\Projetos\BrancaTransportes\res\Icons\logo 36x36.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Launcher\midmap-idpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
@@ -162,7 +171,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="C:\Projetos\BrancaTransportes\res\Icons\logo 96x96.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Launcher\mipmap-xhdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
@@ -171,7 +180,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_960x720.9.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Splash\FM_SplashImage_960x720.9.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-xlarge\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage960</DeployClass>
@@ -193,6 +202,15 @@
             <RemoteDir>BrancaTransportes\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BrancaTransportes\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libBrancaTransportes.so</RemoteName>
+            <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -225,15 +243,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>BrancaTransportes\library\lib\mips\</RemoteDir>
-            <RemoteName>libBrancaTransportes.so</RemoteName>
-            <DeployClass>AndroidLibnativeMipsFile</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
@@ -252,7 +261,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="C:\Projetos\BrancaTransportes\res\Icons\logo 144x144.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Launcher\mipmap-xxhdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
@@ -307,7 +316,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_640x480.9.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Splash\FM_SplashImage_640x480.9.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-large\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage640</DeployClass>
@@ -329,15 +338,6 @@
             <RemoteDir>BrancaTransportes\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>BrancaTransportes\library\lib\armeabi\</RemoteDir>
-            <RemoteName>libBrancaTransportes.so</RemoteName>
-            <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -370,7 +370,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_426x320.9.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Splash\FM_SplashImage_426x320.9.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
@@ -397,7 +397,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Splash\FM_SplashImage_470x320.9.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
@@ -433,7 +433,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="C:\Projetos\BrancaTransportes\res\Icons\logo 72x72.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Launcher\mipmap-hdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon72</DeployClass>
@@ -451,7 +451,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="C:\Projetos\BrancaTransportes\res\Icons\logo 48x48.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="res\Launcher\mipmap-mdpi\ic_launcher.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>BrancaTransportes\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>

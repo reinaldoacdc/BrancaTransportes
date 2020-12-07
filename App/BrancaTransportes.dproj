@@ -6,7 +6,7 @@
         <MainSource>BrancaTransportes.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Android</Platform>
         <TargetedPlatforms>33881</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -333,15 +333,18 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Android)'!=''">
         <VerInfo_Build>1</VerInfo_Build>
-        <Android_LauncherIcon36>C:\Projetos\BrancaTransportes\res\Icons\logo 36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon48>C:\Projetos\BrancaTransportes\res\Icons\logo 48x48.png</Android_LauncherIcon48>
-        <Android_LauncherIcon72>C:\Projetos\BrancaTransportes\res\Icons\logo 72x72.png</Android_LauncherIcon72>
-        <Android_LauncherIcon96>C:\Projetos\BrancaTransportes\res\Icons\logo 96x96.png</Android_LauncherIcon96>
-        <Android_LauncherIcon144>C:\Projetos\BrancaTransportes\res\Icons\logo 144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon36>res\Launcher\midmap-idpi\ic_launcher.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>res\Launcher\mipmap-mdpi\ic_launcher.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>res\Launcher\mipmap-hdpi\ic_launcher.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>res\Launcher\mipmap-xhdpi\ic_launcher.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>res\Launcher\mipmap-xxhdpi\ic_launcher.png</Android_LauncherIcon144>
         <Android_NotificationAccentColor>#000000</Android_NotificationAccentColor>
-        <Android_SplashImage426>C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_426x320.9.png</Android_SplashImage426>
-        <Android_SplashImage640>C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_640x480.9.png</Android_SplashImage640>
-        <Android_SplashImage960>C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_960x720.9.png</Android_SplashImage960>
+        <Android_SplashImage426>res\Splash\FM_SplashImage_426x320.9.png</Android_SplashImage426>
+        <Android_SplashImage640>res\Splash\FM_SplashImage_640x480.9.png</Android_SplashImage640>
+        <Android_SplashImage960>res\Splash\FM_SplashImage_960x720.9.png</Android_SplashImage960>
+        <Android_SplashImage470>res\Splash\FM_SplashImage_470x320.9.png</Android_SplashImage470>
+        <Android_SplashGravity>fill</Android_SplashGravity>
+        <Android_SplashTileMode>disabled</Android_SplashTileMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -444,21 +447,12 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\JvBandsDesign260.bpl">JVCL Band Objects</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\JvAppFrmDesign260.bpl">JVCL Application and Form Components</Excluded_Packages>
                     <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\JvDotNetCtrlsDesign260.bpl">JVCL DotNet Controls</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclunidac260.bpl">Devart Universal Data Access Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\DataSetManager260.bpl">Devart DataSet Manager</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Componentes\ACBR\Lib\Delphi\LibD26\Win32\DCLACBr_CTeDacteFR.bpl">ACBr - (design-time) DACTe em Fast Report - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Componentes\ACBR\Lib\Delphi\LibD26\Win32\DCLACBr_BoletoFR.bpl">ACBr - (design-time) Boleto Impressão em  Fast Report - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Componentes\ACBR\Lib\Delphi\LibD26\Win32\DCLACBr_MDFeDamdfeFR.bpl">ACBr - (design-time) DAMDFe em Fast Report - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Componentes\ACBR\Lib\Delphi\LibD26\Win32\DCLACBr_NFeDanfeRL.bpl">ACBr - (design-time) DANFe em Fortes Report - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Componentes\ACBR\Lib\Delphi\LibD26\Win32\DCLACBr_CTeDacteRL.bpl">ACBr - (design-time) DACTe em Fortes Report - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Componentes\ACBR\Lib\Delphi\LibD26\Win32\DCLACBr_BoletoRL.bpl">ACBr - (design-time) Boleto Impressão em Fortes Report - (http://www.projectoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Componentes\ACBR\Lib\Delphi\LibD26\Win32\DCLACBr_MDFeDamdfeRL.bpl">ACBr - (design-time) DAMDFe em Fortes Report - (http://www.projetoacbr.com.br/)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Componentes\ACBR\Lib\Delphi\LibD26\Win32\DCLACBr_SATExtratoRL.bpl">ACBr - (design-time) Extrato Cupom Fiscal Eletrônico SAT para Fortes Report - (http://www.projectoacbr.com.br/)</Excluded_Packages>
                     <Excluded_Packages Name="C:\Program Files (x86)\FastReport 6 VCL Enterprise\LibD26\dclfrxTee26.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
                     <Excluded_Packages Name="C:\Program Files (x86)\FastReport 6 VCL Enterprise\LibD26\dclfsTee26.bpl">FastScript 1.9 Tee Components</Excluded_Packages>
                     <Excluded_Packages Name="C:\Program Files (x86)\FastReport 6 VCL Enterprise\LibD26\dclfrxIBX26.bpl">FastReport 6.0 IBX Components</Excluded_Packages>
@@ -539,24 +533,30 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteName>libBrancaTransportes.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="Android\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
                     <Platform Name="Android">
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Projetos\BrancaTransportes\res\Icons\logo 36x36.png" Configuration="Debug" Class="Android_LauncherIcon36">
+                <DeployFile LocalName="res\Launcher\midmap-idpi\ic_launcher.png" Configuration="Debug" Class="Android_LauncherIcon36">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Projetos\BrancaTransportes\res\Icons\logo 96x96.png" Configuration="Debug" Class="Android_LauncherIcon96">
+                <DeployFile LocalName="res\Launcher\mipmap-xhdpi\ic_launcher.png" Configuration="Debug" Class="Android_LauncherIcon96">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_960x720.9.png" Configuration="Debug" Class="Android_SplashImage960">
+                <DeployFile LocalName="res\Splash\FM_SplashImage_960x720.9.png" Configuration="Debug" Class="Android_SplashImage960">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -570,6 +570,12 @@
                 </DeployFile>
                 <DeployFile LocalName="Android\Debug\AndroidManifest.xml" Configuration="Debug" Class="ProjectAndroidManifest">
                     <Platform Name="Android">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteName>libBrancaTransportes.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -596,12 +602,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeMipsFile">
-                    <Platform Name="Android">
-                        <RemoteName>libBrancaTransportes.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Configuration="Debug" Class="Android_NotificationIcon24">
                     <Platform Name="Android">
                         <RemoteName>ic_notification.png</RemoteName>
@@ -618,7 +618,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Projetos\BrancaTransportes\res\Icons\logo 144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
+                <DeployFile LocalName="res\Launcher\mipmap-xxhdpi\ic_launcher.png" Configuration="Debug" Class="Android_LauncherIcon144">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -653,7 +653,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_640x480.9.png" Configuration="Debug" Class="Android_SplashImage640">
+                <DeployFile LocalName="res\Splash\FM_SplashImage_640x480.9.png" Configuration="Debug" Class="Android_SplashImage640">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -667,12 +667,6 @@
                 </DeployFile>
                 <DeployFile LocalName="Android\Release\styles.xml" Configuration="Release" Class="AndroidSplashStyles">
                     <Platform Name="Android">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Configuration="Release" Class="AndroidLibnativeArmeabiFile">
-                    <Platform Name="Android">
-                        <RemoteName>libBrancaTransportes.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -693,7 +687,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Projetos\BrancaTransportes\res\Splash\FM_SplashImage_426x320.9.png" Configuration="Debug" Class="Android_SplashImage426">
+                <DeployFile LocalName="res\Splash\FM_SplashImage_426x320.9.png" Configuration="Debug" Class="Android_SplashImage426">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -721,7 +715,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Configuration="Debug" Class="Android_SplashImage470">
+                <DeployFile LocalName="res\Splash\FM_SplashImage_470x320.9.png" Configuration="Debug" Class="Android_SplashImage470">
                     <Platform Name="Android">
                         <RemoteName>splash_image.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -743,7 +737,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Projetos\BrancaTransportes\res\Icons\logo 72x72.png" Configuration="Debug" Class="Android_LauncherIcon72">
+                <DeployFile LocalName="res\Launcher\mipmap-hdpi\ic_launcher.png" Configuration="Debug" Class="Android_LauncherIcon72">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>
@@ -761,7 +755,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="C:\Projetos\BrancaTransportes\res\Icons\logo 48x48.png" Configuration="Debug" Class="Android_LauncherIcon48">
+                <DeployFile LocalName="res\Launcher\mipmap-mdpi\ic_launcher.png" Configuration="Debug" Class="Android_LauncherIcon48">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
                         <Overwrite>true</Overwrite>

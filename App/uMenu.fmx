@@ -1,11 +1,11 @@
 object FrameMenu: TFrameMenu
-  Size.Width = 333.000000000000000000
+  Size.Width = 340.000000000000000000
   Size.Height = 531.000000000000000000
   Size.PlatformDefault = False
   object LogoBackgroundRect: TRectangle
     Align = Top
     Fill.Color = claWhite
-    Size.Width = 333.000000000000000000
+    Size.Width = 340.000000000000000000
     Size.Height = 273.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -929,6 +929,7 @@ object FrameMenu: TFrameMenu
         Size.PlatformDefault = False
         TabOrder = 1
         Text = 'Carregamento'
+        OnClick = Button1Click
       end
       object Button2: TButton
         Position.X = 80.000000000000000000
@@ -938,6 +939,7 @@ object FrameMenu: TFrameMenu
         Size.PlatformDefault = False
         TabOrder = 0
         Text = 'Despesa'
+        OnClick = Button2Click
       end
     end
   end
@@ -949,6 +951,7 @@ object FrameMenu: TFrameMenu
     Size.PlatformDefault = False
     TabOrder = 1
     Text = 'Despesa Extra'
+    OnClick = Button3Click
   end
   object Button4: TButton
     Position.X = 176.000000000000000000

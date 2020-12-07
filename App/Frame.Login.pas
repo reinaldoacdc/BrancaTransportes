@@ -47,11 +47,13 @@ begin
   label1.Text := JSonObject.GetValue('access').Value;
 
 
-//  if (NameEdit.Text = 'ADMIN') and (PasswordEdit.Text = '123') then
-//  begin
-//    FormMain.LoginSucessfull := True;
-//    FormMain.LoadFrame<TFrameMenu>;
-//  end;
+  if JSonObject.GetValue('access').Value = 'True' then
+  begin
+    FormMain.LoginSucessfull := True;
+    FormMain.LoadFrame<TFrameMenu>;
+  end
+  else
+    label1.Text := 'Login ou senha inválidos.';
 
 end;
 

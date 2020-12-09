@@ -74,7 +74,7 @@ begin
       LArray :TJSONArray;
       dao :TDao;
       lista :TCarregamentos;
-    I: Integer;
+      I: Integer;
     begin
       LBody := TJSONObject.Create;
       LArray := TJSONArray.Create;
@@ -88,8 +88,6 @@ begin
          LArray.Add( TJson.ObjectToJsonString(lista[I]) );
         end;
 
-
-
         LBody.AddPair(TJSONPair.Create('result', LArray));
         Res.Send<TJSONObject>(LBody);
       finally
@@ -97,6 +95,26 @@ begin
       end;
     end);
 
+
+  THorse.Get('/carregamento',
+    procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
+    var
+      LBody: TJSONObject;
+      dao :TDao;
+      id :Integer;
+      carga :TCarregamento;
+    begin
+      id := StrToInt( Req.Query.ExtractPair('id').Value );
+      LBody := TJSONObject.Create;
+      dao := TDao.Create;
+      try
+        carga := dao.getCarregamento(id);
+        Lbody := TJson.ObjectToJsonObject(carga);
+        Res.Send<TJSONObject>(LBody);
+      finally
+        dao.Free;
+      end;
+    end);
 
   THorse.Listen(9000);
 end.

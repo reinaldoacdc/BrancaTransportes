@@ -37,7 +37,7 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main;
+uses Form.Main, Frame.Carregamento;
 
 { TDatasetFrame }
 
@@ -60,7 +60,11 @@ procedure TDatasetFrame.ListView1ItemClick(const Sender: TObject;
   const AItem: TListViewItem);
 begin
   Self.Hide;
+
+  FormMain.IdCarregamentoSelecionado := FormMain.ClientDataSet1ID.AsInteger;
   FormMain.FrameStand2.HideAndCloseAll();
+
+  FormMain.LoadFrame<TFrameCarregamento>;
 end;
 
 procedure TDatasetFrame.SetDataSet(const Value: TDataSet);

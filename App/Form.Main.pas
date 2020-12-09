@@ -44,16 +44,17 @@ type
     procedure FormCreate(Sender: TObject);
   private
     FloginSucessfull: Boolean;
+    FidCarregamentoSelecionado: Integer;
 
+    procedure LoadDatasetModal(ClientdataSet :TClientDataSet);
+    procedure LoadListatem;
+    procedure ListarCdsCarregamentos;
   public
     procedure LoadFrame<T :TFrame>;
-    procedure LoadDatasetModal(ClientdataSet :TClientDataSet);
 
-    procedure LoadListatem;
-
-    procedure ListarCdsCarregamentos;
   published
     property LoginSucessfull :Boolean read FloginSucessfull write FloginSucessfull default False;
+    property IdCarregamentoSelecionado :Integer read FidCarregamentoSelecionado write FidCarregamentoSelecionado default 0;
   end;
 
 var
@@ -64,7 +65,7 @@ implementation
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
 
-uses uMenu, uCarregamento, uInstitucional, uParceiros, Frame.Login, uDespesa,
+uses uMenu, uInstitucional, uParceiros, Frame.Login, uDespesa,
   uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
   Model.Carregamento;
 
@@ -160,7 +161,7 @@ begin
   for I := 0 to Length(lista)-1 do
   begin
     ClientDataSet1.Append;
-    ClientDataSet1ID.AsInteger := 13;
+    ClientDataSet1ID.AsInteger := 1;
     ClientDataSet1LOCAL.AsString   := lista[i].Local;
     ClientDataSet1PRODUTO.AsString := lista[i].Produto;
     ClientDataSet1.Post;

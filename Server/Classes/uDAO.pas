@@ -26,6 +26,7 @@ protected
 public
   function Login(username, password :String) :Boolean;
   function ListaCarregamento :TCarregamentos;
+  function getCarregamento(id :Integer) :TCarregamento;
 
   constructor Create; overload;
   constructor Create(params :TDadosAcesso); overload;
@@ -90,6 +91,17 @@ begin
   Fconnection.Connected := False;
 end;
 
+function TDao.getCarregamento(id: Integer): TCarregamento;
+begin
+  Fquery.SQL.Text := Format( 'SELECT LOCAL_CARREGAMENTO, DATA_CARREGAMENTO, PRODUTO_CARREGADO FROM CADASTRO_CARREGAMENTO WHERE CODIGO = %d', [id]);
+  Fquery.Open;
+
+  Result    := TCarregamento.Create( Fquery.FieldByName('LOCAL_CARREGAMENTO').AsString
+                                   , Fquery.FieldByName('DATA_CARREGAMENTO').AsString
+                                   , Fquery.FieldByName('PRODUTO_CARREGADO').AsString
+                                       );
+end;
+
 function TDao.ListaCarregamento: TCarregamentos;
 var I :Integer;
 begin
@@ -105,12 +117,6 @@ begin
                                      , Fquery.FieldByName('PRODUTO_CARREGADO').AsString
 
                                          );
-//
-//
-//    Result[I].Local := Fquery.FieldByName('LOCAL_CARREGAMENTO').AsString;
-//    Result[I].Data  := Fquery.FieldByName('DATA_CARREGAMENTO').AsString;
-//    Result[I].Produto  := Fquery.FieldByName('PRODUTO_CARREGADO').AsString;
-
     Fquery.Next;
   end;
 

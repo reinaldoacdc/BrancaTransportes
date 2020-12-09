@@ -1,4 +1,4 @@
-unit uCarregamento;
+unit Frame.Carregamento;
 
 interface
 
@@ -31,14 +31,45 @@ type
     KM_INICIO: TEdit;
     ItemKmFinal: TListBoxItem;
     KM_CHEGADA: TEdit;
+    Layout2: TLayout;
+    SpeedButton1: TSpeedButton;
+    procedure SpeedButton1Click(Sender: TObject);
   private
-    { Private declarations }
+    Fid: Integer;
+    procedure Carregar;
   public
-    { Public declarations }
+    constructor Create(AOwner: TComponent); override;
+
+  published
+    property Id :Integer read Fid write Fid;
   end;
 
 implementation
 
 {$R *.fmx}
+
+uses Controller.API, Model.Carregamento, Form.Main, uMenu;
+
+procedure TFrameCarregamento.Carregar;
+var carregamento :TCarregamento;
+begin
+  carregamento :=  objAPI.getCarregamento(Self.Id);
+
+  LOCAL.Text := carregamento.Local;
+  PRODUTO.Text := carregamento.Produto;
+  DATA.Text := carregamento.Data;
+end;
+
+constructor TFrameCarregamento.Create(AOwner: TComponent);
+begin
+  inherited;
+  Self.Id := FormMain.IdCarregamentoSelecionado;
+  Carregar;
+end;
+
+procedure TFrameCarregamento.SpeedButton1Click(Sender: TObject);
+begin
+  FormMain.LoadFrame<TFrameMenu>;
+end;
 
 end.

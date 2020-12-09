@@ -29,8 +29,8 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main, Frame.Login, uCarregamentos, uCarregamento, uDespesa,
-  uDespesaExtra;
+uses Form.Main, Frame.Login, uCarregamentos, uDespesa,
+  uDespesaExtra, Frame.Carregamento;
 
 procedure TFrameMenu.Button1Click(Sender: TObject);
 begin

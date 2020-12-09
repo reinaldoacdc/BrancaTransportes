@@ -15,7 +15,12 @@ protected
 public
 
   function Login(username, password :String) :Boolean;
+
+
   function ListaCarregamentos :TCarregamentos;
+
+  function getCarregamento(id :Integer) :TCarregamento;
+
 
   constructor Create; overload;
   destructor Destroy; override;
@@ -45,6 +50,21 @@ destructor TApi.Destroy;
 begin
   FNetHTTPRequest.Free;
   inherited;
+end;
+
+function TApi.getCarregamento(id: Integer): TCarregamento;
+var
+  Url, JSonData   : String;
+  item: TJSONObject;
+  a: TJSONArray;
+  idx :Integer;
+  carga :TCarregamento;
+begin
+  Url := Format('http://192.168.15.184:9000/carregamento?id=%d', [id]);
+  JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
+  FJSonObject := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JsonData),0) as TJSONObject;
+
+  Result := Tjson.JsonToObject<TCarregamento>(FJSonObject);
 end;
 
 function TApi.ListaCarregamentos :TCarregamentos;

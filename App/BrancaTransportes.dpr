@@ -9,7 +9,7 @@ uses
   uMenu in 'uMenu.pas' {FrameMenu: TFrame},
   uDespesa in 'uDespesa.pas' {FrameDespesas: TFrame},
   uDespesaExtra in 'uDespesaExtra.pas' {FrameDespesasExtras: TFrame},
-  uCarregamento in 'uCarregamento.pas' {FrameCarregamento: TFrame},
+  Frame.Carregamento in 'View\Frame.Carregamento.pas' {FrameCarregamento: TFrame},
   Form.Main in 'Form.Main.pas' {FormMain},
   Frame.ListaCarregamento in 'Frame.ListaCarregamento.pas' {FrameListaCarregamento: TFrame},
   Frames.Dataset in 'View\Frames.Dataset.pas' {DatasetFrame: TFrame},

@@ -410,7 +410,7 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="uCarregamento.pas">
+        <DCCReference Include="View\Frame.Carregamento.pas">
             <Form>FrameCarregamento</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>

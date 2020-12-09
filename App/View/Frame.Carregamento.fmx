@@ -1,14 +1,16 @@
 object FrameCarregamento: TFrameCarregamento
   Size.Width = 320.000000000000000000
-  Size.Height = 490.000000000000000000
+  Size.Height = 529.000000000000000000
   Size.PlatformDefault = False
   object PersonalInfoList: TListBox
-    Align = Client
+    Align = Top
     Margins.Left = 5.000000000000000000
     Margins.Top = 30.000000000000000000
     Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 30.000000000000000000
     Size.Width = 310.000000000000000000
-    Size.Height = 362.000000000000000000
+    Size.Height = 339.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'transparentlistboxstyle'
     TabOrder = 0
@@ -18,7 +20,7 @@ object FrameCarregamento: TFrameCarregamento
     DefaultItemStyles.GroupFooterStyle = ''
     GroupingKind = Grouped
     Viewport.Width = 310.000000000000000000
-    Viewport.Height = 362.000000000000000000
+    Viewport.Height = 339.000000000000000000
     object ItemLocal: TListBoxItem
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
@@ -165,8 +167,8 @@ object FrameCarregamento: TFrameCarregamento
     end
   end
   object Layout1: TLayout
-    Align = Bottom
-    Position.Y = 392.000000000000000000
+    Align = Top
+    Position.Y = 369.000000000000000000
     Size.Width = 320.000000000000000000
     Size.Height = 98.000000000000000000
     Size.PlatformDefault = False
@@ -226,6 +228,20 @@ object FrameCarregamento: TFrameCarregamento
           Size.PlatformDefault = False
         end
       end
+    end
+  end
+  object Layout2: TLayout
+    Align = Bottom
+    Position.Y = 479.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object SpeedButton1: TSpeedButton
+      Position.X = 120.000000000000000000
+      Position.Y = 16.000000000000000000
+      Text = 'SpeedButton1'
+      OnClick = SpeedButton1Click
     end
   end
 end

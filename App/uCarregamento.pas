@@ -11,14 +11,26 @@ uses
 type
   TFrameCarregamento = class(TFrame)
     PersonalInfoList: TListBox;
-    Address: TListBoxItem;
-    infoAddress: TEdit;
-    Phone: TListBoxItem;
-    infoTelephone: TEdit;
-    Email: TListBoxItem;
-    infoEmail: TEdit;
-    BirthDate: TListBoxItem;
-    infoDate: TDateEdit;
+    ItemLocal: TListBoxItem;
+    LOCAL: TEdit;
+    ItemProduto: TListBoxItem;
+    PRODUTO: TEdit;
+    ItemData: TListBoxItem;
+    DATA: TDateEdit;
+    Layout1: TLayout;
+    ListBox1: TListBox;
+    ItemTotalFrete: TListBoxItem;
+    TOTAL_FRETE: TEdit;
+    ItemTotalKm: TListBoxItem;
+    TOTAL_KM: TEdit;
+    ItemPeso: TListBoxItem;
+    PESO: TEdit;
+    ItemFrete: TListBoxItem;
+    FRETE: TEdit;
+    ItemKmInicio: TListBoxItem;
+    KM_INICIO: TEdit;
+    ItemKmFinal: TListBoxItem;
+    KM_CHEGADA: TEdit;
   private
     { Private declarations }
   public

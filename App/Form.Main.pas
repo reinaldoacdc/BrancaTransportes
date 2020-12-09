@@ -47,6 +47,8 @@ type
 
   public
     procedure LoadFrame<T :TFrame>;
+    procedure LoadListatem;
+  published
     property LoginSucessfull :Boolean read FloginSucessfull write FloginSucessfull default False;
   end;
 
@@ -59,26 +61,26 @@ implementation
 {$R *.LgXhdpiPh.fmx ANDROID}
 
 uses uMenu, uCarregamento, uInstitucional, uParceiros, Frame.Login, uDespesa,
-  uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset;
+  uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
-  if not (ClientDataSet1.Active) then
-    ClientDataSet1.CreateDataSet;
-
-  ClientDataSet1.Append;
-  ClientDataSet1ID.AsInteger := 13;
-  ClientDataSet1LOCAL.AsString := 'São Paulo';
-  ClientDataSet1PRODUTO.AsString := 'Arroz';
-  ClientDataSet1DATA.AsDateTime := Date;
-  ClientDataSet1.Post;
-
-  ClientDataSet1.Append;
-  ClientDataSet1ID.AsInteger := 27;
-  ClientDataSet1LOCAL.AsString := 'Rio';
-  ClientDataSet1PRODUTO.AsString := 'Feijão';
-  ClientDataSet1DATA.AsDateTime := Date()-10;
-  ClientDataSet1.Post;
+//  if not (ClientDataSet1.Active) then
+//    ClientDataSet1.CreateDataSet;
+//
+//  ClientDataSet1.Append;
+//  ClientDataSet1ID.AsInteger := 13;
+//  ClientDataSet1LOCAL.AsString := 'São Paulo';
+//  ClientDataSet1PRODUTO.AsString := 'Arroz';
+//  ClientDataSet1DATA.AsDateTime := Date;
+//  ClientDataSet1.Post;
+//
+//  ClientDataSet1.Append;
+//  ClientDataSet1ID.AsInteger := 27;
+//  ClientDataSet1LOCAL.AsString := 'Rio';
+//  ClientDataSet1PRODUTO.AsString := 'Feijão';
+//  ClientDataSet1DATA.AsDateTime := Date()-10;
+//  ClientDataSet1.Post;
 
   FrameStand2.CommonActions.Add('Close*',
     procedure (AInfo: TSubjectInfo)
@@ -105,6 +107,30 @@ begin
   MultiView1.HideMaster;
 end;
 
+procedure TFormMain.LoadListatem;
+var
+  LFrameInfo: TFrameInfo<TDatasetFrame>;
+begin
+  //LoadFrame<TFrameListaCarregamento>;
+
+  objAPI.ListaCarregamentos;
+
+  FrameStand1.HideAndCloseAll();
+  FrameStand2.HideAndCloseAll();
+  LFrameInfo := FrameStand2.New<TDatasetFrame>; //FrameListaCarregamento
+
+  LFrameInfo.Frame.DataSet := ClientDataSet1;
+  LFrameInfo.Frame.ItemTextField := 'LOCAL';
+  LFrameInfo.Frame.DetailField := 'PRODUTO';
+
+
+  LFrameInfo.Show;
+  MultiView1.HideMaster;
+//
+//  if not LoginSucessfull then
+//    LoadFrame<TFrameLogin>;
+end;
+
 procedure TFormMain.FrameStand2BeforeShow(const ASender: TSubjectStand;
   const ASubjectInfo: TSubjectInfo);
 var
@@ -126,25 +152,8 @@ begin
 end;
 
 procedure TFormMain.btnCarregamentosClick(Sender: TObject);
-var
-  LFrameInfo: TFrameInfo<TDatasetFrame>;
 begin
-  //LoadFrame<TFrameListaCarregamento>;
-
-  FrameStand1.HideAndCloseAll();
-  FrameStand2.HideAndCloseAll();
-  LFrameInfo := FrameStand2.New<TDatasetFrame>; //FrameListaCarregamento
-
-  LFrameInfo.Frame.DataSet := ClientDataSet1;
-  LFrameInfo.Frame.ItemTextField := 'LOCAL';
-  LFrameInfo.Frame.DetailField := 'PRODUTO';
-
-
-  LFrameInfo.Show;
-  MultiView1.HideMaster;
-//
-//  if not LoginSucessfull then
-//    LoadFrame<TFrameLogin>;
+  LoadListatem;
 end;
 
 procedure TFormMain.ListBoxItem2Click(Sender: TObject);

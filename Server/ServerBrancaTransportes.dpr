@@ -9,12 +9,14 @@ uses
   FireDAC.Stan.Def,
   FireDAC.Stan.Async,
   FireDAC.DApt,
+  REST.Json,
   Horse,
   Horse.Jhonson,
   System.JSON,
   Encriptacao in 'Classes\Encriptacao.pas',
   uConfigINI in 'Classes\uConfigINI.pas',
-  uDAO in 'Classes\uDAO.pas';
+  uDAO in 'Classes\uDAO.pas',
+  Model.Carregamento in 'Model.Carregamento.pas';
 
 begin
   THorse.Use(Jhonson);
@@ -62,12 +64,38 @@ begin
       finally
         dao.Free;
       end;
-
-
-
     end);
 
 
+  THorse.Get('/carregamentos',
+    procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
+    var
+      LBody: TJSONObject;
+      LArray :TJSONArray;
+      dao :TDao;
+      lista :TCarregamentos;
+    I: Integer;
+    begin
+      LBody := TJSONObject.Create;
+      LArray := TJSONArray.Create;
+
+      dao := TDao.Create;
+      try
+        lista := dao.ListaCarregamento;
+
+        for I := 0 to Length(lista)-1 do
+        begin
+         LArray.Add( TJson.ObjectToJsonString(lista[I]) );
+        end;
+
+
+
+        LBody.AddPair(TJSONPair.Create('result', LArray));
+        Res.Send<TJSONObject>(LBody);
+      finally
+        dao.Free;
+      end;
+    end);
 
 
   THorse.Listen(9000);

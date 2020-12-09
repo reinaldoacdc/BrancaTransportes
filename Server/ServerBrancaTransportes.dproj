@@ -150,6 +150,7 @@
         <DCCReference Include="Classes\Encriptacao.pas"/>
         <DCCReference Include="Classes\uConfigINI.pas"/>
         <DCCReference Include="Classes\uDAO.pas"/>
+        <DCCReference Include="Model.Carregamento.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

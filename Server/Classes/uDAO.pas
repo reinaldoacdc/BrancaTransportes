@@ -3,8 +3,8 @@ unit uDAO;
 interface
 
 uses System.SysUtils
-   ,  FireDAC.Phys, FireDAC.Phys.IBBase, FireDAC.Phys.FB
-   , Firedac.Comp.Client;
+   , FireDAC.Phys, FireDAC.Phys.IBBase, FireDAC.Phys.FB , Firedac.Comp.Client
+   , Model.Carregamento;
 
 type TDadosAcesso = record
   Servidor :String;
@@ -25,6 +25,7 @@ protected
   Fconnection :TFDConnection;
 public
   function Login(username, password :String) :Boolean;
+  function ListaCarregamento :TCarregamentos;
 
   constructor Create; overload;
   constructor Create(params :TDadosAcesso); overload;
@@ -87,6 +88,33 @@ end;
 procedure TDao.FechaBanco;
 begin
   Fconnection.Connected := False;
+end;
+
+function TDao.ListaCarregamento: TCarregamentos;
+var I :Integer;
+begin
+
+  Fquery.SQL.Text := 'SELECT LOCAL_CARREGAMENTO, DATA_CARREGAMENTO, PRODUTO_CARREGADO FROM CADASTRO_CARREGAMENTO';
+  Fquery.Open;
+
+  SetLength(Result, Fquery.RecordCount );
+  for I := 0 to Fquery.RecordCount-1 do
+  begin
+    Result[I] := TCarregamento.Create( Fquery.FieldByName('LOCAL_CARREGAMENTO').AsString
+                                     , Fquery.FieldByName('DATA_CARREGAMENTO').AsString
+                                     , Fquery.FieldByName('PRODUTO_CARREGADO').AsString
+
+                                         );
+//
+//
+//    Result[I].Local := Fquery.FieldByName('LOCAL_CARREGAMENTO').AsString;
+//    Result[I].Data  := Fquery.FieldByName('DATA_CARREGAMENTO').AsString;
+//    Result[I].Produto  := Fquery.FieldByName('PRODUTO_CARREGADO').AsString;
+
+    Fquery.Next;
+  end;
+
+
 end;
 
 function TDao.Login(username, password: String): Boolean;

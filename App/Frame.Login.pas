@@ -34,20 +34,11 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main, uMenu, System.JSON;
+uses Form.Main, uMenu, System.JSON, Controller.API;
 
 procedure TFrameLogin.SignupButtonClick(Sender: TObject);
-var
-  JSonObject : TJSONObject;
- JSonData   : String;
 begin
-  JSonData := NetHTTPRequest1.Get(Format('http://192.168.15.184:9000/login?user=%s&password=%s', [NameEdit.Text, PasswordEdit.Text])).ContentAsString;
-  JSonObject := TJSonObject.ParseJSONValue(JSonData) as TJSonObject;
-
-  label1.Text := JSonObject.GetValue('access').Value;
-
-
-  if JSonObject.GetValue('access').Value = 'True' then
+  if objAPI.Login(NameEdit.Text, PasswordEdit.Text) then
   begin
     FormMain.LoginSucessfull := True;
     FormMain.LoadFrame<TFrameMenu>;

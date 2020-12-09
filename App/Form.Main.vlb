@@ -13,9 +13,6 @@ Coordinates=136,10,84,51
 [ListBoxItem2]
 Coordinates=10,276,79,33
 
-[ListBoxItem1]
-Coordinates=340,233,79,33
-
 [ImageList1]
 Coordinates=66,232,68,33
 
@@ -38,11 +35,11 @@ Coordinates=298,10,79,33
 Coordinates=230,10,58,33
 
 []
-Coordinates=145,80,79,33
+Coordinates=145,132,70,33
 
 [FrameStand2]
 Coordinates=145,80,79,33
 
-[StyleBook1]
-Coordinates=145,132,70,33
+[btnCarregamentos]
+Coordinates=340,233,79,33
 

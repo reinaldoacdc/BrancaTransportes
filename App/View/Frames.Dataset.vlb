@@ -1,0 +1,17 @@
+﻿[ListView1]
+Coordinates=10,10,89,159
+Visible=True
+
+[BindSourceDB1]
+Coordinates=210,30,92,123
+
+[]
+Coordinates=215,90,87,159
+Visible=False
+
+[BindingsList1]
+Coordinates=136,87,82,33
+
+[FormMain.ClientDataSet1]
+Visible=False
+

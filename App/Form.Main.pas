@@ -7,14 +7,14 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Controls.Presentation, FMX.MultiView, System.ImageList, FMX.ImgList,
   FMX.StdCtrls, FMX.ListBox, FMX.Layouts, SubjectStand, FrameStand, FMX.Objects,
-  System.Actions, FMX.ActnList;
+  System.Actions, FMX.ActnList, Data.DB, Datasnap.DBClient;
 
 type
   TFormMain = class(TForm)
     MultiView1: TMultiView;
     ImageList1: TImageList;
     ListBox1: TListBox;
-    ListBoxItem1: TListBoxItem;
+    btnCarregamentos: TListBoxItem;
     ListBoxItem2: TListBoxItem;
     ListBoxItem3: TListBoxItem;
     ListBoxItem4: TListBoxItem;
@@ -25,10 +25,15 @@ type
     ToolBar1: TToolBar;
     SpeedButton1: TSpeedButton;
     FrameStand2: TFrameStand;
-    StyleBook1: TStyleBook;
     ActionList1: TActionList;
+    StyleBook1: TStyleBook;
+    ClientDataSet1: TClientDataSet;
+    ClientDataSet1ID: TIntegerField;
+    ClientDataSet1LOCAL: TStringField;
+    ClientDataSet1PRODUTO: TStringField;
+    ClientDataSet1DATA: TDateField;
     procedure FormShow(Sender: TObject);
-    procedure ListBoxItem1Click(Sender: TObject);
+    procedure btnCarregamentosClick(Sender: TObject);
     procedure ListBoxItem2Click(Sender: TObject);
     procedure ListBoxItem3Click(Sender: TObject);
     procedure ListBoxItem4Click(Sender: TObject);
@@ -51,12 +56,30 @@ var
 implementation
 
 {$R *.fmx}
+{$R *.LgXhdpiPh.fmx ANDROID}
 
 uses uMenu, uCarregamento, uInstitucional, uParceiros, Frame.Login, uDespesa,
-  uDespesaExtra, Frame.ListaCarregamento;
+  uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
+  if not (ClientDataSet1.Active) then
+    ClientDataSet1.CreateDataSet;
+
+  ClientDataSet1.Append;
+  ClientDataSet1ID.AsInteger := 13;
+  ClientDataSet1LOCAL.AsString := 'São Paulo';
+  ClientDataSet1PRODUTO.AsString := 'Arroz';
+  ClientDataSet1DATA.AsDateTime := Date;
+  ClientDataSet1.Post;
+
+  ClientDataSet1.Append;
+  ClientDataSet1ID.AsInteger := 27;
+  ClientDataSet1LOCAL.AsString := 'Rio';
+  ClientDataSet1PRODUTO.AsString := 'Feijão';
+  ClientDataSet1DATA.AsDateTime := Date()-10;
+  ClientDataSet1.Post;
+
   FrameStand2.CommonActions.Add('Close*',
     procedure (AInfo: TSubjectInfo)
     begin
@@ -102,15 +125,21 @@ begin
 
 end;
 
-procedure TFormMain.ListBoxItem1Click(Sender: TObject);
+procedure TFormMain.btnCarregamentosClick(Sender: TObject);
 var
-  LFrameInfo: TFrameInfo<TFrameListaCarregamento>;
+  LFrameInfo: TFrameInfo<TDatasetFrame>;
 begin
-  LoadFrame<TFrameListaCarregamento>;
+  //LoadFrame<TFrameListaCarregamento>;
 
   FrameStand1.HideAndCloseAll();
   FrameStand2.HideAndCloseAll();
-  LFrameInfo := FrameStand2.New<TFrameListaCarregamento>;
+  LFrameInfo := FrameStand2.New<TDatasetFrame>; //FrameListaCarregamento
+
+  LFrameInfo.Frame.DataSet := ClientDataSet1;
+  LFrameInfo.Frame.ItemTextField := 'LOCAL';
+  LFrameInfo.Frame.DetailField := 'PRODUTO';
+
+
   LFrameInfo.Show;
   MultiView1.HideMaster;
 //

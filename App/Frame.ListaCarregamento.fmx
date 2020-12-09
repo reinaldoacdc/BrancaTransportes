@@ -1,6 +1,6 @@
 object FrameListaCarregamento: TFrameListaCarregamento
-  Size.Width = 396.000000000000000000
-  Size.Height = 596.000000000000000000
+  Size.Width = 345.000000000000000000
+  Size.Height = 684.000000000000000000
   Size.PlatformDefault = False
   object ListView1: TListView
     ItemAppearanceClassName = 'TDynamicAppearance'
@@ -8,8 +8,8 @@ object FrameListaCarregamento: TFrameListaCarregamento
     HeaderAppearanceClassName = 'TCustomizeItemObjects'
     FooterAppearanceClassName = 'TCustomizeItemObjects'
     Align = Client
-    Size.Width = 396.000000000000000000
-    Size.Height = 574.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 662.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     ItemAppearance.HeaderHeight = 1
@@ -19,7 +19,7 @@ object FrameListaCarregamento: TFrameListaCarregamento
         AppearanceObjectName = 'Text1'
         AppearanceClassName = 'TTextObjectAppearance'
         Appearance.Font.StyleExt = {00070000000000000004000000}
-        Appearance.Width = 375.000000000000000000
+        Appearance.Width = 351.000000000000000000
         Appearance.Height = 24.000000000000000000
       end
       item
@@ -33,10 +33,17 @@ object FrameListaCarregamento: TFrameListaCarregamento
       item
         AppearanceObjectName = 'Text3'
         AppearanceClassName = 'TTextObjectAppearance'
-        Appearance.Width = 193.000000000000000000
+        Appearance.Width = 169.000000000000000000
         Appearance.Height = 21.000000000000000000
         Appearance.PlaceOffset.X = 182.000000000000000000
         Appearance.PlaceOffset.Y = 23.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Accessory4'
+        AppearanceClassName = 'TAccessoryObjectAppearance'
+        Appearance.Width = 37.000000000000000000
+        Appearance.Height = 44.000000000000000000
+        Appearance.PlaceOffset.X = 346.000000000000000000
       end>
     ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
       item
@@ -45,10 +52,11 @@ object FrameListaCarregamento: TFrameListaCarregamento
       end>
     StyleLookup = 'listviewstyle'
     OnDblClick = ListView1DblClick
+    OnItemClick = ListView1ItemClick
   end
   object Button1: TButton
     Align = Top
-    Size.Width = 396.000000000000000000
+    Size.Width = 345.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
@@ -82,8 +90,8 @@ object FrameListaCarregamento: TFrameListaCarregamento
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 20
-    Top = 5
+    Left = 28
+    Top = 285
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1

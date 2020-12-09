@@ -24,6 +24,8 @@ type
     Button1: TButton;
     procedure Button1Click(Sender: TObject);
     procedure ListView1DblClick(Sender: TObject);
+    procedure ListView1ItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
   public
@@ -58,6 +60,13 @@ begin
 end;
 
 procedure TFrameListaCarregamento.ListView1DblClick(Sender: TObject);
+begin
+//  Self.Hide;
+//  FormMain.FrameStand2.HideAndCloseAll();
+end;
+
+procedure TFrameListaCarregamento.ListView1ItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
 begin
   Self.Hide;
   FormMain.FrameStand2.HideAndCloseAll();

@@ -14,6 +14,7 @@ object DatasetFrame: TDatasetFrame
     Size.PlatformDefault = False
     TabOrder = 0
     ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
+    OnItemClick = ListView1ItemClick
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = FormMain.ClientDataSet1

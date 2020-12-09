@@ -11,10 +11,10 @@ uses
   uDespesaExtra in 'uDespesaExtra.pas' {FrameDespesasExtras: TFrame},
   uCarregamento in 'uCarregamento.pas' {FrameCarregamento: TFrame},
   Form.Main in 'Form.Main.pas' {FormMain},
-  Frame.Login in 'Frame.Login.pas' {FrameLogin: TFrame},
   Frame.ListaCarregamento in 'Frame.ListaCarregamento.pas' {FrameListaCarregamento: TFrame},
   Frames.Dataset in 'View\Frames.Dataset.pas' {DatasetFrame: TFrame},
-  Controller.API in 'Controller\Controller.API.pas';
+  Controller.API in 'Controller\Controller.API.pas',
+  Frame.Login in 'View\Frame.Login.pas' {FrameLogin: TFrame};
 
 {$R *.res}
 

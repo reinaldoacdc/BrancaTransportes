@@ -16,6 +16,8 @@ type
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LinkListControlToField1: TLinkListControlToField;
+    procedure ListView1ItemClick(const Sender: TObject;
+      const AItem: TListViewItem);
   private
     { Private declarations }
     function GetDataSet: TDataSet;
@@ -52,6 +54,13 @@ end;
 function TDatasetFrame.GetItemTextField: string;
 begin
   Result := LinkListControlToField1.FieldName;
+end;
+
+procedure TDatasetFrame.ListView1ItemClick(const Sender: TObject;
+  const AItem: TListViewItem);
+begin
+  Self.Hide;
+  FormMain.FrameStand2.HideAndCloseAll();
 end;
 
 procedure TDatasetFrame.SetDataSet(const Value: TDataSet);

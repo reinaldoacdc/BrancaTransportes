@@ -238,8 +238,12 @@ object FrameCarregamento: TFrameCarregamento
     Size.PlatformDefault = False
     TabOrder = 2
     object SpeedButton1: TSpeedButton
-      Position.X = 120.000000000000000000
-      Position.Y = 16.000000000000000000
+      Align = Right
+      Position.X = 240.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'actiontoolbutton'
       Text = 'SpeedButton1'
       OnClick = SpeedButton1Click
     end

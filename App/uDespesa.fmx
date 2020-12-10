@@ -10,7 +10,7 @@ object FrameDespesas: TFrameDespesas
     Position.X = 5.000000000000000000
     Position.Y = 30.000000000000000000
     Size.Width = 310.000000000000000000
-    Size.Height = 217.000000000000000000
+    Size.Height = 211.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'transparentlistboxstyle'
     TabOrder = 0
@@ -20,14 +20,34 @@ object FrameDespesas: TFrameDespesas
     DefaultItemStyles.GroupFooterStyle = ''
     GroupingKind = Grouped
     Viewport.Width = 310.000000000000000000
-    Viewport.Height = 217.000000000000000000
-    object Address: TListBoxItem
+    Viewport.Height = 211.000000000000000000
+    object ItemData: TListBoxItem
+      Size.Width = 310.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Data'
+      object DATA: TDateEdit
+        Date = 41876.000000000000000000
+        Align = VertCenter
+        Margins.Left = 150.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 150.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+    end
+    object ItemKM: TListBoxItem
+      Position.Y = 44.000000000000000000
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      Text = 'Local'
-      object infoAddress: TEdit
+      Text = 'KM'
+      object KM: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
@@ -40,14 +60,14 @@ object FrameDespesas: TFrameDespesas
         Size.PlatformDefault = False
       end
     end
-    object Phone: TListBoxItem
-      Position.Y = 44.000000000000000000
+    object ItemLitros: TListBoxItem
+      Position.Y = 88.000000000000000000
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Text = 'Total do Frete'
-      object infoTelephone: TEdit
+      Text = 'Litros'
+      object TOTAL_LITROS: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
@@ -61,13 +81,13 @@ object FrameDespesas: TFrameDespesas
         Size.PlatformDefault = False
       end
     end
-    object Email: TListBoxItem
-      Position.Y = 88.000000000000000000
+    object ItemValor: TListBoxItem
+      Position.Y = 132.000000000000000000
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
-      Text = 'Produto carregado'
+      Text = 'Valor'
       object infoEmail: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
@@ -82,25 +102,121 @@ object FrameDespesas: TFrameDespesas
         Size.PlatformDefault = False
       end
     end
-    object BirthDate: TListBoxItem
-      Position.Y = 132.000000000000000000
+    object ListBoxItem2: TListBoxItem
+      Position.Y = 176.000000000000000000
       Size.Width = 310.000000000000000000
-      Size.Height = 44.000000000000000000
+      Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 3
-      Text = 'Data Carregamento'
-      object infoDate: TDateEdit
-        Date = 41876.000000000000000000
-        Align = VertCenter
-        Margins.Left = 150.000000000000000000
-        Margins.Right = 10.000000000000000000
-        Position.X = 150.000000000000000000
-        Position.Y = 6.000000000000000000
-        Size.Width = 150.000000000000000000
-        Size.Height = 32.000000000000000000
+      TabOrder = 4
+      Text = 'Comprovante'
+      object SpeedButton2: TSpeedButton
+        Action = TakePhotoFromCameraAction1
+        Align = Right
+        Enabled = True
+        ImageIndex = -1
+        Position.X = 230.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'cameratoolbutton'
+        OnClick = SpeedButton2Click
+      end
+    end
+  end
+  object Layout1: TLayout
+    Align = Bottom
+    Position.Y = 439.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object SpeedButton1: TSpeedButton
+      Position.X = 120.000000000000000000
+      Position.Y = 16.000000000000000000
+      Text = 'SpeedButton1'
+    end
+  end
+  object Layout3D1: TLayout3D
+    Height = 4.000000000000000000
+    Width = 5.000000000000000000
+  end
+  object Layout2: TLayout
+    Align = Bottom
+    Position.Y = 344.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 95.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object ListBox1: TListBox
+      Align = Client
+      Size.Width = 320.000000000000000000
+      Size.Height = 95.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      Viewport.Width = 316.000000000000000000
+      Viewport.Height = 91.000000000000000000
+      object ListBoxItem1: TListBoxItem
+        Size.Width = 316.000000000000000000
+        Size.Height = 44.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        Text = 'Ultimo KM'
+        object ULTIMO_KM: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = VertCenter
+          TabOrder = 0
+          KeyboardType = PhonePad
+          Position.X = 150.000000000000000000
+          Position.Y = 6.000000000000000000
+          Margins.Left = 150.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Size.Width = 156.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
       end
+      object ItemTotal: TListBoxItem
+        Position.Y = 44.000000000000000000
+        Size.Width = 316.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Total'
+        object Edit1: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = VertCenter
+          TabOrder = 0
+          KeyboardType = EmailAddress
+          Position.X = 150.000000000000000000
+          Position.Y = 6.000000000000000000
+          Margins.Left = 150.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Size.Width = 156.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+    end
+  end
+  object Image1: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Top
+    Position.Y = 241.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 96.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ActionList1: TActionList
+    Left = 8
+    object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+      OnDidFinishTaking = TakePhotoFromCameraAction1DidFinishTaking
     end
   end
 end

@@ -58,6 +58,10 @@ begin
   LOCAL.Text := carregamento.Local;
   PRODUTO.Text := carregamento.Produto;
   DATA.Text := carregamento.Data;
+  FRETE.Text := carregamento.Frete;
+  PESO.Text := carregamento.Peso;
+  KM_INICIO.Text := carregamento.KmInicio;
+  KM_CHEGADA.Text := carregamento.KmFinal;
 end;
 
 constructor TFrameCarregamento.Create(AOwner: TComponent);

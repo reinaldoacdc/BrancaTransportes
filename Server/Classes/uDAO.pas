@@ -93,12 +93,16 @@ end;
 
 function TDao.getCarregamento(id: Integer): TCarregamento;
 begin
-  Fquery.SQL.Text := Format( 'SELECT LOCAL_CARREGAMENTO, DATA_CARREGAMENTO, PRODUTO_CARREGADO FROM CADASTRO_CARREGAMENTO WHERE CODIGO = %d', [id]);
+  Fquery.SQL.Text := Format( 'SELECT * FROM CADASTRO_CARREGAMENTO WHERE CODIGO = %d', [id]);
   Fquery.Open;
 
   Result    := TCarregamento.Create( Fquery.FieldByName('LOCAL_CARREGAMENTO').AsString
                                    , Fquery.FieldByName('DATA_CARREGAMENTO').AsString
                                    , Fquery.FieldByName('PRODUTO_CARREGADO').AsString
+                                   , Fquery.FieldByName('FRETE_TONELADA').AsString
+                                   , Fquery.FieldByName('PESO_LIQ_CARGA').AsString
+                                   , Fquery.FieldByName('KM_INICIO').AsString
+                                   , Fquery.FieldByName('KM_CHEGADA').AsString
                                        );
 end;
 

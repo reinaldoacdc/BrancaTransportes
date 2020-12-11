@@ -84,14 +84,14 @@ object FormMain: TFormMain
     MasterButton = SpeedButton1
     Mode = Popover
     NavigationPaneOptions.CollapsedWidth = 161.000000000000000000
-    Size.Width = 250.000000000000000000
+    Size.Width = 258.000000000000000000
     Size.Height = 400.000000000000000000
     Size.PlatformDefault = False
     Visible = False
     TabOrder = 1
     object ListBox1: TListBox
       Align = Client
-      Size.Width = 250.000000000000000000
+      Size.Width = 258.000000000000000000
       Size.Height = 400.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'transparentlistboxstyle'
@@ -102,11 +102,11 @@ object FormMain: TFormMain
       DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 250.000000000000000000
+      Viewport.Width = 258.000000000000000000
       Viewport.Height = 400.000000000000000000
       object btnCarregamentos: TListBoxItem
         ImageIndex = 0
-        Size.Width = 250.000000000000000000
+        Size.Width = 258.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -116,7 +116,7 @@ object FormMain: TFormMain
       object ListBoxItem2: TListBoxItem
         ImageIndex = 1
         Position.Y = 40.000000000000000000
-        Size.Width = 250.000000000000000000
+        Size.Width = 258.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -126,7 +126,7 @@ object FormMain: TFormMain
       object ListBoxItem3: TListBoxItem
         ImageIndex = 2
         Position.Y = 80.000000000000000000
-        Size.Width = 250.000000000000000000
+        Size.Width = 258.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
@@ -136,7 +136,7 @@ object FormMain: TFormMain
       object ListBoxItem4: TListBoxItem
         ImageIndex = 4
         Position.Y = 120.000000000000000000
-        Size.Width = 250.000000000000000000
+        Size.Width = 258.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
@@ -146,7 +146,7 @@ object FormMain: TFormMain
       object ListBoxItem5: TListBoxItem
         ImageIndex = 5
         Position.Y = 160.000000000000000000
-        Size.Width = 250.000000000000000000
+        Size.Width = 258.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
@@ -156,7 +156,7 @@ object FormMain: TFormMain
       object ListBoxItem6: TListBoxItem
         ImageIndex = 3
         Position.Y = 200.000000000000000000
-        Size.Width = 250.000000000000000000
+        Size.Width = 258.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 5

@@ -48,7 +48,7 @@ implementation
 
 {$R *.fmx}
 
-uses Controller.API, Model.Carregamento, Form.Main, uMenu;
+uses Controller.API, Model.Carregamento, Form.Main, Frame.Menu;
 
 procedure TFrameCarregamento.Carregar;
 var carregamento :TCarregamento;

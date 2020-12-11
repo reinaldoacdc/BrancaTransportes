@@ -34,7 +34,7 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main, uMenu, System.JSON, Controller.API;
+uses Form.Main, Frame.Menu, System.JSON, Controller.API;
 
 procedure TFrameLogin.SignupButtonClick(Sender: TObject);
 begin

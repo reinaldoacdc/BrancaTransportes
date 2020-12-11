@@ -65,7 +65,7 @@ implementation
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
 
-uses uMenu, uInstitucional, uParceiros, Frame.Login, uDespesa,
+uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, uDespesa,
   uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
   Model.Carregamento;
 

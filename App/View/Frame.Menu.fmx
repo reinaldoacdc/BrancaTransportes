@@ -1,11 +1,11 @@
 object FrameMenu: TFrameMenu
-  Size.Width = 340.000000000000000000
-  Size.Height = 531.000000000000000000
+  Size.Width = 351.000000000000000000
+  Size.Height = 538.000000000000000000
   Size.PlatformDefault = False
   object LogoBackgroundRect: TRectangle
     Align = Top
     Fill.Color = claWhite
-    Size.Width = 340.000000000000000000
+    Size.Width = 351.000000000000000000
     Size.Height = 273.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -921,45 +921,136 @@ object FrameMenu: TFrameMenu
         Size.Height = 163.000000000000000000
         Size.PlatformDefault = False
       end
-      object Button1: TButton
-        Position.X = -64.000000000000000000
-        Position.Y = 296.000000000000000000
-        Size.Width = 81.000000000000000000
-        Size.Height = 49.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        Text = 'Carregamento'
-        OnClick = Button1Click
-      end
-      object Button2: TButton
-        Position.X = 80.000000000000000000
-        Position.Y = 296.000000000000000000
-        Size.Width = 81.000000000000000000
-        Size.Height = 49.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        Text = 'Despesa'
-        OnClick = Button2Click
-      end
     end
   end
-  object Button3: TButton
-    Position.X = 32.000000000000000000
-    Position.Y = 392.000000000000000000
-    Size.Width = 81.000000000000000000
-    Size.Height = 49.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 1
-    Text = 'Despesa Extra'
-    OnClick = Button3Click
-  end
-  object Button4: TButton
-    Position.X = 176.000000000000000000
-    Position.Y = 392.000000000000000000
-    Size.Width = 81.000000000000000000
-    Size.Height = 49.000000000000000000
+  object GridLayout1: TGridLayout
+    Align = Bottom
+    ItemHeight = 70.000000000000000000
+    ItemWidth = 150.000000000000000000
+    Padding.Left = 20.000000000000000000
+    Padding.Top = 20.000000000000000000
+    Padding.Right = 5.000000000000000000
+    Orientation = Horizontal
+    Position.Y = 329.000000000000000000
+    Size.Width = 351.000000000000000000
+    Size.Height = 209.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
-    Text = 'Configura'#231#245'es'
+    object Layout1: TLayout
+      Align = FitLeft
+      Position.X = 20.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Rectangle1: TRectangle
+        Align = Client
+        Fill.Color = claFirebrick
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Size.Width = 130.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = Rectangle1Click
+        object Label1: TLabel
+          Align = Client
+          Size.Width = 130.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Novo Carregamento'
+          TabOrder = 0
+        end
+      end
+    end
+    object Layout2: TLayout
+      Position.X = 170.000000000000000000
+      Position.Y = 20.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Rectangle2: TRectangle
+        Align = Client
+        Fill.Color = claFirebrick
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Size.Width = 130.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        object Label2: TLabel
+          Align = Client
+          Size.Width = 130.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Nova Despesa'
+          TabOrder = 0
+          OnClick = Label2Click
+        end
+      end
+    end
+    object Layout3: TLayout
+      Position.X = 20.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object Rectangle3: TRectangle
+        Align = Client
+        Fill.Color = claFirebrick
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Size.Width = 130.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        object Label3: TLabel
+          Align = Client
+          Size.Width = 130.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Nova Despesa Extra'
+          TabOrder = 0
+          OnClick = Label3Click
+        end
+      end
+    end
+    object Layout4: TLayout
+      Position.X = 170.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object Rectangle4: TRectangle
+        Align = Client
+        Fill.Color = claFirebrick
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Size.Width = 130.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        object Label4: TLabel
+          Align = Client
+          Size.Width = 130.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'Configura'#231#245'es'
+          TabOrder = 0
+        end
+      end
+    end
   end
 end

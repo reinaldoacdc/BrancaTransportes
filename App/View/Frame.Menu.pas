@@ -1,4 +1,4 @@
-unit uMenu;
+unit Frame.Menu;
 
 interface
 
@@ -12,13 +12,22 @@ type
     LogoBackgroundRect: TRectangle;
     LogoCenterLayout: TLayout;
     LogoImage: TImage;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
+    GridLayout1: TGridLayout;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    Layout3: TLayout;
+    Layout4: TLayout;
+    Rectangle1: TRectangle;
+    Label1: TLabel;
+    Rectangle2: TRectangle;
+    Label2: TLabel;
+    Rectangle3: TRectangle;
+    Label3: TLabel;
+    Rectangle4: TRectangle;
+    Label4: TLabel;
+    procedure Rectangle1Click(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
+    procedure Label3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,23 +41,23 @@ implementation
 uses Form.Main, Frame.Login, uCarregamentos, uDespesa,
   uDespesaExtra, Frame.Carregamento;
 
-procedure TFrameMenu.Button1Click(Sender: TObject);
-begin
-  FormMain.LoadFrame<TFrameCarregamento>;
-  if not FormMain.LoginSucessfull then
-    FormMain.LoadFrame<TFrameLogin>;
-end;
-
-procedure TFrameMenu.Button2Click(Sender: TObject);
+procedure TFrameMenu.Label2Click(Sender: TObject);
 begin
   FormMain.LoadFrame<TFrameDespesas>;
   if not FormMain.LoginSucessfull then
     FormMain.LoadFrame<TFrameLogin>;
 end;
 
-procedure TFrameMenu.Button3Click(Sender: TObject);
+procedure TFrameMenu.Label3Click(Sender: TObject);
 begin
   FormMain.LoadFrame<TFrameDespesasExtras>;
+  if not FormMain.LoginSucessfull then
+    FormMain.LoadFrame<TFrameLogin>;
+end;
+
+procedure TFrameMenu.Rectangle1Click(Sender: TObject);
+begin
+  FormMain.LoadFrame<TFrameCarregamento>;
   if not FormMain.LoginSucessfull then
     FormMain.LoadFrame<TFrameLogin>;
 end;

@@ -34,9 +34,32 @@ var
 
 implementation
 
-uses REST.Json, System.Classes, System.SysUtils, Form.Main;
+uses REST.Json, System.Classes, System.SysUtils, Form.Main,  Data.DB,
+     REST.Response.Adapter;
 
 { TApi }
+
+procedure JsonToDataset(aDataset : TDataSet; aJSON : string);
+var
+  JObj: TJSONArray;
+  vConv : TCustomJSONDataSetAdapter;
+begin
+  if (aJSON = EmptyStr) then
+  begin
+    Exit;
+  end;
+
+  JObj := TJSONObject.ParseJSONValue(aJSON) as TJSONArray;
+  vConv := TCustomJSONDataSetAdapter.Create(Nil);
+
+  try
+    vConv.Dataset := aDataset;
+    vConv.UpdateDataSet(JObj);
+  finally
+    vConv.Free;
+    JObj.Free;
+  end;
+end;
 
 constructor TApi.Create;
 begin
@@ -62,6 +85,7 @@ var
 begin
   Url := Format('http://192.168.15.184:9000/carregamento?id=%d', [id]);
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
+
   FJSonObject := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JsonData),0) as TJSONObject;
 
   Result := Tjson.JsonToObject<TCarregamento>(FJSonObject);
@@ -77,15 +101,19 @@ var
 begin
   Url := 'http://192.168.15.184:9000/carregamentos';
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
-  FJSonObject := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JsonData),0) as TJSONObject;
 
-  a := TJSONArray(FJSonObject.GetValue('result'));
-  SetLength(Result, a.Count );
-  for idx := 0 to pred(a.size) do begin
-    item := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(a.Items[idx].Value), 0)  as TJSONObject;
-    carga := Tjson.JsonToObject<TCarregamento>(item);
-    Result[idx] := carga;
-  end;
+  JsonToDataset(FormMain.ClientDataSet1, JSonData);
+
+//  FJSonObject := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JsonData),0) as TJSONObject;
+//
+//  a := TJSONArray(FJSonObject.GetValue('result'));
+//  SetLength(Result, a.Count );
+//  for idx := 0 to pred(a.size) do begin
+//    item := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(a.Items[idx].Value), 0)  as TJSONObject;
+//    carga := Tjson.JsonToObject<TCarregamento>(item);
+//    Result[idx] := carga;
+//  end;
+
 end;
 
 function TApi.Login(username, password: String): Boolean;

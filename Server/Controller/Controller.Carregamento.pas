@@ -2,17 +2,17 @@ unit Controller.Carregamento;
 
 interface
 
-uses Horse, System.JSON, REST.Json
-  , Model.Carregamento;
+uses Horse, System.JSON, REST.Json, Model.Entity.CADASTRO_CARREGAMENTO;
 
 procedure Registry(App : THorse);
 procedure Login(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 procedure Get(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 procedure GetID(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+procedure Insert(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 
 implementation
 
-uses Encriptacao, uDAO, System.SysUtils;
+uses Encriptacao, uDAO, System.SysUtils, Model.DaoGeneric;
 
 procedure Registry(App : THorse);
 begin
@@ -20,7 +20,7 @@ begin
 
   App.Get('/carregamentos', Get);
   App.Get('/carregamento/:id', GetID);
-//  App.Post('/produto', Insert);
+  App.Post('/carregamento', Insert);
 //  App.Put('/produto/:id', Update);
 //  App.Delete('/produto/:id', Delete);
 end;
@@ -53,50 +53,49 @@ end;
 
 procedure Get(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
-  LBody: TJSONObject;
-  LArray :TJSONArray;
-  dao :TDao;
-  lista :TCarregamentos;
-  I: Integer;
+  FDAO : iDAOGeneric<TCADASTRO_CARREGAMENTO>;
 begin
-  LBody := TJSONObject.Create;
-  LArray := TJSONArray.Create;
-
-  dao := TDao.Create;
-  try
-    lista := dao.ListaCarregamento;
-
-    for I := 0 to Length(lista)-1 do
-    begin
-     LArray.Add( TJson.ObjectToJsonString(lista[I]) );
-    end;
-
-    LBody.AddPair(TJSONPair.Create('result', LArray));
-    Res.Send<TJSONObject>(LBody);
-  finally
-    dao.Free;
-  end;
-
+  FDAO := TDAOGeneric<TCADASTRO_CARREGAMENTO>.New;
+  Res.Send<TJSonArray>(FDAO.Find);
 end;
 
 procedure GetID(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 var
-  LBody: TJSONObject;
-  dao :TDao;
-  id :Integer;
-  carga :TCarregamento;
+  FDAO : iDAOGeneric<TCADASTRO_CARREGAMENTO>;
 begin
-  id := StrToInt( Req.Query.ExtractPair('id').Value );
-  LBody := TJSONObject.Create;
-  dao := TDao.Create;
-  try
-    carga := dao.getCarregamento(id);
-    Lbody := TJson.ObjectToJsonObject(carga);
-    Res.Send<TJSONObject>(LBody);
-  finally
-    dao.Free;
-  end;
+  FDAO := TDAOGeneric<TCADASTRO_CARREGAMENTO>.New;
+  Res.Send<TJSONObject>(FDAO.Find(Req.Params.Items['id']));
+end;
 
+
+procedure Insert(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+var
+  FDAO : iDAOGeneric<TCADASTRO_CARREGAMENTO>;
+  Json :TJSONObject;
+  json_str :String;
+  carga :TCADASTRO_CARREGAMENTO;
+begin
+  FDAO := TDAOGeneric<TCADASTRO_CARREGAMENTO>.New;
+  carga := Req.Body<TCADASTRO_CARREGAMENTO>;
+
+  //carga := TJson.JsonToObject(Req.Body<TCADASTRO_CARREGAMENTO>);
+
+
+  //json_str := TJson.ObjectToJsonString (carga, [TJsonOption. ] );
+  json := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(carga.ToString), 0) as TJSONObject;
+  //json.Parse(BytesOf(carga.ToString), 0);  //TJson.ObjectToJsonObject(carga);  //carga.ToJSONObject;
+
+  WriteLn('--');
+  WriteLn('carga: - ' + carga.ToString);
+  WriteLn('--');
+  WriteLn('json: - ' + json.ToString);
+  try
+    FDAO.Insert( json );
+
+  except on E :Exception do
+    Writeln(E.Message);
+  end;
+  Res.Send<TJSONObject>( json );
 end;
 
 end.

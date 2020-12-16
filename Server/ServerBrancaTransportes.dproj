@@ -69,7 +69,7 @@
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>ServerBrancaTransportes</SanitizedProjectName>
-        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\horse\src;modules\jhonson\src;modules\simpleorm\Sample\Entidades;modules\simpleorm\Sample\Firedac;modules\simpleorm\Sample\RestDW;modules\simpleorm\Sample\Validation\Base\View;modules\simpleorm\Sample\Validation\Entidade;modules\simpleorm\Sample\Validation\Export;modules\simpleorm\Sample\Validation\View;modules\simpleorm\Sample\horse\Controller;modules\simpleorm\Sample\horse;modules\simpleorm\Sample\horse\Model\Connection;modules\simpleorm\Sample\horse\Model\Entity;modules\simpleorm\Sample\horse\Model;modules\simpleorm;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\horse\src;modules\horse-cors\src;modules\jhonson\src;modules\simpleorm\Sample\Entidades;modules\simpleorm\Sample\Firedac;modules\simpleorm\Sample\RestDW;modules\simpleorm\Sample\Validation\Base\View;modules\simpleorm\Sample\Validation\Entidade;modules\simpleorm\Sample\Validation\Export;modules\simpleorm\Sample\Validation\View;modules\simpleorm\Sample\horse\Controller;modules\simpleorm\Sample\horse\Controller\__recovery;modules\simpleorm\Sample\horse;modules\simpleorm\Sample\horse\Model\Connection;modules\simpleorm\Sample\horse\Model\Entity;modules\simpleorm\Sample\horse\Model\Entity\__recovery;modules\simpleorm\Sample\horse\Model;modules\simpleorm\Sample\horse\Win32\Debug;modules\simpleorm\Sample\horse\Win32\Release;modules\simpleorm\Sample\horse\modules;modules\simpleorm;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;tethering;FrameStandPackage_10_3;RESTBackendComponents;bindengine;CloudService;bindcompdbx;IndyIPServer;IndySystem;fmxFireDAC;soaprtl;DbxCommonDriver;xmlrtl;soapmidas;rtl;DbxClientDriver;IndyIPClient;RESTComponents;DBXInterBaseDriver;bindcompfmx;fmx;FireDACIBDriver;dbexpress;IndyCore;dsnap;FireDACCommon;soapserver;FireDACCommonDriver;inet;IndyIPCommon;FireDAC;FireDACSqliteDriver;CustomIPTransport;bindcomp;dbxcds;dsnapxml;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
@@ -150,8 +150,10 @@
         <DCCReference Include="Classes\Encriptacao.pas"/>
         <DCCReference Include="Classes\uConfigINI.pas"/>
         <DCCReference Include="Classes\uDAO.pas"/>
-        <DCCReference Include="Model.Carregamento.pas"/>
         <DCCReference Include="Controller\Controller.Carregamento.pas"/>
+        <DCCReference Include="Model\Connection\Model.Connection.pas"/>
+        <DCCReference Include="Model\Connection\Model.DaoGeneric.pas"/>
+        <DCCReference Include="Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

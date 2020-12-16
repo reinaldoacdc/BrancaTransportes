@@ -51,8 +51,11 @@ type
 
 implementation
 
-uses FMX.DialogService,
-     Androidapi.Helpers, Androidapi.JNI.JavaTypes, Androidapi.JNI.Os;
+uses FMX.DialogService
+     {$IFDEF Android}
+     , Androidapi.Helpers, Androidapi.JNI.JavaTypes, Androidapi.JNI.Os
+     {$ENDIF}
+     ;
 
 {$R *.fmx}
 
@@ -68,6 +71,7 @@ end;
 
 procedure TFrameDespesas.SpeedButton2Click(Sender: TObject);
 begin
+  {$IFDEF Android}
   PermissaoCamera := JStringToString(TJManifest_permission.JavaClass.CAMERA);
   PermissaoReadStorage := JStringToString(TJManifest_permission.JavaClass.READ_EXTERNAL_STORAGE);
   PermissaoWriteStorage := JStringToString(TJManifest_permission.JavaClass.WRITE_EXTERNAL_STORAGE);
@@ -78,6 +82,7 @@ begin
                                          TakePicturePermissionRequestResult,
                                          DisplayMessageCamera
                                          );
+  {$ENDIF}
 end;
 
 procedure TFrameDespesas.TakePhotoFromCameraAction1DidFinishTaking(

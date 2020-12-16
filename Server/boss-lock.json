@@ -5,7 +5,7 @@
 		"github.com/bittencourtthulio/simpleorm": {
 			"name": "simpleorm",
 			"version": "2.02.01",
-			"hash": "312257d6314f98dbdb11275693294ea1",
+			"hash": "1b63bbf672fe6de51e4e2ac3e8d06873",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
@@ -13,7 +13,15 @@
 		"github.com/hashload/horse": {
 			"name": "horse",
 			"version": "v2.0.6",
-			"hash": "cca1769dfab681cfd26ae8499f9045e1",
+			"hash": "43fc6d2ed956a8628c77c76b9198e7cb",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-cors": {
+			"name": "horse-cors",
+			"version": "1.0.2",
+			"hash": "f1fd91acb4d43c9a778249d447027f16",
 			"artifacts": {},
 			"failed": false,
 			"changed": false

@@ -6,7 +6,7 @@ uses
   uHome in 'uHome.pas' {frmHome},
   uParceiros in 'uParceiros.pas' {FrameParceiros: TFrame},
   uInstitucional in 'uInstitucional.pas' {FrameInstitucional: TFrame},
-  uMenu in 'uMenu.pas' {FrameMenu: TFrame},
+  Frame.Menu in 'View\Frame.Menu.pas' {FrameMenu: TFrame},
   uDespesa in 'uDespesa.pas' {FrameDespesas: TFrame},
   uDespesaExtra in 'uDespesaExtra.pas' {FrameDespesasExtras: TFrame},
   Frame.Carregamento in 'View\Frame.Carregamento.pas' {FrameCarregamento: TFrame},

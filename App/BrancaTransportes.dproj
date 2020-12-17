@@ -97,6 +97,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <SanitizedProjectName>BrancaTransportes</SanitizedProjectName>
+        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\fmx-toast\samples\src;modules\fmx-toast\src;modules\simpleorm\Sample\Entidades;modules\simpleorm\Sample\Firedac;modules\simpleorm\Sample\RestDW;modules\simpleorm\Sample\Validation\Base\View;modules\simpleorm\Sample\Validation\Entidade;modules\simpleorm\Sample\Validation\Export;modules\simpleorm\Sample\Validation\View;modules\simpleorm\Sample\horse\Controller;modules\simpleorm\Sample\horse;modules\simpleorm\Sample\horse\Model\Connection;modules\simpleorm\Sample\horse\Model\Entity;modules\simpleorm\Sample\horse\Model;modules\simpleorm;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;tethering;RESTBackendComponents;bindengine;CloudService;bindcompdbx;IndyIPServer;IndySystem;fmxFireDAC;soaprtl;DbxCommonDriver;xmlrtl;soapmidas;rtl;DbxClientDriver;IndyIPClient;RESTComponents;DBXInterBaseDriver;bindcompfmx;fmx;FireDACIBDriver;dbexpress;IndyCore;dsnap;FireDACCommon;soapserver;FireDACCommonDriver;inet;IndyIPCommon;FireDAC;FireDACSqliteDriver;CustomIPTransport;bindcomp;dbxcds;dsnapxml;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
@@ -384,10 +385,6 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uHome.pas">
-            <Form>frmHome</Form>
-            <FormType>fmx</FormType>
-        </DCCReference>
         <DCCReference Include="uParceiros.pas">
             <Form>FrameParceiros</Form>
             <FormType>fmx</FormType>
@@ -438,8 +435,7 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\Server\Model.Carregamento.pas"/>
-        <DCCReference Include="..\Server\Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas"/>
+        <DCCReference Include="..\Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

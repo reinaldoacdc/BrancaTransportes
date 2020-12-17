@@ -2,7 +2,7 @@ unit Controller.API;
 
 interface
 
-uses Model.Carregamento, Model.Entity.CADASTRO_CARREGAMENTO,
+uses Model.Entity.CADASTRO_CARREGAMENTO,
  System.JSON, System.Net.HttpClientComponent;
 
 type TApi = class(TObject)
@@ -17,9 +17,10 @@ public
   function Login(username, password :String) :Boolean;
 
 
-  function ListaCarregamentos :TCarregamentos;
-
+  function ListaCarregamentos :TCADASTRO_CARREGAMENTO;
   function getCarregamento(id :Integer) :TCADASTRO_CARREGAMENTO;
+  procedure postCarregamento(carregamento :TCADASTRO_CARREGAMENTO);
+  procedure putCarregamento(carregamento :TCADASTRO_CARREGAMENTO);
 
 
   constructor Create; overload;
@@ -78,10 +79,6 @@ end;
 function TApi.getCarregamento(id: Integer): TCADASTRO_CARREGAMENTO;
 var
   Url, JSonData   : String;
-  item: TJSONObject;
-  a: TJSONArray;
-  idx :Integer;
-  carga :TCarregamento;
 begin
   Url := Format('http://192.168.15.184:9000/carregamento/%d', [id]);
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
@@ -91,13 +88,9 @@ begin
   Result := Tjson.JsonToObject<TCADASTRO_CARREGAMENTO>(FJSonObject);
 end;
 
-function TApi.ListaCarregamentos :TCarregamentos;
+function TApi.ListaCarregamentos :TCADASTRO_CARREGAMENTO;
 var
   Url, JSonData   : String;
-  item: TJSONObject;
-  a: TJSONArray;
-  idx :Integer;
-  carga :TCarregamento;
 begin
   Url := 'http://192.168.15.184:9000/carregamentos';
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
@@ -114,6 +107,24 @@ begin
   FJSonObject := TJSonObject.ParseJSONValue(JSonData) as TJSonObject;
 
   Result := StrToBool(FJSonObject.GetValue('access').Value);
+end;
+
+procedure TApi.postCarregamento(carregamento: TCADASTRO_CARREGAMENTO);
+var
+  Url, JSonData   : String;
+begin
+  Url := 'http://192.168.15.184:9000/carregamento';
+  FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
+  FNetHTTPRequest.Post( Url, TStringStream.Create(carregamento.ToJsonString)  );
+end;
+
+procedure TApi.putCarregamento(carregamento: TCADASTRO_CARREGAMENTO);
+var
+  Url, JSonData   : String;
+begin
+  Url := 'http://192.168.15.184:9000/carregamento';
+  FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
+  FNetHTTPRequest.Put( Url, TStringStream.Create(carregamento.ToJsonString)  );
 end;
 
 initialization

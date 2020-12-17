@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.DateTimeCtrls, FMX.Controls.Presentation, FMX.Edit, FMX.ListBox,
-  FMX.Layouts;
+  FMX.Layouts, REST.Types, REST.Client, Data.Bind.Components,
+  Data.Bind.ObjectScope;
 
 type
   TFrameCarregamento = class(TFrame)
@@ -33,10 +34,13 @@ type
     KM_CHEGADA: TEdit;
     Layout2: TLayout;
     SpeedButton1: TSpeedButton;
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
     procedure SpeedButton1Click(Sender: TObject);
   private
     Fid: Integer;
     procedure Carregar;
+    procedure Salvar;
   public
     constructor Create(AOwner: TComponent); override;
 
@@ -48,20 +52,23 @@ implementation
 
 {$R *.fmx}
 
-uses Controller.API, Model.Carregamento, Form.Main, Frame.Menu;
+uses Controller.API, Form.Main, Frame.Menu, Model.Entity.CADASTRO_CARREGAMENTO;
 
 procedure TFrameCarregamento.Carregar;
-var carregamento :TCarregamento;
+var carregamento :TCADASTRO_CARREGAMENTO;
 begin
-  carregamento :=  objAPI.getCarregamento(Self.Id);
+  if Self.Id > 0 then
+  begin
+    carregamento :=  objAPI.getCarregamento(Self.Id);
 
-  LOCAL.Text := carregamento.Local;
-  PRODUTO.Text := carregamento.Produto;
-  DATA.Text := carregamento.Data;
-  FRETE.Text := carregamento.Frete;
-  PESO.Text := carregamento.Peso;
-  KM_INICIO.Text := carregamento.KmInicio;
-  KM_CHEGADA.Text := carregamento.KmFinal;
+    LOCAL.Text      := carregamento.LOCAL_CARREGAMENTO;
+    PRODUTO.Text    := carregamento.PRODUTO_CARREGADO;
+    DATA.Text       := DateToStr( carregamento.DATA_CARREGAMENTO );
+    FRETE.Text      := FloatToStr( carregamento.FRETE_TONELADA );
+    PESO.Text       := FloatToStr( carregamento.PESO_LIQ_CARGA );
+    KM_INICIO.Text  := FloatToStr( carregamento.KM_INICIO );
+    KM_CHEGADA.Text := FloatToStr( carregamento.KM_CHEGADA );
+  end;
 end;
 
 constructor TFrameCarregamento.Create(AOwner: TComponent);
@@ -71,8 +78,29 @@ begin
   Carregar;
 end;
 
+procedure TFrameCarregamento.Salvar;
+var carregamento :TCADASTRO_CARREGAMENTO;
+begin
+//
+  carregamento := TCADASTRO_CARREGAMENTO.Create;
+  carregamento.CODIGO := Self.Id;
+  carregamento.DATA_CARREGAMENTO := DATA.Date;
+  carregamento.LOCAL_CARREGAMENTO := LOCAL.Text;
+  carregamento.PESO_LIQ_CARGA := StrToFloat( PESO.Text );
+  carregamento.FRETE_TONELADA := StrToFloat( FRETE.Text );
+  //carregamento.TOTAL_FRETE  := StrToFloat( TOTAL_FRETE.Text );
+  carregamento.KM_INICIO :=  StrToFloat( KM_INICIO.Text );
+  carregamento.KM_CHEGADA := StrToFloat( KM_CHEGADA.Text );
+
+  if Self.Id = 0 then
+    objApi.postCarregamento(carregamento)
+  else
+    objApi.putCarregamento(carregamento);
+end;
+
 procedure TFrameCarregamento.SpeedButton1Click(Sender: TObject);
 begin
+  Salvar;
   FormMain.LoadFrame<TFrameMenu>;
 end;
 

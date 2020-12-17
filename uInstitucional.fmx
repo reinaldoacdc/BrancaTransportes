@@ -1,0 +1,73 @@
+object FrameInstitucional: TFrameInstitucional
+  Size.Width = 334.000000000000000000
+  Size.Height = 559.000000000000000000
+  Size.PlatformDefault = False
+  object Label1: TLabel
+    Position.X = 80.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Sobre a empresa'
+    TabOrder = 0
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ' +
+        'rutrum nisi,'
+      
+        ' id interdum tellus. Fusce viverra turpis nisi, vitae placerat e' +
+        'lit aliquam nec'
+      
+        '. Maecenas sollicitudin dui ac sollicitudin dignissim. Praesent ' +
+        'dolor nunc, '
+      
+        'pulvinar sit amet gravida vitae, cursus vitae lectus. Mauris sit' +
+        ' amet dui odio.'
+      
+        ' In venenatis feugiat ipsum ut sollicitudin. Fusce a urna posuer' +
+        'e sem blandit'
+      ' convallis.'
+      ''
+      ''
+      
+        'Vestibulum non metus non magna scelerisque porta vel ut orci. Or' +
+        'ci varius '
+      
+        'natoque penatibus et magnis dis parturient montes, nascetur ridi' +
+        'culus mus. '
+      
+        'Vivamus justo sem, pellentesque et scelerisque commodo, fermentu' +
+        'm eget'
+      
+        ' erat. Phasellus fermentum luctus lacus. Sed congue eget nulla e' +
+        'get gravida.'
+      
+        ' In hac habitasse platea dictumst. Ut placerat felis leo, imperd' +
+        'iet tempor odio'
+      
+        ' imperdiet vel. Nunc faucibus diam in lorem pellentesque, eu ele' +
+        'mentum ante'
+      
+        ' suscipit. Donec molestie egestas sapien, nec molestie justo acc' +
+        'umsan sit '
+      
+        'amet. Ut scelerisque interdum ligula. Ut tempor venenatis lacini' +
+        'a.'
+      
+        ' Quisque quis arcu eget velit porta placerat. Aenean eget ipsum ' +
+        'lacus.')
+    Enabled = False
+    Position.X = 48.000000000000000000
+    Position.Y = 168.000000000000000000
+    Size.Width = 249.000000000000000000
+    Size.Height = 305.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 245.000000000000000000
+    Viewport.Height = 285.000000000000000000
+  end
+end

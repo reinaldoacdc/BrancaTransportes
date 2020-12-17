@@ -183,8 +183,8 @@ object FrameCarregamento: TFrameCarregamento
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 316.000000000000000000
-      Viewport.Height = 94.000000000000000000
+      Viewport.Width = 320.000000000000000000
+      Viewport.Height = 98.000000000000000000
       object ItemTotalKm: TListBoxItem
         Size.Width = 316.000000000000000000
         Size.Height = 44.000000000000000000
@@ -247,5 +247,17 @@ object FrameCarregamento: TFrameCarregamento
       Text = 'SpeedButton1'
       OnClick = SpeedButton1Click
     end
+  end
+  object RESTClient1: TRESTClient
+    Params = <>
+    Left = 181
+    Top = 310
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    SynchronizedEvents = False
+    Left = 117
+    Top = 334
   end
 end

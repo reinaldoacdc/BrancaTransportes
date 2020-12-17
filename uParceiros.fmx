@@ -1,0 +1,41 @@
+object FrameParceiros: TFrameParceiros
+  Size.Width = 633.000000000000000000
+  Size.Height = 387.000000000000000000
+  Size.PlatformDefault = False
+  object Button1: TButton
+    Position.X = 32.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Parceiro1'
+  end
+  object Button2: TButton
+    Position.X = 176.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Parceiro2'
+  end
+  object Button3: TButton
+    Position.X = 24.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Parceiro3'
+  end
+  object Button4: TButton
+    Position.X = 176.000000000000000000
+    Position.Y = 136.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 81.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Parceiro4'
+  end
+end

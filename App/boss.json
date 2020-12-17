@@ -6,6 +6,7 @@
 	"mainsrc": "./",
 	"projects": [],
 	"dependencies": {
+		"github.com/bittencourtthulio/simpleorm": "^2.02.01",
 		"github.com/mateusvicente100/fmx-toast": "^1.0.0"
 	}
 }

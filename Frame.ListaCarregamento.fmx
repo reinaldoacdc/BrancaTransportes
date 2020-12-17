@@ -1,0 +1,116 @@
+object FrameListaCarregamento: TFrameListaCarregamento
+  Size.Width = 345.000000000000000000
+  Size.Height = 684.000000000000000000
+  Size.PlatformDefault = False
+  object ListView1: TListView
+    ItemAppearanceClassName = 'TDynamicAppearance'
+    ItemEditAppearanceClassName = 'TDynamicAppearance'
+    HeaderAppearanceClassName = 'TCustomizeItemObjects'
+    FooterAppearanceClassName = 'TCustomizeItemObjects'
+    Align = Client
+    Size.Width = 345.000000000000000000
+    Size.Height = 662.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ItemAppearance.HeaderHeight = 1
+    ItemAppearance.FooterHeight = 1
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Font.StyleExt = {00070000000000000004000000}
+        Appearance.Width = 351.000000000000000000
+        Appearance.Height = 24.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text2'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 247.000000000000000000
+        Appearance.Height = 21.000000000000000000
+        Appearance.PlaceOffset.X = -64.000000000000000000
+        Appearance.PlaceOffset.Y = 23.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Text3'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Width = 169.000000000000000000
+        Appearance.Height = 21.000000000000000000
+        Appearance.PlaceOffset.X = 182.000000000000000000
+        Appearance.PlaceOffset.Y = 23.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Accessory4'
+        AppearanceClassName = 'TAccessoryObjectAppearance'
+        Appearance.Width = 37.000000000000000000
+        Appearance.Height = 44.000000000000000000
+        Appearance.PlaceOffset.X = 346.000000000000000000
+      end>
+    ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end>
+    StyleLookup = 'listviewstyle'
+    OnDblClick = ListView1DblClick
+    OnItemClick = ListView1ItemClick
+  end
+  object Button1: TButton
+    Align = Top
+    Size.Width = 345.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Button1'
+    OnClick = Button1Click
+  end
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 104
+    Top = 296
+    object ClientDataSet1ID: TIntegerField
+      FieldName = 'ID'
+    end
+    object ClientDataSet1LOCAL: TStringField
+      FieldName = 'LOCAL'
+    end
+    object ClientDataSet1PRODUTO: TStringField
+      FieldName = 'PRODUTO'
+    end
+    object ClientDataSet1DATA: TDateField
+      FieldName = 'DATA'
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = ClientDataSet1
+    ScopeMappings = <>
+    Left = 192
+    Top = 296
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 28
+    Top = 285
+    object LinkListControlToField1: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      Control = ListView1
+      FillExpressions = <
+        item
+          SourceMemberName = 'LOCAL'
+          ControlMemberName = 'Text1'
+        end
+        item
+          SourceMemberName = 'PRODUTO'
+          ControlMemberName = 'Text2'
+        end
+        item
+          SourceMemberName = 'DATA'
+          ControlMemberName = 'Text3'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+end

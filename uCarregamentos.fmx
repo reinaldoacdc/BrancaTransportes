@@ -1,0 +1,500 @@
+object frmCarregamentos: TfrmCarregamentos
+  Size.Width = 359.000000000000000000
+  Size.Height = 433.000000000000000000
+  Size.PlatformDefault = False
+  object ToolBar1: TToolBar
+    Size.Width = 359.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object Label2: TLabel
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Text = 'Tile Mode'
+    end
+    object Button1: TButton
+      Action = NextTabAction
+      Align = Right
+      Enabled = True
+      ImageIndex = -1
+      Margins.Right = 5.000000000000000000
+      Position.X = 297.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'speedbuttonstyle'
+      TabOrder = 1
+    end
+    object Button2: TButton
+      Action = PreviousTabAction
+      Align = Left
+      Enabled = True
+      ImageIndex = -1
+      Margins.Left = 5.000000000000000000
+      Position.X = 5.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 2
+    end
+  end
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 359.000000000000000000
+    Size.Height = 385.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object VertScrollBox1: TVertScrollBox
+      Align = Client
+      Size.Width = 359.000000000000000000
+      Size.Height = 385.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 359.000000000000000000
+      Viewport.Height = 385.000000000000000000
+      object TabControl1: TTabControl
+        Align = Client
+        FullSize = True
+        Size.Width = 359.000000000000000000
+        Size.Height = 385.000000000000000000
+        Size.PlatformDefault = False
+        TabHeight = 49.000000000000000000
+        TabIndex = 0
+        TabOrder = 0
+        TabPosition = None
+        Sizes = (
+          359s
+          385s
+          359s
+          385s
+          359s
+          385s
+          359s
+          385s
+          359s
+          385s)
+        object TabItem1: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'tabitemcustom'
+          TabOrder = 0
+          Text = 'Personal Information - Part 1'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object ListBox1: TListBox
+            Align = Client
+            Size.Width = 359.000000000000000000
+            Size.Height = 385.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            DisableFocusEffect = True
+            DefaultItemStyles.ItemStyle = ''
+            DefaultItemStyles.GroupHeaderStyle = ''
+            DefaultItemStyles.GroupFooterStyle = ''
+            Viewport.Width = 355.000000000000000000
+            Viewport.Height = 381.000000000000000000
+            object ListBoxItem3: TListBoxItem
+              ItemData.Detail = 'ID'
+              TabOrder = 0
+              Text = 'Carregamento1'
+            end
+            object ListBoxItem4: TListBoxItem
+              Position.Y = 19.000000000000000000
+              TabOrder = 1
+              Text = 'Carregamento2'
+            end
+            object ListBoxItem15: TListBoxItem
+              Position.Y = 38.000000000000000000
+              TabOrder = 2
+              Text = 'Carregamento3'
+            end
+            object ListBoxItem16: TListBoxItem
+              Position.Y = 57.000000000000000000
+              TabOrder = 3
+              Text = 'Carregamento4'
+            end
+            object SpeedButton1: TSpeedButton
+              Position.X = 264.000000000000000000
+              Position.Y = 288.000000000000000000
+              Size.Width = 80.000000000000000000
+              Size.Height = 49.000000000000000000
+              Size.PlatformDefault = False
+              StyleLookup = 'stepperbuttonright'
+              Text = 'SpeedButton1'
+            end
+          end
+        end
+        object TabItem2: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Personal Information - Part 2'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object PersonalInfoList: TListBox
+            Align = Top
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 30.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 30.000000000000000000
+            Size.Width = 349.000000000000000000
+            Size.Height = 217.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'transparentlistboxstyle'
+            TabOrder = 0
+            DisableFocusEffect = True
+            DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+            DefaultItemStyles.GroupHeaderStyle = ''
+            DefaultItemStyles.GroupFooterStyle = ''
+            GroupingKind = Grouped
+            Viewport.Width = 349.000000000000000000
+            Viewport.Height = 217.000000000000000000
+            object Address: TListBoxItem
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Text = 'Local'
+              object infoAddress: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = VertCenter
+                TabOrder = 0
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object Phone: TListBoxItem
+              Position.Y = 44.000000000000000000
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Text = 'Total do Frete'
+              object infoTelephone: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = VertCenter
+                TabOrder = 0
+                KeyboardType = PhonePad
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object Email: TListBoxItem
+              Position.Y = 88.000000000000000000
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              Text = 'Produto carregado'
+              object infoEmail: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = VertCenter
+                TabOrder = 0
+                KeyboardType = EmailAddress
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object BirthDate: TListBoxItem
+              Position.Y = 132.000000000000000000
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 3
+              Text = 'Data Carregamento'
+              object infoDate: TDateEdit
+                Date = 41876.000000000000000000
+                Align = VertCenter
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+                TabOrder = 1
+              end
+            end
+          end
+        end
+        object TabItem3: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Despesas'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object EducationList: TListBox
+            Align = Top
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 30.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 30.000000000000000000
+            Size.Width = 349.000000000000000000
+            Size.Height = 241.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'transparentlistboxstyle'
+            TabOrder = 0
+            DisableFocusEffect = True
+            DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+            DefaultItemStyles.GroupHeaderStyle = ''
+            DefaultItemStyles.GroupFooterStyle = ''
+            GroupingKind = Grouped
+            Viewport.Width = 349.000000000000000000
+            Viewport.Height = 241.000000000000000000
+            object Institution: TListBoxItem
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Text = 'Despesa Abastecimento'
+              object edInstitution: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = VertCenter
+                TabOrder = 0
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object City: TListBoxItem
+              Position.Y = 44.000000000000000000
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Text = 'Total Litros'
+              object edCity: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = VertCenter
+                TabOrder = 0
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object SpeedButton2: TSpeedButton
+              Position.X = 240.000000000000000000
+              Position.Y = 208.000000000000000000
+              StyleLookup = 'cameratoolbuttonbordered'
+              Text = 'SpeedButton2'
+            end
+          end
+        end
+        object TabItem4: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Work Experience'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object WorkList: TListBox
+            Align = Top
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 30.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 30.000000000000000000
+            Size.Width = 349.000000000000000000
+            Size.Height = 273.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'transparentlistboxstyle'
+            TabOrder = 0
+            DisableFocusEffect = True
+            DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
+            DefaultItemStyles.GroupHeaderStyle = ''
+            DefaultItemStyles.GroupFooterStyle = ''
+            GroupingKind = Grouped
+            Viewport.Width = 349.000000000000000000
+            Viewport.Height = 273.000000000000000000
+            object Employer: TListBoxItem
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Text = 'Despesa Extra'
+              object weEmpName: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = VertCenter
+                TabOrder = 0
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object EmployerCity: TListBoxItem
+              Position.Y = 44.000000000000000000
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              Text = 'Vaor'
+              object weCity: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = VertCenter
+                TabOrder = 0
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object CurrentJob: TListBoxItem
+              Position.Y = 88.000000000000000000
+              Size.Width = 349.000000000000000000
+              Size.Height = 44.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              Text = 'Observa'#231#227'o'
+              object weOccupiedJob: TEdit
+                Touch.InteractiveGestures = [LongTap, DoubleTap]
+                Align = VertCenter
+                TabOrder = 0
+                Position.X = 150.000000000000000000
+                Position.Y = 6.000000000000000000
+                Margins.Left = 150.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Size.Width = 189.000000000000000000
+                Size.Height = 32.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+          end
+        end
+        object TabItem5: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 8.000000000000000000
+          Size.Height = 8.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = ''
+          TabOrder = 0
+          Text = 'Personal Information Summary'
+          ExplicitSize.cx = 8.000000000000000000
+          ExplicitSize.cy = 8.000000000000000000
+          object Memo1: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            DataDetectorTypes = []
+            ReadOnly = True
+            Align = Client
+            HitTest = False
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 5.000000000000000000
+            Margins.Bottom = 20.000000000000000000
+            Size.Width = 349.000000000000000000
+            Size.Height = 360.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Viewport.Width = 345.000000000000000000
+            Viewport.Height = 356.000000000000000000
+          end
+          object Concluir: TButton
+            Position.X = 232.000000000000000000
+            Position.Y = 304.000000000000000000
+            TabOrder = 1
+            Text = 'Concluir'
+          end
+        end
+      end
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 176
+    Top = 248
+    GestureData = <
+      item
+        Control = TabControl1
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+  object ActionList1: TActionList
+    Left = 120
+    Top = 248
+    object PreviousTabAction: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+      CustomText = 'Back'
+    end
+    object NextTabAction: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+      CustomText = 'Next'
+    end
+    object TitleAction: TControlAction
+      Category = 'Tab'
+      Text = 'TitleAction'
+    end
+  end
+end

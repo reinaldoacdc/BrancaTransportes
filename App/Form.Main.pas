@@ -69,8 +69,7 @@ implementation
 {$R *.LgXhdpiPh.fmx ANDROID}
 
 uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, uDespesa,
-  uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
-  Model.Carregamento;
+  uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -117,8 +116,6 @@ begin
 end;
 
 procedure TFormMain.LoadListatem;
-var
-  I :Integer;
 begin
   ListarCdsCarregamentos;
   LoadDatasetModal(ClientDataSet1);
@@ -150,16 +147,13 @@ begin
 end;
 
 procedure TFormMain.ListarCdsCarregamentos;
-var
-  lista :TCarregamentos;
-  I :Integer;
 begin
    if not (ClientDataSet1.Active) then
     ClientDataSet1.CreateDataSet
   else
     ClientDataSet1.EmptyDataSet;
 
-  lista := objAPI.ListaCarregamentos;
+  objAPI.ListaCarregamentos;
 end;
 
 procedure TFormMain.ListBoxItem2Click(Sender: TObject);

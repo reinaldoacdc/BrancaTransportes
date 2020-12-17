@@ -3,7 +3,6 @@ program BrancaTransportes;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  uHome in 'uHome.pas' {frmHome},
   uParceiros in 'uParceiros.pas' {FrameParceiros: TFrame},
   uInstitucional in 'uInstitucional.pas' {FrameInstitucional: TFrame},
   Frame.Menu in 'View\Frame.Menu.pas' {FrameMenu: TFrame},
@@ -15,8 +14,7 @@ uses
   Frames.Dataset in 'View\Frames.Dataset.pas' {DatasetFrame: TFrame},
   Controller.API in 'Controller\Controller.API.pas',
   Frame.Login in 'View\Frame.Login.pas' {FrameLogin: TFrame},
-  Model.Carregamento in '..\Server\Model.Carregamento.pas',
-  Model.Entity.CADASTRO_CARREGAMENTO in '..\Server\Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas';
+  Model.Entity.CADASTRO_CARREGAMENTO in '..\Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas';
 
 {$R *.res}
 

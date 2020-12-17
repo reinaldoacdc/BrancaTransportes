@@ -450,5 +450,8 @@ object FormMain: TFormMain
     object ClientDataSet1PRODUTO_CARREGADO: TStringField
       FieldName = 'PRODUTO_CARREGADO'
     end
+    object ClientDataSet1CODIGO: TIntegerField
+      FieldName = 'CODIGO'
+    end
   end
 end

@@ -30,7 +30,7 @@ object DatasetFrame: TDatasetFrame
     object LinkListControlToField1: TLinkListControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
-      FieldName = 'LOCAL'
+      FieldName = 'PRODUTO_CARREGADO'
       Control = ListView1
       FillExpressions = <
         item

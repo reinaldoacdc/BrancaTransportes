@@ -61,7 +61,7 @@ procedure TDatasetFrame.ListView1ItemClick(const Sender: TObject;
 begin
   Self.Hide;
 
-  FormMain.IdCarregamentoSelecionado := FormMain.ClientDataSet1ID.AsInteger;
+  FormMain.IdCarregamentoSelecionado := FormMain.ClientDataSet1CODIGO.AsInteger;
   FormMain.FrameStand2.HideAndCloseAll();
 
   FormMain.LoadFrame<TFrameCarregamento>;

@@ -2,7 +2,7 @@ unit Controller.API;
 
 interface
 
-uses Model.Carregamento,
+uses Model.Carregamento, Model.Entity.CADASTRO_CARREGAMENTO,
  System.JSON, System.Net.HttpClientComponent;
 
 type TApi = class(TObject)
@@ -19,7 +19,7 @@ public
 
   function ListaCarregamentos :TCarregamentos;
 
-  function getCarregamento(id :Integer) :TCarregamento;
+  function getCarregamento(id :Integer) :TCADASTRO_CARREGAMENTO;
 
 
   constructor Create; overload;
@@ -75,7 +75,7 @@ begin
   inherited;
 end;
 
-function TApi.getCarregamento(id: Integer): TCarregamento;
+function TApi.getCarregamento(id: Integer): TCADASTRO_CARREGAMENTO;
 var
   Url, JSonData   : String;
   item: TJSONObject;
@@ -83,12 +83,12 @@ var
   idx :Integer;
   carga :TCarregamento;
 begin
-  Url := Format('http://192.168.15.184:9000/carregamento?id=%d', [id]);
+  Url := Format('http://192.168.15.184:9000/carregamento/%d', [id]);
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
 
   FJSonObject := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JsonData),0) as TJSONObject;
 
-  Result := Tjson.JsonToObject<TCarregamento>(FJSonObject);
+  Result := Tjson.JsonToObject<TCADASTRO_CARREGAMENTO>(FJSonObject);
 end;
 
 function TApi.ListaCarregamentos :TCarregamentos;
@@ -103,17 +103,6 @@ begin
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
 
   JsonToDataset(FormMain.ClientDataSet1, JSonData);
-
-//  FJSonObject := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JsonData),0) as TJSONObject;
-//
-//  a := TJSONArray(FJSonObject.GetValue('result'));
-//  SetLength(Result, a.Count );
-//  for idx := 0 to pred(a.size) do begin
-//    item := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(a.Items[idx].Value), 0)  as TJSONObject;
-//    carga := Tjson.JsonToObject<TCarregamento>(item);
-//    Result[idx] := carga;
-//  end;
-
 end;
 
 function TApi.Login(username, password: String): Boolean;

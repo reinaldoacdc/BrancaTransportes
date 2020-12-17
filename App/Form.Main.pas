@@ -34,6 +34,7 @@ type
     ClientDataSet1DATA: TDateField;
     ClientDataSet1LOCAL_CARREGAMENTO: TStringField;
     ClientDataSet1PRODUTO_CARREGADO: TStringField;
+    ClientDataSet1CODIGO: TIntegerField;
     procedure FormShow(Sender: TObject);
     procedure btnCarregamentosClick(Sender: TObject);
     procedure ListBoxItem2Click(Sender: TObject);
@@ -159,15 +160,6 @@ begin
     ClientDataSet1.EmptyDataSet;
 
   lista := objAPI.ListaCarregamentos;
-
-//  for I := 0 to Length(lista)-1 do
-//  begin
-//    ClientDataSet1.Append;
-//    ClientDataSet1ID.AsInteger := 1;
-//    ClientDataSet1LOCAL.AsString   := lista[i].Local;
-//    ClientDataSet1PRODUTO.AsString := lista[i].Produto;
-//    ClientDataSet1.Post;
-//  end;
 end;
 
 procedure TFormMain.ListBoxItem2Click(Sender: TObject);

@@ -439,6 +439,7 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\Server\Model.Carregamento.pas"/>
+        <DCCReference Include="..\Server\Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

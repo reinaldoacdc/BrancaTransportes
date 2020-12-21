@@ -29,6 +29,8 @@ procedure Disconnected(Index : Integer);
 
 implementation
 
+uses uConfigINI;
+
 function Connected : Integer;
 begin
   if not Assigned(FConnList) then
@@ -36,11 +38,11 @@ begin
 
   FConnList.Add(TFDConnection.Create(nil));
   Result := Pred(FConnList.Count);
-  { TODO : Configurações - Database }
+
   FConnList.Items[Result].Params.DriverID := 'FB';
-  FConnList.Items[Result].Params.Database := 'C:\System Erp\Dados\DADOS.FDB';
-  FConnList.Items[Result].Params.UserName := 'SYSDBA';
-  FConnList.Items[Result].Params.Password := 'masterkey';
+  FConnList.Items[Result].Params.Database := ConfigINI.AcessoBanco.Caminho; // 'C:\System Erp\Dados\DADOS.FDB';
+  FConnList.Items[Result].Params.UserName := ConfigINI.AcessoBanco.Usuario;  //'SYSDBA';
+  FConnList.Items[Result].Params.Password := ConfigINI.AcessoBanco.Senha; // 'masterkey';
   FConnList.Items[Result].Connected;
 end;
 

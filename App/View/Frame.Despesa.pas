@@ -77,14 +77,15 @@ begin
 end;
 
 procedure TFrameDespesas.Salvar;
-var despesa :TCADASTRO_DESPESAS;
+//var
+//  despesa :TCADASTRO_DESPESAS;
 begin
-  despesa := TCADASTRO_DESPESAS.Create;
-  despesa.DATA_ABASTECIMENTO :=  StrToDate( DATA.Text );
-  DESPESA.KM_ABASTECIMENTO := StrToFloat( KM_ABASTECIMENTO.Text );
-  despesa.TOTAL_LITROS := StrToFloat(TOTAL_LITROS.Text);
-  DESPESA.VALOR_LITROS := strToFloat(VALOR_LITROS.Text);
-  //DESPESA.IMAGEM_COMPROVANTE :=
+//  despesa := TCADASTRO_DESPESAS.Create;
+//  despesa.DATA_ABASTECIMENTO :=  StrToDate( DATA.Text );
+//  DESPESA.KM_ABASTECIMENTO := StrToFloat( KM_ABASTECIMENTO.Text );
+//  despesa.TOTAL_LITROS := StrToFloat(TOTAL_LITROS.Text);
+//  DESPESA.VALOR_LITROS := strToFloat(VALOR_LITROS.Text);
+//  //DESPESA.IMAGEM_COMPROVANTE :=
 end;
 
 procedure TFrameDespesas.SpeedButton1Click(Sender: TObject);

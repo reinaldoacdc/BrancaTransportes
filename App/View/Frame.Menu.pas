@@ -38,7 +38,7 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main, Frame.Login, uCarregamentos, uDespesa,
+uses Form.Main, Frame.Login, uCarregamentos, Frame.Despesa,
   uDespesaExtra, Frame.Carregamento;
 
 procedure TFrameMenu.btnNovaDespesaClick(Sender: TObject);

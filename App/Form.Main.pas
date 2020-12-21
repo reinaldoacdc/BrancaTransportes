@@ -70,7 +70,7 @@ implementation
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
 
-uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, uDespesa,
+uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, Frame.Despesa,
   uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
   Frame.Carregamento;
 

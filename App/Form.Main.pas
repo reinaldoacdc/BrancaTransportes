@@ -71,7 +71,7 @@ implementation
 {$R *.LgXhdpiPh.fmx ANDROID}
 
 uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, Frame.Despesa,
-  uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
+  Frame.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
   Frame.Carregamento;
 
 procedure TFormMain.FormCreate(Sender: TObject);

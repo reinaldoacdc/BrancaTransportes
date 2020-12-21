@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Objects, FMX.Layouts, FMX.Controls.Presentation;
+  FMX.Objects, FMX.Layouts, FMX.Controls.Presentation, FMX.Gestures;
 
 type
   TFrameMenu = class(TFrame)
@@ -26,6 +26,8 @@ type
     Rectangle4: TRectangle;
     Label4: TLabel;
     ScaledLayout1: TScaledLayout;
+    ScrollBox1: TScrollBox;
+    GestureManager1: TGestureManager;
     procedure btnNovoCarregamentoClick(Sender: TObject);
     procedure btnNovaDespesaClick(Sender: TObject);
     procedure btnNovaDespesaExtraClick(Sender: TObject);
@@ -40,7 +42,7 @@ implementation
 {$R *.fmx}
 
 uses Form.Main, Frame.Login, uCarregamentos, Frame.Despesa,
-  uDespesaExtra, Frame.Carregamento;
+  Frame.DespesaExtra, Frame.Carregamento;
 
 procedure TFrameMenu.btnNovaDespesaClick(Sender: TObject);
 begin

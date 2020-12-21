@@ -944,7 +944,7 @@ object FrameMenu: TFrameMenu
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      object Rectangle1: TRectangle
+      object btnNovoCarregamento: TRectangle
         Align = Client
         Fill.Color = claFirebrick
         Margins.Left = 10.000000000000000000
@@ -954,8 +954,8 @@ object FrameMenu: TFrameMenu
         Size.Width = 130.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        OnClick = Rectangle1Click
-        object Label1: TLabel
+        OnClick = btnNovoCarregamentoClick
+        object lblNovoCarregamento: TLabel
           Align = Client
           Size.Width = 130.000000000000000000
           Size.Height = 50.000000000000000000
@@ -973,7 +973,7 @@ object FrameMenu: TFrameMenu
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      object Rectangle2: TRectangle
+      object btnNovaDespesa: TRectangle
         Align = Client
         Fill.Color = claFirebrick
         Margins.Left = 10.000000000000000000
@@ -983,7 +983,8 @@ object FrameMenu: TFrameMenu
         Size.Width = 130.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        object Label2: TLabel
+        OnClick = btnNovaDespesaClick
+        object lblNovaDespesa: TLabel
           Align = Client
           Size.Width = 130.000000000000000000
           Size.Height = 50.000000000000000000
@@ -991,7 +992,6 @@ object FrameMenu: TFrameMenu
           TextSettings.HorzAlign = Center
           Text = 'Nova Despesa'
           TabOrder = 0
-          OnClick = Label2Click
         end
       end
     end
@@ -1002,7 +1002,7 @@ object FrameMenu: TFrameMenu
       Size.Height = 70.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
-      object Rectangle3: TRectangle
+      object btnNovaDespesaExtra: TRectangle
         Align = Client
         Fill.Color = claFirebrick
         Margins.Left = 10.000000000000000000
@@ -1012,7 +1012,8 @@ object FrameMenu: TFrameMenu
         Size.Width = 130.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
-        object Label3: TLabel
+        OnClick = btnNovaDespesaExtraClick
+        object lblNovaDespesaExtra: TLabel
           Align = Client
           Size.Width = 130.000000000000000000
           Size.Height = 50.000000000000000000
@@ -1020,7 +1021,6 @@ object FrameMenu: TFrameMenu
           TextSettings.HorzAlign = Center
           Text = 'Nova Despesa Extra'
           TabOrder = 0
-          OnClick = Label3Click
         end
       end
     end

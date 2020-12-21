@@ -18,7 +18,9 @@ uses
   Model.Connection in 'Model\Connection\Model.Connection.pas',
   Model.DaoGeneric in 'Model\Connection\Model.DaoGeneric.pas',
   Model.Entity.CADASTRO_CARREGAMENTO in 'Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas',
-  uDAO in 'Classes\uDAO.pas';
+  uDAO in 'Classes\uDAO.pas',
+  Controller.Despesa in 'Controller\Controller.Despesa.pas',
+  Model.Entity.CADASTRO_DESPESAS in 'Model\Entity\Model.Entity.CADASTRO_DESPESAS.pas';
 
 var
   App : THorse;
@@ -28,6 +30,7 @@ begin
   App.Use(CORS);
 
   Controller.Carregamento.Registry(App);
+  Controller.Despesa.Registry(App);
 
   App.Start;
 end.

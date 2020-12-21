@@ -48,16 +48,18 @@ type
   private
     FloginSucessfull: Boolean;
     FidCarregamentoSelecionado: Integer;
+    FframeSelecionado: String;
 
     procedure LoadDatasetModal(ClientdataSet :TClientDataSet);
-    procedure LoadListatem;
+
     procedure ListarCdsCarregamentos;
   public
     procedure LoadFrame<T :TFrame>;
-
+    procedure LoadListatem(Tela :String);
   published
     property LoginSucessfull :Boolean read FloginSucessfull write FloginSucessfull default False;
     property IdCarregamentoSelecionado :Integer read FidCarregamentoSelecionado write FidCarregamentoSelecionado default 0;
+    property FrameSelecionado :String read FframeSelecionado write FframeSelecionado;
   end;
 
 var
@@ -69,7 +71,8 @@ implementation
 {$R *.LgXhdpiPh.fmx ANDROID}
 
 uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, uDespesa,
-  uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API;
+  uDespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
+  Frame.Carregamento;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -115,8 +118,10 @@ begin
   MultiView1.HideMaster;
 end;
 
-procedure TFormMain.LoadListatem;
+procedure TFormMain.LoadListatem(Tela :String);
 begin
+  Self.FrameSelecionado := Tela;
+
   ListarCdsCarregamentos;
   LoadDatasetModal(ClientDataSet1);
 end;
@@ -143,7 +148,7 @@ end;
 
 procedure TFormMain.btnCarregamentosClick(Sender: TObject);
 begin
-  LoadListatem;
+  LoadListatem('CARREGAMENTO');
 end;
 
 procedure TFormMain.ListarCdsCarregamentos;

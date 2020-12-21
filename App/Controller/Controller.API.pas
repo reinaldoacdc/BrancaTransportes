@@ -30,6 +30,9 @@ published
 
 end;
 
+const
+  BASE_URL = 'http://192.168.15.184:9000/';
+
 var
   objAPI :TApi;
 

@@ -17,17 +17,17 @@ type
     Layout2: TLayout;
     Layout3: TLayout;
     Layout4: TLayout;
-    Rectangle1: TRectangle;
-    Label1: TLabel;
-    Rectangle2: TRectangle;
-    Label2: TLabel;
-    Rectangle3: TRectangle;
-    Label3: TLabel;
+    btnNovoCarregamento: TRectangle;
+    lblNovoCarregamento: TLabel;
+    btnNovaDespesa: TRectangle;
+    lblNovaDespesa: TLabel;
+    btnNovaDespesaExtra: TRectangle;
+    lblNovaDespesaExtra: TLabel;
     Rectangle4: TRectangle;
     Label4: TLabel;
-    procedure Rectangle1Click(Sender: TObject);
-    procedure Label2Click(Sender: TObject);
-    procedure Label3Click(Sender: TObject);
+    procedure btnNovoCarregamentoClick(Sender: TObject);
+    procedure btnNovaDespesaClick(Sender: TObject);
+    procedure btnNovaDespesaExtraClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,21 +41,23 @@ implementation
 uses Form.Main, Frame.Login, uCarregamentos, uDespesa,
   uDespesaExtra, Frame.Carregamento;
 
-procedure TFrameMenu.Label2Click(Sender: TObject);
+procedure TFrameMenu.btnNovaDespesaClick(Sender: TObject);
 begin
   FormMain.LoadFrame<TFrameDespesas>;
   if not FormMain.LoginSucessfull then
-    FormMain.LoadFrame<TFrameLogin>;
+    FormMain.LoadFrame<TFrameLogin>
+  else
+    FormMain.LoadListatem('DESPESA');
 end;
 
-procedure TFrameMenu.Label3Click(Sender: TObject);
+procedure TFrameMenu.btnNovaDespesaExtraClick(Sender: TObject);
 begin
   FormMain.LoadFrame<TFrameDespesasExtras>;
   if not FormMain.LoginSucessfull then
     FormMain.LoadFrame<TFrameLogin>;
 end;
 
-procedure TFrameMenu.Rectangle1Click(Sender: TObject);
+procedure TFrameMenu.btnNovoCarregamentoClick(Sender: TObject);
 begin
   FormMain.LoadFrame<TFrameCarregamento>;
   if not FormMain.LoginSucessfull then

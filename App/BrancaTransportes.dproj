@@ -400,7 +400,7 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="uDespesa.pas">
+        <DCCReference Include="View\Frame.Despesa.pas">
             <Form>FrameDespesas</Form>
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>

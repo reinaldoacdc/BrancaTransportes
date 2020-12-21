@@ -34,8 +34,6 @@ type
     KM_CHEGADA: TEdit;
     Layout2: TLayout;
     SpeedButton1: TSpeedButton;
-    RESTClient1: TRESTClient;
-    RESTRequest1: TRESTRequest;
     procedure SpeedButton1Click(Sender: TObject);
   private
     Fid: Integer;

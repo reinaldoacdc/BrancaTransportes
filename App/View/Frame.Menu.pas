@@ -25,6 +25,7 @@ type
     lblNovaDespesaExtra: TLabel;
     Rectangle4: TRectangle;
     Label4: TLabel;
+    ScaledLayout1: TScaledLayout;
     procedure btnNovoCarregamentoClick(Sender: TObject);
     procedure btnNovaDespesaClick(Sender: TObject);
     procedure btnNovaDespesaExtraClick(Sender: TObject);

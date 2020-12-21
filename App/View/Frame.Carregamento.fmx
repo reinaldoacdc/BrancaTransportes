@@ -46,7 +46,7 @@ object FrameCarregamento: TFrameCarregamento
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Text = 'Produto carregado'
+      Text = 'Produto'
       object PRODUTO: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
@@ -67,7 +67,7 @@ object FrameCarregamento: TFrameCarregamento
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
-      Text = 'Data Carregamento'
+      Text = 'Data'
       object DATA: TDateEdit
         Date = 41876.000000000000000000
         Align = VertCenter
@@ -243,21 +243,9 @@ object FrameCarregamento: TFrameCarregamento
       Size.Width = 80.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
-      StyleLookup = 'actiontoolbutton'
+      StyleLookup = 'organizetoolbutton'
       Text = 'SpeedButton1'
       OnClick = SpeedButton1Click
     end
-  end
-  object RESTClient1: TRESTClient
-    Params = <>
-    Left = 181
-    Top = 310
-  end
-  object RESTRequest1: TRESTRequest
-    Client = RESTClient1
-    Params = <>
-    SynchronizedEvents = False
-    Left = 117
-    Top = 334
   end
 end

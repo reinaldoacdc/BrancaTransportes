@@ -8,7 +8,7 @@ uses
   FMX.DateTimeCtrls, FMX.Controls.Presentation, FMX.Edit, FMX.ListBox,
   FMX.Layouts, System.Math.Vectors, FMX.Controls3D, FMX.Layers3D, FMX.Objects,
   System.Actions, FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions,
-  System.Permissions;
+  System.Permissions, System.ImageList, FMX.ImgList;
 
 type
   TFrameDespesas = class(TFrame)
@@ -35,6 +35,7 @@ type
     ActionList1: TActionList;
     TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
     Image1: TImage;
+    ImageList1: TImageList;
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);

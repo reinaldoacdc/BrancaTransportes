@@ -1,14 +1,16 @@
 object FrameDespesasExtras: TFrameDespesasExtras
   Size.Width = 320.000000000000000000
-  Size.Height = 483.000000000000000000
+  Size.Height = 531.000000000000000000
   Size.PlatformDefault = False
   object ListBox: TListBox
-    Align = Client
+    Align = Top
     Margins.Left = 5.000000000000000000
     Margins.Top = 30.000000000000000000
     Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 30.000000000000000000
     Size.Width = 310.000000000000000000
-    Size.Height = 453.000000000000000000
+    Size.Height = 347.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'transparentlistboxstyle'
     TabOrder = 0
@@ -18,7 +20,7 @@ object FrameDespesasExtras: TFrameDespesasExtras
     DefaultItemStyles.GroupFooterStyle = ''
     GroupingKind = Grouped
     Viewport.Width = 310.000000000000000000
-    Viewport.Height = 453.000000000000000000
+    Viewport.Height = 347.000000000000000000
     object itemFornecedor: TListBoxItem
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
@@ -144,5 +146,68 @@ object FrameDespesasExtras: TFrameDespesasExtras
       StyleLookup = 'cameratoolbuttonbordered'
       Text = 'SpeedButton2'
     end
+  end
+  object Layout1: TLayout
+    Align = Bottom
+    Position.Y = 481.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object SpeedButton1: TSpeedButton
+      Align = Right
+      Images = ImageList1
+      ImageIndex = 0
+      Position.X = 280.000000000000000000
+      Scale.X = 2.000000000000000000
+      Scale.Y = 2.000000000000000000
+      Size.Width = 20.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = SpeedButton1Click
+    end
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 36
+        MultiResBitmap.Width = 36
+        MultiResBitmap = <
+          item
+            Width = 36
+            Height = 36
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+              98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              016D494441545847ED97312F044118869728150A85928444A190502A147A1111
+              25FF8042E23A7412118444AD12098944540A3A0A3F40A1F40314120A09CF77DF
+              3897DBB9D9DD996145F6499E7CEF5EB1F7DEEECEEE5E5251114887993626700C
+              7BEA5B613CE089463F0EF123B24BE8453FDA7618C3CC52B653B68A9B1A931BA3
+              0F93C65696714F633ED6F0EB1749F6A5793FADB63D529D66FE36BB682D555621
+              414ACD6BFCA6CC42C2B0990DCA2E94C2B6CAE4625CD7F823ABAC19F99E0D8DED
+              71AD8ED8A656F19F3B6555A12CFE65A1473CC5737C920F420829F4828B388473
+              388303B882EFE84548212973A4B18114D9C65A7DCB03DF427778A6D18ABC5E78
+              9DBE90422EE448DD6B2C866FA13CD7C89B9985F02D346AA68B71330BE15B680A
+              5D0FCE051CD4580CDF42C231DA4ACDE281C6E28414EAC36BBCC22DDCC15B949B
+              6437E6E1D94C27F25A697B5588ED2BF662265D7881B69DC4741F53B8FE4A8FE0
+              344AC1D8C83DEA526345454C92E413AD44AB755CE158290000000049454E44AE
+              426082}
+            FileName = 
+              'C:\Projetos\BrancaTransportes\App\res\Material\baseline_save_bla' +
+              'ck_18dp.png'
+          end>
+        Name = 'Item 0'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'Item 0'
+            SourceRect.Right = 36.000000000000000000
+            SourceRect.Bottom = 36.000000000000000000
+          end>
+      end>
+    Left = 240
+    Top = 264
   end
 end

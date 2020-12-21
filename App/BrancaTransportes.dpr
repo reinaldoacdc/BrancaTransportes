@@ -7,7 +7,7 @@ uses
   uInstitucional in 'uInstitucional.pas' {FrameInstitucional: TFrame},
   Frame.Menu in 'View\Frame.Menu.pas' {FrameMenu: TFrame},
   Frame.Despesa in 'View\Frame.Despesa.pas' {FrameDespesas: TFrame},
-  uDespesaExtra in 'uDespesaExtra.pas' {FrameDespesasExtras: TFrame},
+  Frame.DespesaExtra in 'View\Frame.DespesaExtra.pas' {FrameDespesasExtras: TFrame},
   Frame.Carregamento in 'View\Frame.Carregamento.pas' {FrameCarregamento: TFrame},
   Form.Main in 'Form.Main.pas' {FormMain},
   Frame.ListaCarregamento in 'Frame.ListaCarregamento.pas' {FrameListaCarregamento: TFrame},

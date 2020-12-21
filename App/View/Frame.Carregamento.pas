@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.DateTimeCtrls, FMX.Controls.Presentation, FMX.Edit, FMX.ListBox,
   FMX.Layouts, REST.Types, REST.Client, Data.Bind.Components,
-  Data.Bind.ObjectScope;
+  Data.Bind.ObjectScope, System.ImageList, FMX.ImgList;
 
 type
   TFrameCarregamento = class(TFrame)
@@ -33,7 +33,8 @@ type
     ItemKmFinal: TListBoxItem;
     KM_CHEGADA: TEdit;
     Layout2: TLayout;
-    SpeedButton1: TSpeedButton;
+    ImageList1: TImageList;
+    SpeedButton2: TSpeedButton;
     procedure SpeedButton1Click(Sender: TObject);
   private
     Fid: Integer;

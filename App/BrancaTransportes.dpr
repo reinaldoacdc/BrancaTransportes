@@ -14,7 +14,8 @@ uses
   Frames.Dataset in 'View\Frames.Dataset.pas' {DatasetFrame: TFrame},
   Controller.API in 'Controller\Controller.API.pas',
   Frame.Login in 'View\Frame.Login.pas' {FrameLogin: TFrame},
-  Model.Entity.CADASTRO_CARREGAMENTO in '..\Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas';
+  Model.Entity.CADASTRO_CARREGAMENTO in '..\Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas',
+  Model.Entity.CADASTRO_DESPESAS in '..\Model\Entity\Model.Entity.CADASTRO_DESPESAS.pas';
 
 {$R *.res}
 

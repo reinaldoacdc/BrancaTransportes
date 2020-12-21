@@ -36,6 +36,7 @@ begin
 
   FConnList.Add(TFDConnection.Create(nil));
   Result := Pred(FConnList.Count);
+  { TODO : Configurações - Database }
   FConnList.Items[Result].Params.DriverID := 'FB';
   FConnList.Items[Result].Params.Database := 'C:\System Erp\Dados\DADOS.FDB';
   FConnList.Items[Result].Params.UserName := 'SYSDBA';

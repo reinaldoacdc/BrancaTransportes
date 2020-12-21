@@ -31,6 +31,7 @@ published
 end;
 
 const
+  { TODO : Configurações - Base URL }
   BASE_URL = 'http://192.168.15.184:9000/';
 
 var
@@ -83,7 +84,7 @@ function TApi.getCarregamento(id: Integer): TCADASTRO_CARREGAMENTO;
 var
   Url, JSonData   : String;
 begin
-  Url := Format('http://192.168.15.184:9000/carregamento/%d', [id]);
+  Url := Format(BASE_URL + 'carregamento/%d', [id]);
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
 
   FJSonObject := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JsonData),0) as TJSONObject;
@@ -95,7 +96,7 @@ function TApi.ListaCarregamentos :TCADASTRO_CARREGAMENTO;
 var
   Url, JSonData   : String;
 begin
-  Url := 'http://192.168.15.184:9000/carregamentos';
+  Url := BASE_URL + 'carregamentos';
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
 
   JsonToDataset(FormMain.ClientDataSet1, JSonData);
@@ -105,7 +106,7 @@ function TApi.Login(username, password: String): Boolean;
 var
   Url, JSonData   : String;
 begin
-  Url := Format('http://192.168.15.184:9000/login?user=%s&password=%s', [username, password]);
+  Url := Format(BASE_URL + 'login?user=%s&password=%s', [username, password]);
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
   FJSonObject := TJSonObject.ParseJSONValue(JSonData) as TJSonObject;
 
@@ -116,7 +117,7 @@ procedure TApi.postCarregamento(carregamento: TCADASTRO_CARREGAMENTO);
 var
   Url, JSonData   : String;
 begin
-  Url := 'http://192.168.15.184:9000/carregamento';
+  Url := BASE_URL + 'carregamento';
   FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
   FNetHTTPRequest.Post( Url, TStringStream.Create(carregamento.ToJsonString)  );
 end;
@@ -125,7 +126,7 @@ procedure TApi.putCarregamento(carregamento: TCADASTRO_CARREGAMENTO);
 var
   Url, JSonData   : String;
 begin
-  Url := 'http://192.168.15.184:9000/carregamento';
+  Url := BASE_URL + 'carregamento';
   FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
   FNetHTTPRequest.Put( Url, TStringStream.Create(carregamento.ToJsonString)  );
 end;

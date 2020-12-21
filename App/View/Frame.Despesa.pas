@@ -62,7 +62,7 @@ uses Model.Entity.CADASTRO_DESPESAS
      {$IFDEF Android}
      , Androidapi.Helpers, Androidapi.JNI.JavaTypes, Androidapi.JNI.Os
      {$ENDIF}
-     ;
+     , Form.Main, Frame.Menu;
 
 {$R *.fmx}
 
@@ -84,13 +84,13 @@ begin
   DESPESA.KM_ABASTECIMENTO := StrToFloat( KM_ABASTECIMENTO.Text );
   despesa.TOTAL_LITROS := StrToFloat(TOTAL_LITROS.Text);
   DESPESA.VALOR_LITROS := strToFloat(VALOR_LITROS.Text);
-  DESPESA.IMAGEM_COMPROVANTE :=
+  //DESPESA.IMAGEM_COMPROVANTE :=
 end;
 
 procedure TFrameDespesas.SpeedButton1Click(Sender: TObject);
 begin
-//
   Salvar;
+  FormMain.LoadFrame<TFrameMenu>;
 end;
 
 procedure TFrameDespesas.SpeedButton2Click(Sender: TObject);

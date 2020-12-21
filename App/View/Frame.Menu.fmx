@@ -971,9 +971,11 @@ object FrameMenu: TFrameMenu
             OnClick = btnNovoCarregamentoClick
             object lblNovoCarregamento: TLabel
               Align = Client
+              StyledSettings = [Family, Size, Style]
               Size.Width = 130.000000000000000000
               Size.Height = 50.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.FontColor = claWhite
               TextSettings.HorzAlign = Center
               Text = 'Novo Carregamento'
               TabOrder = 0
@@ -1000,9 +1002,11 @@ object FrameMenu: TFrameMenu
             OnClick = btnNovaDespesaClick
             object lblNovaDespesa: TLabel
               Align = Client
+              StyledSettings = [Family, Size, Style]
               Size.Width = 130.000000000000000000
               Size.Height = 50.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.FontColor = claWhite
               TextSettings.HorzAlign = Center
               Text = 'Nova Despesa'
               TabOrder = 0
@@ -1029,9 +1033,11 @@ object FrameMenu: TFrameMenu
             OnClick = btnNovaDespesaExtraClick
             object lblNovaDespesaExtra: TLabel
               Align = Client
+              StyledSettings = [Family, Size, Style]
               Size.Width = 130.000000000000000000
               Size.Height = 50.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.FontColor = claWhite
               TextSettings.HorzAlign = Center
               Text = 'Nova Despesa Extra'
               TabOrder = 0
@@ -1057,9 +1063,11 @@ object FrameMenu: TFrameMenu
             Size.PlatformDefault = False
             object Label4: TLabel
               Align = Client
+              StyledSettings = [Family, Size, Style]
               Size.Width = 130.000000000000000000
               Size.Height = 50.000000000000000000
               Size.PlatformDefault = False
+              TextSettings.FontColor = claWhite
               TextSettings.HorzAlign = Center
               Text = 'Configura'#231#245'es'
               TabOrder = 0

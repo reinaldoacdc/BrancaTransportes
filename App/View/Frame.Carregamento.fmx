@@ -31,6 +31,8 @@ object FrameCarregamento: TFrameCarregamento
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
+        KeyboardType = Alphabet
+        ReturnKeyType = Next
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
@@ -51,7 +53,8 @@ object FrameCarregamento: TFrameCarregamento
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
-        KeyboardType = EmailAddress
+        KeyboardType = Alphabet
+        ReturnKeyType = Next
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
@@ -69,7 +72,7 @@ object FrameCarregamento: TFrameCarregamento
       TabOrder = 2
       Text = 'Data'
       object DATA: TDateEdit
-        Date = 41876.000000000000000000
+        TodayDefault = True
         Align = VertCenter
         Margins.Left = 150.000000000000000000
         Margins.Right = 10.000000000000000000
@@ -79,6 +82,7 @@ object FrameCarregamento: TFrameCarregamento
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        OnExit = DATAExit
       end
     end
     object ItemFrete: TListBoxItem
@@ -92,7 +96,8 @@ object FrameCarregamento: TFrameCarregamento
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
-        KeyboardType = EmailAddress
+        KeyboardType = NumberPad
+        ReturnKeyType = Next
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
@@ -107,13 +112,14 @@ object FrameCarregamento: TFrameCarregamento
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 6
+      TabOrder = 4
       Text = 'Peso'
       object PESO: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
-        KeyboardType = EmailAddress
+        KeyboardType = NumberPad
+        ReturnKeyType = Next
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
@@ -128,13 +134,14 @@ object FrameCarregamento: TFrameCarregamento
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 5
+      TabOrder = 6
       Text = 'Km Inicio'
       object KM_INICIO: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
-        KeyboardType = EmailAddress
+        KeyboardType = NumberPad
+        ReturnKeyType = Next
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
@@ -149,13 +156,14 @@ object FrameCarregamento: TFrameCarregamento
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 4
+      TabOrder = 5
       Text = 'Km Chegada'
       object KM_CHEGADA: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
-        KeyboardType = EmailAddress
+        KeyboardType = NumberPad
+        ReturnKeyType = Done
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000

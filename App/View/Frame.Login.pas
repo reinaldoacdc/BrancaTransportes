@@ -24,6 +24,7 @@ type
     NetHTTPRequest1: TNetHTTPRequest;
     Label1: TLabel;
     procedure SignupButtonClick(Sender: TObject);
+    procedure PasswordEditExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,6 +36,11 @@ implementation
 {$R *.fmx}
 
 uses Form.Main, Frame.Menu, System.JSON, Controller.API;
+
+procedure TFrameLogin.PasswordEditExit(Sender: TObject);
+begin
+  SignupButtonClick(Sender);
+end;
 
 procedure TFrameLogin.SignupButtonClick(Sender: TObject);
 begin

@@ -1,11 +1,11 @@
 object FrameLogin: TFrameLogin
-  Size.Width = 343.000000000000000000
+  Size.Width = 333.000000000000000000
   Size.Height = 583.000000000000000000
   Size.PlatformDefault = False
   object LogoBackgroundRect: TRectangle
     Align = Top
     Fill.Color = claWhite
-    Size.Width = 343.000000000000000000
+    Size.Width = 333.000000000000000000
     Size.Height = 273.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -930,14 +930,14 @@ object FrameLogin: TFrameLogin
     Margins.Right = 25.000000000000000000
     Position.X = 25.000000000000000000
     Position.Y = 223.000000000000000000
-    Size.Width = 293.000000000000000000
+    Size.Width = 283.000000000000000000
     Size.Height = 226.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object FormBackgroundRect: TRectangle
       Align = Contents
       Fill.Color = claWhite
-      Size.Width = 293.000000000000000000
+      Size.Width = 283.000000000000000000
       Size.Height = 226.000000000000000000
       Size.PlatformDefault = False
       Stroke.Kind = None
@@ -946,6 +946,8 @@ object FrameLogin: TFrameLogin
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Top
       TabOrder = 1
+      KeyboardType = Alphabet
+      ReturnKeyType = Next
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.HorzAlign = Center
       Position.X = 10.000000000000000000
@@ -954,7 +956,7 @@ object FrameLogin: TFrameLogin
       Margins.Top = 20.000000000000000000
       Margins.Right = 10.000000000000000000
       Margins.Bottom = 10.000000000000000000
-      Size.Width = 273.000000000000000000
+      Size.Width = 263.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
       TextPrompt = 'Usu'#225'rio'
@@ -965,6 +967,8 @@ object FrameLogin: TFrameLogin
       Touch.InteractiveGestures = [LongTap, DoubleTap]
       Align = Top
       TabOrder = 2
+      KeyboardType = Alphabet
+      ReturnKeyType = Go
       Password = True
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.HorzAlign = Center
@@ -974,11 +978,13 @@ object FrameLogin: TFrameLogin
       Margins.Top = 10.000000000000000000
       Margins.Right = 10.000000000000000000
       Margins.Bottom = 10.000000000000000000
-      Size.Width = 273.000000000000000000
+      Size.Width = 263.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
       TextPrompt = 'Senha'
       StyledSettings = [Family, Size, FontColor]
+      KillFocusByReturn = True
+      OnExit = PasswordEditExit
     end
     object SignupButton: TButton
       Align = Bottom
@@ -989,7 +995,7 @@ object FrameLogin: TFrameLogin
       Margins.Bottom = 10.000000000000000000
       Position.X = 10.000000000000000000
       Position.Y = 176.000000000000000000
-      Size.Width = 273.000000000000000000
+      Size.Width = 263.000000000000000000
       Size.Height = 40.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
@@ -1008,7 +1014,7 @@ object FrameLogin: TFrameLogin
   object FooterSpaceLayout: TLayout
     Align = Top
     Position.Y = 449.000000000000000000
-    Size.Width = 343.000000000000000000
+    Size.Width = 333.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1

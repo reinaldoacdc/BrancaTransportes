@@ -36,6 +36,7 @@ type
     ImageList1: TImageList;
     SpeedButton2: TSpeedButton;
     procedure SpeedButton1Click(Sender: TObject);
+    procedure DATAExit(Sender: TObject);
   private
     Fid: Integer;
     procedure Carregar;
@@ -75,6 +76,11 @@ begin
   inherited;
   Self.Id := FormMain.IdCarregamentoSelecionado;
   Carregar;
+end;
+
+procedure TFrameCarregamento.DATAExit(Sender: TObject);
+begin
+  FRETE.SetFocus;
 end;
 
 procedure TFrameCarregamento.Salvar;

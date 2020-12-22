@@ -32,7 +32,8 @@ end;
 
 const
   { TODO : Configurações - Base URL }
-  BASE_URL = 'http://192.168.100.61:9000/';
+  //BASE_URL = 'http://192.168.0.192:9000/';
+  BASE_URL = 'http://192.168.15.184:9000/';
 
 var
   objAPI :TApi;

@@ -42,6 +42,9 @@ type
   private
     PermissaoCamera, PermissaoReadStorage, PermissaoWriteStorage : string;
     Fid: Integer;
+
+    function Base64FromBitmap(Bitmap: TBitmap): string;
+
     procedure TakePicturePermissionRequestResult(
         Sender: TObject; const APermissions: TArray<string>;
         const AGrantResults: TArray<TPermissionStatus>);
@@ -58,14 +61,42 @@ type
 
 implementation
 
-uses Model.Entity.CADASTRO_DESPESAS
+uses System.NetEncoding
+   , Model.Entity.CADASTRO_DESPESAS
    , FMX.DialogService
      {$IFDEF Android}
      , Androidapi.Helpers, Androidapi.JNI.JavaTypes, Androidapi.JNI.Os
      {$ENDIF}
-     , Form.Main, Frame.Menu;
+     , Form.Main, Frame.Menu, Controller.API;
 
 {$R *.fmx}
+
+function TFrameDespesas.Base64FromBitmap(Bitmap: TBitmap): string;
+var
+  Input: TBytesStream;
+  Output: TStringStream;
+  Encoding: TBase64Encoding;
+begin
+        Input := TBytesStream.Create;
+        try
+                Bitmap.SaveToStream(Input);
+                Input.Position := 0;
+                Output := TStringStream.Create('', TEncoding.ASCII);
+
+                try
+                    Encoding := TBase64Encoding.Create(0);
+                    Encoding.Encode(Input, Output);
+                    Result := Output.DataString;
+                finally
+                        Encoding.Free;
+                        Output.Free;
+                end;
+
+        finally
+                Input.Free;
+        end;
+
+end;
 
 procedure TFrameDespesas.DisplayMessageCamera(Sender: TObject;
   const APermissions: TArray<string>; const APostProc: TProc);
@@ -78,15 +109,20 @@ begin
 end;
 
 procedure TFrameDespesas.Salvar;
-//var
-//  despesa :TCADASTRO_DESPESAS;
+var
+  despesa :TCADASTRO_DESPESAS;
 begin
-//  despesa := TCADASTRO_DESPESAS.Create;
-//  despesa.DATA_ABASTECIMENTO :=  StrToDate( DATA.Text );
-//  DESPESA.KM_ABASTECIMENTO := StrToFloat( KM_ABASTECIMENTO.Text );
-//  despesa.TOTAL_LITROS := StrToFloat(TOTAL_LITROS.Text);
-//  DESPESA.VALOR_LITROS := strToFloat(VALOR_LITROS.Text);
-//  //DESPESA.IMAGEM_COMPROVANTE :=
+  despesa := TCADASTRO_DESPESAS.Create;
+  despesa.DATA_ABASTECIMENTO :=  StrToDate( DATA.Text );
+  DESPESA.KM_ABASTECIMENTO := StrToFloat( KM_ABASTECIMENTO.Text );
+  despesa.TOTAL_LITROS := StrToFloat(TOTAL_LITROS.Text);
+  DESPESA.VALOR_LITROS := strToFloat(VALOR_LITROS.Text);
+
+
+
+  //DESPESA.IMAGEM_COMPROVANTE := Base64FromBitmap( Image1.Bitmap );
+
+  objAPI.postDespesa(despesa);
 end;
 
 procedure TFrameDespesas.SpeedButton1Click(Sender: TObject);

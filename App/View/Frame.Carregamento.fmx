@@ -127,6 +127,7 @@ object FrameCarregamento: TFrameCarregamento
         Size.Width = 150.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
+        OnExit = PESOExit
       end
     end
     object ItemKmInicio: TListBoxItem
@@ -171,6 +172,8 @@ object FrameCarregamento: TFrameCarregamento
         Size.Width = 150.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
+        KillFocusByReturn = True
+        OnExit = KM_CHEGADAExit
       end
     end
   end

@@ -2,7 +2,7 @@ unit Controller.API;
 
 interface
 
-uses Model.Entity.CADASTRO_CARREGAMENTO,
+uses Model.Entity.CADASTRO_CARREGAMENTO, Model.Entity.CADASTRO_DESPESAS,
  System.JSON, System.Net.HttpClientComponent;
 
 type TApi = class(TObject)
@@ -21,6 +21,8 @@ public
   function getCarregamento(id :Integer) :TCADASTRO_CARREGAMENTO;
   procedure postCarregamento(carregamento :TCADASTRO_CARREGAMENTO);
   procedure putCarregamento(carregamento :TCADASTRO_CARREGAMENTO);
+
+  procedure postDespesa(despesa :TCADASTRO_DESPESAS);
 
 
   constructor Create; overload;
@@ -121,6 +123,15 @@ begin
   Url := BASE_URL + 'carregamento';
   FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
   FNetHTTPRequest.Post( Url, TStringStream.Create(carregamento.ToJsonString)  );
+end;
+
+procedure TApi.postDespesa(despesa: TCADASTRO_DESPESAS);
+var
+  Url, JSonData   : String;
+begin
+  Url := BASE_URL + 'despesa';
+  FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
+  FNetHTTPRequest.Post( Url, TStringStream.Create(despesa.ToJsonString)  );
 end;
 
 procedure TApi.putCarregamento(carregamento: TCADASTRO_CARREGAMENTO);

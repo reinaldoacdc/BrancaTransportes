@@ -37,6 +37,8 @@ type
     SpeedButton2: TSpeedButton;
     procedure SpeedButton1Click(Sender: TObject);
     procedure DATAExit(Sender: TObject);
+    procedure KM_CHEGADAExit(Sender: TObject);
+    procedure PESOExit(Sender: TObject);
   private
     Fid: Integer;
     procedure Carregar;
@@ -83,19 +85,38 @@ begin
   FRETE.SetFocus;
 end;
 
+procedure TFrameCarregamento.KM_CHEGADAExit(Sender: TObject);
+var valor :Double;
+begin
+  valor :=  StrToFloat(KM_CHEGADA.Text) - StrToFloat(KM_INICIO.Text);
+  TOTAL_KM.Text := FloatToStr(valor);
+
+  //Salvar;
+end;
+
+procedure TFrameCarregamento.PESOExit(Sender: TObject);
+var valor :Double;
+begin
+  valor := StrToFloat( PESO.Text ) * StrToFloat(FRETE.Text) ;
+  TOTAL_FRETE.Text := FloatToStr(valor);
+end;
+
 procedure TFrameCarregamento.Salvar;
 var carregamento :TCADASTRO_CARREGAMENTO;
 begin
 //
   carregamento := TCADASTRO_CARREGAMENTO.Create;
   carregamento.CODIGO := Self.Id;
+  carregamento.PRODUTO_CARREGADO := PRODUTO.Text;
   carregamento.DATA_CARREGAMENTO := DATA.Date;
   carregamento.LOCAL_CARREGAMENTO := LOCAL.Text;
   carregamento.PESO_LIQ_CARGA := StrToFloat( PESO.Text );
   carregamento.FRETE_TONELADA := StrToFloat( FRETE.Text );
-  //carregamento.TOTAL_FRETE  := StrToFloat( TOTAL_FRETE.Text );
   carregamento.KM_INICIO :=  StrToFloat( KM_INICIO.Text );
   carregamento.KM_CHEGADA := StrToFloat( KM_CHEGADA.Text );
+
+  carregamento.TOTAL_FRETE  := StrToFloat( TOTAL_FRETE.Text );
+  carregamento.TOTAL_KM_RODADOS     := StrToFloat(TOTAL_KM.Text);
 
   if Self.Id = 0 then
     objApi.postCarregamento(carregamento)

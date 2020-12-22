@@ -35,11 +35,11 @@ begin
   //json.Parse(BytesOf(carga.ToString), 0);  //TJson.ObjectToJsonObject(carga);  //carga.ToJSONObject;
 
   WriteLn('--');
-  WriteLn('carga: - ' + carga.ToString);
-  WriteLn('--');
-  WriteLn('json: - ' + json.ToString);
+  //WriteLn('carga: - ' + carga.ToString);
+  //WriteLn('--');
+  //WriteLn('json: - ' + json.ToString);
   try
-    FDAO.Insert( json );
+    FDAO.Insert( carga );
 
   except on E :Exception do
     Writeln(E.Message);

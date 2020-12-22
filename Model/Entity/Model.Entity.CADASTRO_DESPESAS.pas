@@ -46,8 +46,8 @@ type
     property KM_RODADOS: real read FKM_RODADOS write FKM_RODADOS;
     [Campo('MEDIA')]
     property MEDIA: real read FMEDIA write FMEDIA;
-    [Campo('IMAGEM_COMPROVANTE')]
-    property IMAGEM_COMPROVANTE: string read FIMAGEM_COMPROVANTE write FIMAGEM_COMPROVANTE;
+    //[Campo('IMAGEM_COMPROVANTE')]
+    //property IMAGEM_COMPROVANTE: string read FIMAGEM_COMPROVANTE write FIMAGEM_COMPROVANTE;
 
     function ToJSONObject: TJsonObject;
     function ToJsonString: string;

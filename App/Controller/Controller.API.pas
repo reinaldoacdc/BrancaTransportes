@@ -32,10 +32,8 @@ published
 
 end;
 
-const
-  { TODO : Configurações - Base URL }
-  //BASE_URL = 'http://192.168.0.192:9000/';
-  BASE_URL = 'http://192.168.15.184:9000/';
+//const
+  //BASE_URL = 'http://192.168.15.184:9000/';
 
 var
   objAPI :TApi;
@@ -43,7 +41,7 @@ var
 implementation
 
 uses REST.Json, System.Classes, System.SysUtils, Form.Main,  Data.DB,
-     REST.Response.Adapter;
+     REST.Response.Adapter, uConfigINI;
 
 { TApi }
 
@@ -87,7 +85,7 @@ function TApi.getCarregamento(id: Integer): TCADASTRO_CARREGAMENTO;
 var
   Url, JSonData   : String;
 begin
-  Url := Format(BASE_URL + 'carregamento/%d', [id]);
+  Url := Format(ConfigINI.AcessoBanco.URL_API + '/carregamento/%d', [id]);
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
 
   FJSonObject := TJSONObject.ParseJSONValue(TEncoding.UTF8.GetBytes(JsonData),0) as TJSONObject;
@@ -99,7 +97,7 @@ function TApi.ListaCarregamentos :TCADASTRO_CARREGAMENTO;
 var
   Url, JSonData   : String;
 begin
-  Url := BASE_URL + 'carregamentos';
+  Url := ConfigINI.AcessoBanco.URL_API + '/carregamentos';
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
 
   JsonToDataset(FormMain.ClientDataSet1, JSonData);
@@ -109,7 +107,7 @@ function TApi.Login(username, password: String): Boolean;
 var
   Url, JSonData   : String;
 begin
-  Url := Format(BASE_URL + 'login?user=%s&password=%s', [username, password]);
+  Url := Format(ConfigINI.AcessoBanco.URL_API + '/login?user=%s&password=%s', [username, password]);
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
   FJSonObject := TJSonObject.ParseJSONValue(JSonData) as TJSonObject;
 
@@ -120,7 +118,7 @@ procedure TApi.postCarregamento(carregamento: TCADASTRO_CARREGAMENTO);
 var
   Url, JSonData   : String;
 begin
-  Url := BASE_URL + 'carregamento';
+  Url := ConfigINI.AcessoBanco.URL_API + '/carregamento';
   FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
   FNetHTTPRequest.Post( Url, TStringStream.Create(carregamento.ToJsonString)  );
 end;
@@ -129,7 +127,7 @@ procedure TApi.postDespesa(despesa: TCADASTRO_DESPESAS);
 var
   Url, JSonData   : String;
 begin
-  Url := BASE_URL + 'despesa';
+  Url := ConfigINI.AcessoBanco.URL_API + '/despesa';
   FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
   FNetHTTPRequest.Post( Url, TStringStream.Create(despesa.ToJsonString)  );
 end;
@@ -138,7 +136,7 @@ procedure TApi.putCarregamento(carregamento: TCADASTRO_CARREGAMENTO);
 var
   Url, JSonData   : String;
 begin
-  Url := BASE_URL + 'carregamento';
+  Url := ConfigINI.AcessoBanco.URL_API + '/carregamento';
   FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
   FNetHTTPRequest.Put( Url, TStringStream.Create(carregamento.ToJsonString)  );
 end;

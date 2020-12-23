@@ -52,6 +52,7 @@ var ConfigINI :TConfigIni;
 
 implementation
 
+uses System.IOUtils;
 
 { TConfigIniBase }
 

@@ -1,76 +1,17 @@
 object FrameConfiguracoes: TFrameConfiguracoes
-  Size.Width = 339.000000000000000000
+  Size.Width = 277.000000000000000000
   Size.Height = 398.000000000000000000
   Size.PlatformDefault = False
-  object GridPanelLayout1: TGridPanelLayout
+  object Layout1: TLayout
     Align = Client
-    Size.Width = 339.000000000000000000
+    Size.Width = 277.000000000000000000
     Size.Height = 398.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 0
-    ColumnCollection = <
-      item
-        Value = 16.666666666666670000
-      end
-      item
-        Value = 67.204301075268820000
-      end
-      item
-        Value = 16.129032258064520000
-      end>
-    ControlCollection = <
-      item
-        Column = 1
-        Control = ListBox1
-        Row = 0
-      end
-      item
-        Column = 2
-        Control = Layout1
-        Row = 0
-      end>
-    RowCollection = <
-      item
-        Value = 100.000000000000000000
-      end>
-    object ListBox1: TListBox
-      Align = Top
-      Position.X = 56.500000000000000000
-      Size.Width = 227.822570800781300000
-      Size.Height = 225.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-      DisableFocusEffect = True
-      DefaultItemStyles.ItemStyle = ''
-      DefaultItemStyles.GroupHeaderStyle = ''
-      DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 223.800000000000000000
-      Viewport.Height = 221.000000000000000000
-      object ItemIP: TListBoxItem
-        Size.Width = 223.000000000000000000
-        Size.Height = 44.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        Text = 'IP Servidor'
-        object URL_API: TEdit
-          Touch.InteractiveGestures = [LongTap, DoubleTap]
-          Align = VertCenter
-          TabOrder = 0
-          Position.X = 150.000000000000000000
-          Position.Y = 6.000000000000000000
-          Margins.Left = 150.000000000000000000
-          Margins.Right = 10.000000000000000000
-          Size.Width = 63.000000000000000000
-          Size.Height = 32.000000000000000000
-          Size.PlatformDefault = False
-        end
-      end
-    end
-    object Layout1: TLayout
+    TabOrder = 1
+    object Layout2: TLayout
       Align = Bottom
-      Position.X = 284.322570800781300000
       Position.Y = 348.000000000000000000
-      Size.Width = 54.677429199218750000
+      Size.Width = 277.000000000000000000
       Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -78,7 +19,7 @@ object FrameConfiguracoes: TFrameConfiguracoes
         Align = Right
         Images = ImageList1
         ImageIndex = 0
-        Position.X = 14.677429199218750000
+        Position.X = 237.000000000000000000
         Scale.X = 2.000000000000000000
         Scale.Y = 2.000000000000000000
         Size.Width = 20.000000000000000000
@@ -86,6 +27,28 @@ object FrameConfiguracoes: TFrameConfiguracoes
         Size.PlatformDefault = False
         OnClick = SpeedButton1Click
       end
+    end
+    object Label1: TLabel
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Size.Width = 277.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 20.000000000000000000
+      Text = 'IP Servidor'
+      TabOrder = 2
+      OnClick = ItemIPClick
+    end
+    object URL_API: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      Position.X = 6.000000000000000000
+      Position.Y = 48.000000000000000000
+      Margins.Left = 150.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Size.Width = 259.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
     end
   end
   object ImageList1: TImageList

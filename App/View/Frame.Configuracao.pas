@@ -10,14 +10,14 @@ uses
 
 type
   TFrameConfiguracoes = class(TFrame)
-    GridPanelLayout1: TGridPanelLayout;
-    ListBox1: TListBox;
-    ItemIP: TListBoxItem;
-    URL_API: TEdit;
-    Layout1: TLayout;
-    SpeedButton1: TSpeedButton;
     ImageList1: TImageList;
+    Layout1: TLayout;
+    Layout2: TLayout;
+    SpeedButton1: TSpeedButton;
+    Label1: TLabel;
+    URL_API: TEdit;
     procedure SpeedButton1Click(Sender: TObject);
+    procedure ItemIPClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,10 +30,15 @@ implementation
 
 uses uConfigINI, Form.Main, Frame.Menu;
 
+procedure TFrameConfiguracoes.ItemIPClick(Sender: TObject);
+begin
+  URL_API.Text := ConfigINI.AcessoBanco.URL_API;
+end;
+
 procedure TFrameConfiguracoes.SpeedButton1Click(Sender: TObject);
 begin
   ConfigINI.AcessoBanco.URL_API := URL_API.Text;
-  FormMain.LoadFrame<TFrameMenu>;
+  FormMain.LoadFrame<TFrameMenu>;///
 end;
 
 end.

@@ -15,11 +15,11 @@ type
     ImageList1: TImageList;
     ListBox1: TListBox;
     btnCarregamentos: TListBoxItem;
-    ListBoxItem2: TListBoxItem;
+    listInstitucional: TListBoxItem;
     ListBoxItem3: TListBoxItem;
     ListBoxItem4: TListBoxItem;
     ListBoxItem5: TListBoxItem;
-    ListBoxItem6: TListBoxItem;
+    listConfiguracao: TListBoxItem;
     FrameStand1: TFrameStand;
     Layout1: TLayout;
     ToolBar1: TToolBar;
@@ -37,11 +37,11 @@ type
     ClientDataSet1CODIGO: TIntegerField;
     procedure FormShow(Sender: TObject);
     procedure btnCarregamentosClick(Sender: TObject);
-    procedure ListBoxItem2Click(Sender: TObject);
+    procedure listInstitucionalClick(Sender: TObject);
     procedure ListBoxItem3Click(Sender: TObject);
     procedure ListBoxItem4Click(Sender: TObject);
     procedure ListBoxItem5Click(Sender: TObject);
-    procedure ListBoxItem6Click(Sender: TObject);
+    procedure listConfiguracaoClick(Sender: TObject);
     procedure FrameStand2BeforeShow(const ASender: TSubjectStand;
       const ASubjectInfo: TSubjectInfo);
     procedure FormCreate(Sender: TObject);
@@ -72,7 +72,7 @@ implementation
 
 uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, Frame.Despesa,
   Frame.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
-  Frame.Carregamento;
+  Frame.Carregamento, Frame.Configuracao;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -161,7 +161,7 @@ begin
   objAPI.ListaCarregamentos;
 end;
 
-procedure TFormMain.ListBoxItem2Click(Sender: TObject);
+procedure TFormMain.listInstitucionalClick(Sender: TObject);
 begin
   LoadFrame<TFrameInstitucional>;
 end;
@@ -185,9 +185,9 @@ begin
     LoadFrame<TFrameLogin>;
 end;
 
-procedure TFormMain.ListBoxItem6Click(Sender: TObject);
+procedure TFormMain.listConfiguracaoClick(Sender: TObject);
 begin
-  LoadFrame<TFrameParceiros>;
+  LoadFrame<TFrameConfiguracoes>;
 end;
 
 end.

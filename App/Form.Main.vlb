@@ -10,9 +10,6 @@ Coordinates=10,10,116,213
 [SpeedButton1]
 Coordinates=136,10,84,51
 
-[ListBoxItem2]
-Coordinates=10,276,79,33
-
 [ImageList1]
 Coordinates=66,232,68,33
 
@@ -27,9 +24,6 @@ Coordinates=99,233,79,33
 
 [ListBoxItem5]
 Coordinates=10,233,79,33
-
-[ListBoxItem6]
-Coordinates=298,10,79,33
 
 [ToolBar1]
 Coordinates=230,10,58,33
@@ -72,4 +66,10 @@ Coordinates=494,105,211,33
 
 [ClientDataSet1CODIGO]
 Coordinates=152,80,128,33
+
+[listInstitucional]
+Coordinates=10,276,79,33
+
+[listConfiguracao]
+Coordinates=298,10,79,33
 

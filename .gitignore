@@ -69,3 +69,5 @@ __recovery/
 modules/
 
 App/Android/**
+App/Win32/**
+Server/Win32/**

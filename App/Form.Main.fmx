@@ -113,7 +113,7 @@ object FormMain: TFormMain
         Text = 'Carregamentos'
         OnClick = btnCarregamentosClick
       end
-      object ListBoxItem2: TListBoxItem
+      object listInstitucional: TListBoxItem
         ImageIndex = 1
         Position.Y = 40.000000000000000000
         Size.Width = 250.000000000000000000
@@ -121,7 +121,7 @@ object FormMain: TFormMain
         Size.PlatformDefault = False
         TabOrder = 1
         Text = 'Sobre N'#243's'
-        OnClick = ListBoxItem2Click
+        OnClick = listInstitucionalClick
       end
       object ListBoxItem3: TListBoxItem
         ImageIndex = 2
@@ -153,7 +153,7 @@ object FormMain: TFormMain
         Text = 'Despesas Extra'
         OnClick = ListBoxItem5Click
       end
-      object ListBoxItem6: TListBoxItem
+      object listConfiguracao: TListBoxItem
         ImageIndex = 3
         Position.Y = 200.000000000000000000
         Size.Width = 250.000000000000000000
@@ -161,7 +161,7 @@ object FormMain: TFormMain
         Size.PlatformDefault = False
         TabOrder = 5
         Text = 'Configura'#231#245'es'
-        OnClick = ListBoxItem6Click
+        OnClick = listConfiguracaoClick
       end
     end
   end

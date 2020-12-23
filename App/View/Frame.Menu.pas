@@ -23,7 +23,7 @@ type
     lblNovaDespesa: TLabel;
     btnNovaDespesaExtra: TRectangle;
     lblNovaDespesaExtra: TLabel;
-    Rectangle4: TRectangle;
+    btnConfiguracoes: TRectangle;
     Label4: TLabel;
     ScaledLayout1: TScaledLayout;
     ScrollBox1: TScrollBox;
@@ -31,6 +31,7 @@ type
     procedure btnNovoCarregamentoClick(Sender: TObject);
     procedure btnNovaDespesaClick(Sender: TObject);
     procedure btnNovaDespesaExtraClick(Sender: TObject);
+    procedure btnConfiguracoesClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,7 +43,12 @@ implementation
 {$R *.fmx}
 
 uses Form.Main, Frame.Login, uCarregamentos, Frame.Despesa,
-  Frame.DespesaExtra, Frame.Carregamento;
+  Frame.DespesaExtra, Frame.Carregamento, Frame.Configuracao;
+
+procedure TFrameMenu.btnConfiguracoesClick(Sender: TObject);
+begin
+  FormMain.LoadFrame<TFrameConfiguracoes>;
+end;
 
 procedure TFrameMenu.btnNovaDespesaClick(Sender: TObject);
 begin

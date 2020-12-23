@@ -1051,7 +1051,7 @@ object FrameMenu: TFrameMenu
           Size.Height = 70.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 3
-          object Rectangle4: TRectangle
+          object btnConfiguracoes: TRectangle
             Align = Client
             Fill.Color = claFirebrick
             Margins.Left = 10.000000000000000000
@@ -1061,6 +1061,7 @@ object FrameMenu: TFrameMenu
             Size.Width = 130.000000000000000000
             Size.Height = 50.000000000000000000
             Size.PlatformDefault = False
+            OnClick = btnConfiguracoesClick
             object Label4: TLabel
               Align = Client
               StyledSettings = [Family, Size, Style]

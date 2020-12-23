@@ -25,8 +25,11 @@ type
     procedure setPassword(const Value: String);
     function getServidor: String;
     procedure setServidor(const Value: String);
+    function getURL_API: String;
+    procedure setURL_API(const Value: String);
     public
     published
+        property URL_API :String read getURL_API write setURL_API;
         property Servidor :String read getServidor write setServidor;
         property Caminho :String read getPathDB write setPathDB;
         property Usuario :String read getUsername write setUsername;
@@ -75,6 +78,11 @@ begin
   Result := Owner.ReadString('AcessoBanco', 'Servidor', '');
 end;
 
+function TConfigIniAcessoBanco.getURL_API: String;
+begin
+  Result := Owner.ReadString('AcessoBanco', 'URL_API', '');
+end;
+
 function TConfigIniAcessoBanco.getUsername: String;
 begin
   Result := Owner.ReadString('AcessoBanco', 'Username', '');
@@ -95,6 +103,11 @@ begin
   Owner.WriteString('AcessoBanco', 'Servidor', Value);
 end;
 
+procedure TConfigIniAcessoBanco.setURL_API(const Value: String);
+begin
+  Owner.WriteString('AcessoBanco', 'URL_API', Value);
+end;
+
 procedure TConfigIniAcessoBanco.setUsername(const Value: String);
 begin
   Owner.WriteString('AcessoBanco', 'Username', Value);
@@ -108,7 +121,12 @@ begin
 end;
 
 initialization
+{$IFDEF Android}
+  ConfigINI := TConfigINI.Create(System.IOUtils.TPath.GetDocumentsPath + System.SysUtils.PathDelim + 'config.ini');
+
+{$ELSE}
   ConfigINI := TConfigINI.Create(ExtractFilePath(ParamStr(0)) + 'config.ini');
+{$ENDIF}
 
 finalization
   FreeAndNil(ConfigINI);

@@ -11,6 +11,8 @@ uses
   System.Permissions, System.ImageList, FMX.ImgList;
 
 type
+  TByteArr = array of byte;
+
   TFrameDespesas = class(TFrame)
     PersonalInfoList: TListBox;
     ItemKM: TListBoxItem;
@@ -44,6 +46,7 @@ type
     Fid: Integer;
 
     function Base64FromBitmap(Bitmap: TBitmap): string;
+    function StrToByte(const Value: String): TByteArr;
 
     procedure TakePicturePermissionRequestResult(
         Sender: TObject; const APermissions: TArray<string>;
@@ -67,7 +70,7 @@ uses System.NetEncoding
      {$IFDEF Android}
      , Androidapi.Helpers, Androidapi.JNI.JavaTypes, Androidapi.JNI.Os
      {$ENDIF}
-     , Form.Main, Frame.Menu, Controller.API;
+     , Form.Main, Frame.Menu, Controller.API, UdmMain;
 
 {$R *.fmx}
 
@@ -111,18 +114,34 @@ end;
 procedure TFrameDespesas.Salvar;
 var
   despesa :TCADASTRO_DESPESAS;
+  MemStream: TMemoryStream;
 begin
-  despesa := TCADASTRO_DESPESAS.Create;
-  despesa.DATA_ABASTECIMENTO :=  StrToDate( DATA.Text );
-  DESPESA.KM_ABASTECIMENTO := StrToFloat( KM_ABASTECIMENTO.Text );
-  despesa.TOTAL_LITROS := StrToFloat(TOTAL_LITROS.Text);
-  DESPESA.VALOR_LITROS := strToFloat(VALOR_LITROS.Text);
+//  despesa := TCADASTRO_DESPESAS.Create;
+//  despesa.DATA_ABASTECIMENTO :=  StrToDate( DATA.Text );
+//  DESPESA.KM_ABASTECIMENTO := StrToFloat( KM_ABASTECIMENTO.Text );
+//  despesa.TOTAL_LITROS := StrToFloat(TOTAL_LITROS.Text);
+//  DESPESA.VALOR_LITROS := strToFloat(VALOR_LITROS.Text);
+//  //DESPESA.IMAGEM_COMPROVANTE := Base64FromBitmap( Image1.Bitmap );
+//  objAPI.postDespesa(despesa);
 
 
+  if not(DmMain.tbDespesa.Active) then
+    dmMain.tbDespesa.Open;
 
-  //DESPESA.IMAGEM_COMPROVANTE := Base64FromBitmap( Image1.Bitmap );
+  dmMain.tbDespesa.Insert;
+  dmMain.tbDespesaCODIGO.AsInteger := DmMain.Maximo('CADASTRO_DESPESAS')+1;
+  dmMain.tbDespesaDATA_ABASTECIMENTO.AsDateTime := data.Date;
+  dmmain.tbDespesaKM_ULTIMO_ABASTECIMENTO.AsFloat := StrToFloat(KM_ULTIMO_ABASTECIMENTO.text);
+  dmMain.tbDespesaKM_ABASTECIMENTO.AsFloat := StrToFloat( KM_ABASTECIMENTO.Text );
+  dmMain.tbDespesaTOTAL_LITROS.AsFloat := StrToFloat(TOTAL_LITROS.Text);
+  dmMain.tbDespesaVALOR_LITROS.AsFloat := strToFloat(VALOR_LITROS.Text);
+  dmmain.tbDespesaKM_RODADOS.AsFloat := StrToFloat( KM_ABASTECIMENTO.Text );
+  dmMain.tbDespesaIMAGEM_COMPROVANTE.Value := BytesOf ( Base64FromBitmap( Image1.Bitmap ) );
+  dmMain.tbDespesa.Post;
 
-  objAPI.postDespesa(despesa);
+  dmMain.FDConnection1.Commit;
+
+
 end;
 
 procedure TFrameDespesas.SpeedButton1Click(Sender: TObject);
@@ -145,6 +164,21 @@ begin
                                          DisplayMessageCamera
                                          );
   {$ENDIF}
+end;
+
+function TFrameDespesas.StrToByte(const Value: String): TByteArr;
+var
+
+    I: integer;
+
+begin
+
+    SetLength(Result, Length(Value));
+
+    for I := 0 to Length(Value) - 1 do
+
+        Result[I] := ord(Value[I + 1]) - 48;
+
 end;
 
 procedure TFrameDespesas.TakePhotoFromCameraAction1DidFinishTaking(

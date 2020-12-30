@@ -72,7 +72,7 @@ implementation
 
 uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, Frame.Despesa,
   Frame.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
-  Frame.Carregamento, Frame.Configuracao;
+  Frame.Carregamento, Frame.Configuracao, UdmMain;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -98,7 +98,8 @@ begin
   FrameStand2.HideAndCloseAll();
   LFrameInfo := FrameStand2.New<TDatasetFrame>;
 
-  LFrameInfo.Frame.DataSet := ClientDataSet;
+
+  LFrameInfo.Frame.DataSet :=  ClientDataSet;
   LFrameInfo.Frame.ItemTextField := 'LOCAL_CARREGAMENTO';
   LFrameInfo.Frame.DetailField := 'PRODUTO_CARREGADO';
 
@@ -158,7 +159,21 @@ begin
   else
     ClientDataSet1.EmptyDataSet;
 
-  objAPI.ListaCarregamentos;
+  //objAPI.ListaCarregamentos;
+
+  DmMain.tbCarregamento.Open;
+  DmMain.tbCarregamento.First;
+  WHILE NOT DmMain.tbCarregamento.Eof do
+  begin
+    ClientDataSet1.Insert;
+    ClientDataSet1ID.AsInteger := DmMain.tbCarregamentoCODIGO.AsInteger;
+    ClientDataSet1CODIGO.AsInteger := DmMain.tbCarregamentoCODIGO.AsInteger;
+    ClientDataSet1LOCAL_CARREGAMENTO.AsString := DmMain.tbCarregamentoLOCAL_CARREGAMENTO.AsString;
+    ClientDataSet1PRODUTO_CARREGADO.AsString := DmMain.tbCarregamentoPRODUTO_CARREGADO.AsString;
+    ClientDataSet1.Post;
+
+    DmMain.tbCarregamento.Next;
+  end;
 end;
 
 procedure TFormMain.listInstitucionalClick(Sender: TObject);

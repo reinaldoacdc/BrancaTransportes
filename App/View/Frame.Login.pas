@@ -44,13 +44,13 @@ end;
 
 procedure TFrameLogin.SignupButtonClick(Sender: TObject);
 begin
-  if objAPI.Login(NameEdit.Text, PasswordEdit.Text) then
-  begin
+//  if objAPI.Login(NameEdit.Text, PasswordEdit.Text) then
+//  begin
     FormMain.LoginSucessfull := True;
     FormMain.LoadFrame<TFrameMenu>;
-  end
-  else
-    label1.Text := 'Login ou senha inválidos.';
+//  end
+//  else
+//    label1.Text := 'Login ou senha inválidos.';
 
 end;
 

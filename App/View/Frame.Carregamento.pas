@@ -54,22 +54,37 @@ implementation
 
 {$R *.fmx}
 
-uses Controller.API, Form.Main, Frame.Menu, Model.Entity.CADASTRO_CARREGAMENTO;
+uses Controller.API, Form.Main, Frame.Menu, Model.Entity.CADASTRO_CARREGAMENTO,
+  UdmMain;
 
 procedure TFrameCarregamento.Carregar;
 var carregamento :TCADASTRO_CARREGAMENTO;
 begin
   if Self.Id > 0 then
   begin
-    carregamento :=  objAPI.getCarregamento(Self.Id);
+//    carregamento :=  objAPI.getCarregamento(Self.Id);
+//
+//    LOCAL.Text      := carregamento.LOCAL_CARREGAMENTO;
+//    PRODUTO.Text    := carregamento.PRODUTO_CARREGADO;
+//    DATA.Text       := DateToStr( carregamento.DATA_CARREGAMENTO );
+//    FRETE.Text      := FloatToStr( carregamento.FRETE_TONELADA );
+//    PESO.Text       := FloatToStr( carregamento.PESO_LIQ_CARGA );
+//    KM_INICIO.Text  := FloatToStr( carregamento.KM_INICIO );
+//    KM_CHEGADA.Text := FloatToStr( carregamento.KM_CHEGADA );
 
-    LOCAL.Text      := carregamento.LOCAL_CARREGAMENTO;
-    PRODUTO.Text    := carregamento.PRODUTO_CARREGADO;
-    DATA.Text       := DateToStr( carregamento.DATA_CARREGAMENTO );
-    FRETE.Text      := FloatToStr( carregamento.FRETE_TONELADA );
-    PESO.Text       := FloatToStr( carregamento.PESO_LIQ_CARGA );
-    KM_INICIO.Text  := FloatToStr( carregamento.KM_INICIO );
-    KM_CHEGADA.Text := FloatToStr( carregamento.KM_CHEGADA );
+    DmMain.qrCarregamento.Close;
+    DmMain.qrCarregamento.Params[0].Value := Self.Id;
+    DmMain.qrCarregamento.Open;
+
+    LOCAL.Text := Dmmain.qrCarregamentoLOCAL_CARREGAMENTO.AsString;
+    PRODUTO.Text := DmMain.qrCarregamentoPRODUTO_CARREGADO.AsString;
+    DATA.Date  := DmMain.qrCarregamentoDATA_CARREGAMENTO.AsDateTime;
+    FRETE.Text := DmMain.qrCarregamentoFRETE_TONELADA.AsString;
+    peso.Text := DmMain.qrCarregamentoPESO_LIQ_CARGA.AsString;
+    KM_INICIO.Text := DmMain.qrCarregamentoKM_INICIO.AsString;
+    KM_CHEGADA.Text := DmMain.qrCarregamentoKM_CHEGADA.AsString;
+
+
   end;
 end;
 
@@ -90,8 +105,6 @@ var valor :Double;
 begin
   valor :=  StrToFloat(KM_CHEGADA.Text) - StrToFloat(KM_INICIO.Text);
   TOTAL_KM.Text := FloatToStr(valor);
-
-  //Salvar;
 end;
 
 procedure TFrameCarregamento.PESOExit(Sender: TObject);
@@ -102,26 +115,55 @@ begin
 end;
 
 procedure TFrameCarregamento.Salvar;
-var carregamento :TCADASTRO_CARREGAMENTO;
+var valor :Double;
+//var carregamento :TCADASTRO_CARREGAMENTO;
 begin
+////
+//  carregamento := TCADASTRO_CARREGAMENTO.Create;
+//  carregamento.CODIGO := Self.Id;
+//  carregamento.PRODUTO_CARREGADO := PRODUTO.Text;
+//  carregamento.DATA_CARREGAMENTO := DATA.Date;
+//  carregamento.LOCAL_CARREGAMENTO := LOCAL.Text;
+//  carregamento.PESO_LIQ_CARGA := StrToFloat( PESO.Text );
+//  carregamento.FRETE_TONELADA := StrToFloat( FRETE.Text );
+//  carregamento.KM_INICIO :=  StrToFloat( KM_INICIO.Text );
+//  carregamento.KM_CHEGADA := StrToFloat( KM_CHEGADA.Text );
 //
-  carregamento := TCADASTRO_CARREGAMENTO.Create;
-  carregamento.CODIGO := Self.Id;
-  carregamento.PRODUTO_CARREGADO := PRODUTO.Text;
-  carregamento.DATA_CARREGAMENTO := DATA.Date;
-  carregamento.LOCAL_CARREGAMENTO := LOCAL.Text;
-  carregamento.PESO_LIQ_CARGA := StrToFloat( PESO.Text );
-  carregamento.FRETE_TONELADA := StrToFloat( FRETE.Text );
-  carregamento.KM_INICIO :=  StrToFloat( KM_INICIO.Text );
-  carregamento.KM_CHEGADA := StrToFloat( KM_CHEGADA.Text );
+//  carregamento.TOTAL_FRETE  := StrToFloat( TOTAL_FRETE.Text );
+//  carregamento.TOTAL_KM_RODADOS     := StrToFloat(TOTAL_KM.Text);
+//
+//  if Self.Id = 0 then
+//    objApi.postCarregamento(carregamento)
+//  else
+//    objApi.putCarregamento(carregamento);
 
-  carregamento.TOTAL_FRETE  := StrToFloat( TOTAL_FRETE.Text );
-  carregamento.TOTAL_KM_RODADOS     := StrToFloat(TOTAL_KM.Text);
 
-  if Self.Id = 0 then
-    objApi.postCarregamento(carregamento)
-  else
-    objApi.putCarregamento(carregamento);
+
+  valor := StrToFloat( PESO.Text ) * StrToFloat(FRETE.Text) ;
+  TOTAL_FRETE.Text := FloatToStr(valor);
+
+  valor :=  StrToFloat(KM_CHEGADA.Text) - StrToFloat(KM_INICIO.Text);
+  TOTAL_KM.Text := FloatToStr(valor);
+
+  if not(DmMain.tbCarregamento.Active) then
+    dmMain.tbCarregamento.Open;
+
+
+  DMMAIN.tbCarregamento.Insert;
+
+  DmMain.tbCarregamentoCODIGO.AsInteger := DmMain.Maximo('CADASTRO_CARREGAMENTO')+1;
+  DMmAIN.tbCarregamentoDATA_CARREGAMENTO.AsDateTime := data.Date;
+  DMmAIN.tbCarregamentoLOCAL_CARREGAMENTO.AsString  := LOCAL.Text;
+  DmMain.tbCarregamentoPESO_LIQ_CARGA.AsFloat       := StrToFloat( PESO.Text );
+  DmMain.tbCarregamentoFRETE_TONELADA.AsFloat       := StrToFloat( FRETE.Text );
+  DmMain.tbCarregamentoTOTAL_FRETE.AsFloat          := StrToFloat( TOTAL_FRETE.Text );
+  DmMain.tbCarregamentoKM_INICIO.AsFloat            := StrToFloat( KM_INICIO.Text );
+  DmMain.tbCarregamentoKM_CHEGADA.AsFloat           := StrToFloat( KM_CHEGADA.Text );
+  DmMain.tbCarregamentoTOTAL_KM_RODADOS.AsFloat     := StrToFloat(TOTAL_KM.Text);
+  DmMain.tbCarregamentoPRODUTO_CARREGADO.AsString   := PRODUTO.Text;
+
+  DMMAIN.tbCarregamento.Post;
+  DmMain.FDConnection1.Commit;
 end;
 
 procedure TFrameCarregamento.SpeedButton1Click(Sender: TObject);

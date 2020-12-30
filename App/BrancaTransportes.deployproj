@@ -5,7 +5,7 @@
     </ProjectExtensions>
     <PropertyGroup>
         <DeviceId Condition="'$(Platform)'=='Android'">4200021b03b4b4ff</DeviceId>
-        <DeviceId Condition="'$(Platform)'=='Android64'">4200021b03b4b4ff</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSDevice32'"/>
         <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSSimulator'">iPhone5</DeviceId>
@@ -330,6 +330,15 @@
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
             <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="DADOS.db" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>BrancaTransportes\assets\internal\</RemoteDir>
+            <RemoteName>DADOS.db</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>

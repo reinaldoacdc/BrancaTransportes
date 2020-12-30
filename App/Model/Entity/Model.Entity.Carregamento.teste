@@ -1,0 +1,55 @@
+unit Model.Entity.Carregamento;
+
+interface
+
+uses
+  SimpleAttributes;
+
+type
+  [Tabela('CADASTRO_CARREGAMENTO')]
+  TCARREGAMENTO = class
+  private
+    FCODIGO :Integer;
+
+    function GetCODIGO: Integer;
+    procedure SetCODIGO(const Value: Integer);
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Limpar;
+
+    property CODIGO: Integer read GetFCODIGO write SetFCODIGO;
+  end;
+
+
+implementation
+
+{ TCARREGAMENTO }
+
+constructor TCARREGAMENTO.Create;
+begin
+  Limpar;
+end;
+
+destructor TCARREGAMENTO.Destroy;
+begin
+
+  inherited;
+end;
+
+function TCARREGAMENTO.GetFCODIGO: Integer;
+begin
+  Result := FCODIGO;
+end;
+
+procedure TCARREGAMENTO.Limpar;
+begin
+  //
+end;
+
+procedure TCARREGAMENTO.SetFCODIGO(const Value: Integer);
+begin
+  FCODIGO := Value;
+end;
+
+end.

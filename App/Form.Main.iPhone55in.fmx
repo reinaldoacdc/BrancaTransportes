@@ -1,0 +1,23 @@
+inherited FormMain_iPhone55in: TFormMain_iPhone55in
+  ClientHeight = 716
+  ClientWidth = 414
+  DesignerMasterStyle = 3
+  inherited Layout1: TLayout
+    Size.Width = 414.000000000000000000
+    Size.Height = 672.000000000000000000
+  end
+  inherited ToolBar1: TToolBar
+    Size.Width = 414.000000000000000000
+    Size.Height = 44.000000000000000000
+    inherited SpeedButton1: TSpeedButton
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+    end
+  end
+  inherited MultiView1: TMultiView
+    inherited ListBox1: TListBox
+      Viewport.Width = 250.000000000000000000
+      Viewport.Height = 400.000000000000000000
+    end
+  end
+end

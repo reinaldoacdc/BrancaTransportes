@@ -72,6 +72,7 @@ object FrameCarregamento: TFrameCarregamento
       TabOrder = 2
       Text = 'Data'
       object DATA: TDateEdit
+        Date = 44195.000000000000000000
         TodayDefault = True
         Align = VertCenter
         Margins.Left = 150.000000000000000000

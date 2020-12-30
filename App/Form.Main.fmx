@@ -82,17 +82,16 @@ object FormMain: TFormMain
   end
   object MultiView1: TMultiView
     MasterButton = SpeedButton1
-    Mode = Popover
     NavigationPaneOptions.CollapsedWidth = 161.000000000000000000
     Size.Width = 250.000000000000000000
-    Size.Height = 400.000000000000000000
+    Size.Height = 578.000000000000000000
     Size.PlatformDefault = False
     Visible = False
     TabOrder = 1
     object ListBox1: TListBox
       Align = Client
       Size.Width = 250.000000000000000000
-      Size.Height = 400.000000000000000000
+      Size.Height = 578.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'transparentlistboxstyle'
       TabOrder = 0
@@ -103,7 +102,7 @@ object FormMain: TFormMain
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
       Viewport.Width = 250.000000000000000000
-      Viewport.Height = 400.000000000000000000
+      Viewport.Height = 578.000000000000000000
       object btnCarregamentos: TListBoxItem
         ImageIndex = 0
         Size.Width = 250.000000000000000000

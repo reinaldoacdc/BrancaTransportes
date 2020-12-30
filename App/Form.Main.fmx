@@ -162,6 +162,26 @@ object FormMain: TFormMain
         Text = 'Configura'#231#245'es'
         OnClick = btnConfiguracaoClick
       end
+      object btnMenu: TListBoxItem
+        ImageIndex = 6
+        Position.Y = 240.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Menu'
+        OnClick = btnMenuClick
+      end
+      object btnSincronizar: TListBoxItem
+        ImageIndex = 7
+        Position.Y = 280.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Sincronizar'
+        OnClick = btnSincronizarClick
+      end
     end
   end
   object ImageList1: TImageList
@@ -347,6 +367,72 @@ object FormMain: TFormMain
               '_alt_black_18dp.png'
           end>
         Name = 'baseline_add_location_alt_black_18dp'
+      end
+      item
+        MultiResBitmap.Height = 36
+        MultiResBitmap.Width = 36
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 36
+            Height = 36
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+              98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              01FA494441545847EDD7BF2B45611CC7F14B068A3218288AA20C14455136CA60
+              A00C1645190C141B9BC1201342297F8081C26CB1190C1465A0181483325014C5
+              FB73CF39B7E7DE9E73B93CC78F3A9F7A79CE39F7D773CEF93E8FE724E2C48913
+              71F2FC362C6528F6369379C5B5B7F9A914A0D2DB4CE50E8FDEE6C7D18727B087
+              7BBC593CE0107368821975A013EB3881EDF372836D8CC23CE1544AB18017D8BE
+              209B03B4401D39F38FE54227388B42A43203DB9B5DD00F5E1AB46F7B9FFA90C8
+              D71FC7518DADA00F5528418D41FB15D0EBFBB0C6C5153A422F7289F9BBCEAF50
+              3376BDCDAF278A5B1644534607863274A31659E3E29629F5D06855F1DADE6352
+              22BD65CA0026519DDCF37295E119A189E2961D631AAAA92298234C8263D6B8EE
+              D02AD49179DCA20D41ED8CF96D0FD226415B5CD6D032FE540D8DC35643A77E9B
+              F51F6B9435D408B386B4AF3698B9AD71DDA1250435A465865943237E1BD75058
+              0D5DF8EDAFD550E63C54E7B73F5A43E63CA48E85CDCABA52D6B8EE900AF95B89
+              E296290DD0DA7C135A2705AB45D17A7C037ADDACB5B4B818651ACAFA9173E358
+              2E9C8F329DFD223E5CEB648BAD431A965BD032A20BC12809E8985EDB8159B4E5
+              7EABE8DF843A378856989F6FC730D6105ADC9AD074BFFBA167ABCF46CF5453D0
+              93C413B438CBF50A6905A9E738F384BE1D7D99D32F8CF34F9248BC03228421DB
+              943B9C3B0000000049454E44AE426082}
+            FileName = 
+              'C:\Projetos\BrancaTransportes\App\res\Material\baseline_menu_boo' +
+              'k_black_18dp.png'
+          end>
+        Name = 'baseline_menu_book_black_18dp'
+      end
+      item
+        MultiResBitmap.Height = 36
+        MultiResBitmap.Width = 36
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 36
+            Height = 36
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+              98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              01BB494441545847ED97A12F466114873F922008822008822008368260130436
+              914D10455110FC0966FE0041100401994D10444110D8D8D804814D10F83DF3BE
+              7676F7EDBDF7DCFB5DFBC27DB667EFB7EBBBE79E7BBCDE73B41A1A1A6AA627AC
+              5E06E5825C94C37248C2937C90A7F24C7EC8766CC8DDDF8FD5E0C17BF24B7EE7
+              F82EB765BFB4900C3FAF0C157993D907E7F9282725C464B01204CA56E54A727D
+              5A8E0467E496BC91F6BB546B3F73AD344BD206BA9373328F3599AA6829786BDE
+              2E06B9946CE8A28CC96769138996C296F9560E480F76CF6475332A6D00F68A87
+              5432E86653C69B4FB8E0202F1974C37E8937AF72A120459241379C1FF1664EE3
+              7F21D53AEC5B946D316E7AC3DA35A4127A092BC4E6593BA984E8DC91A9B056C1
+              6E76CEB7B6A412628488AC84B50A36C645585D4CC8F8463456DA405966658CF5
+              29BD27FE1F1C883110DDBD4F7AE1E1F732C6D991A5199776EC38929EA418CEEC
+              01FB2A3DCDB92DEB3206442A55E4D747EFA321DB7BE76547A0CC3630553B94CC
+              4AF648E0F3B23C96F6FBC85F5947A1524566E9AC0C6924590BEC29BBD15392FC
+              8164C8AB1D8E04FEA3B896762264D39E4BE66AE6A98686862EA3D5FA015347C9
+              EF2E7E28BC0000000049454E44AE426082}
+            FileName = 
+              'C:\Projetos\BrancaTransportes\App\res\Material\baseline_refresh_' +
+              'black_18dp.png'
+          end>
+        Name = 'baseline_refresh_black_18dp'
       end>
     Destination = <
       item
@@ -393,6 +479,22 @@ object FormMain: TFormMain
         Layers = <
           item
             Name = 'baseline_add_location_alt_black_18dp'
+            SourceRect.Right = 36.000000000000000000
+            SourceRect.Bottom = 36.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'baseline_menu_book_black_18dp'
+            SourceRect.Right = 36.000000000000000000
+            SourceRect.Bottom = 36.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'baseline_refresh_black_18dp'
             SourceRect.Right = 36.000000000000000000
             SourceRect.Bottom = 36.000000000000000000
           end>

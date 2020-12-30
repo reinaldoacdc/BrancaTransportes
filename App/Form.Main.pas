@@ -35,6 +35,8 @@ type
     ClientDataSet1LOCAL_CARREGAMENTO: TStringField;
     ClientDataSet1PRODUTO_CARREGADO: TStringField;
     ClientDataSet1CODIGO: TIntegerField;
+    btnMenu: TListBoxItem;
+    btnSincronizar: TListBoxItem;
     procedure FormShow(Sender: TObject);
     procedure btnCarregamentosClick(Sender: TObject);
     procedure btnInsitucionalClick(Sender: TObject);
@@ -45,6 +47,8 @@ type
     procedure FrameStand2BeforeShow(const ASender: TSubjectStand;
       const ASubjectInfo: TSubjectInfo);
     procedure FormCreate(Sender: TObject);
+    procedure btnMenuClick(Sender: TObject);
+    procedure btnSincronizarClick(Sender: TObject);
   private
     FloginSucessfull: Boolean;
     FidCarregamentoSelecionado: Integer;
@@ -72,7 +76,7 @@ implementation
 
 uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, Frame.Despesa,
   Frame.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
-  Frame.Carregamento, Frame.Configuracao, UdmMain;
+  Frame.Carregamento, Frame.Configuracao, UdmMain, Frame.Sincronismo;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -181,9 +185,19 @@ begin
   LoadFrame<TFrameInstitucional>;
 end;
 
+procedure TFormMain.btnMenuClick(Sender: TObject);
+begin
+  LoadFrame<TFrameMenu>;
+end;
+
 procedure TFormMain.btnParceirosClick(Sender: TObject);
 begin
   LoadFrame<TFrameParceiros>;
+end;
+
+procedure TFormMain.btnSincronizarClick(Sender: TObject);
+begin
+  LoadFrame<TFrameSincronismo>;
 end;
 
 procedure TFormMain.btnDespesasClick(Sender: TObject);

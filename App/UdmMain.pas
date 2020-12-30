@@ -48,6 +48,15 @@ type
     tbDespesaKM_RODADOS: TBCDField;
     tbDespesaMEDIA: TBCDField;
     tbDespesaIMAGEM_COMPROVANTE: TBlobField;
+    tbDespesaExtra: TFDQuery;
+    tbDespesaExtraCODIGO: TIntegerField;
+    tbDespesaExtraFORNECEDOR: TStringField;
+    tbDespesaExtraVALOR: TBCDField;
+    tbDespesaExtraDESCRICAO_SERVICO: TStringField;
+    tbDespesaExtraLOCAL: TStringField;
+    tbDespesaExtraKM_MANUTENCAO: TBCDField;
+    tbDespesaExtraCIDADE_MANUTECAO: TStringField;
+    tbDespesaExtraIMAGEM_COMPROVANTE: TBlobField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

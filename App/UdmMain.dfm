@@ -7,6 +7,7 @@ object DmMain: TDmMain
     Params.Strings = (
       'DriverID=SQLite'
       'Database=C:\Projetos\BrancaTransportes\App\DADOS.db')
+    Connected = True
     LoginPrompt = False
     Left = 88
     Top = 48
@@ -208,6 +209,54 @@ object DmMain: TDmMain
       Size = 2
     end
     object tbDespesaIMAGEM_COMPROVANTE: TBlobField
+      FieldName = 'IMAGEM_COMPROVANTE'
+      Origin = 'IMAGEM_COMPROVANTE'
+    end
+  end
+  object tbDespesaExtra: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from CADASTRO_DESPESAS_EXTRAS')
+    Left = 192
+    Top = 144
+    object tbDespesaExtraCODIGO: TIntegerField
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      Required = True
+    end
+    object tbDespesaExtraFORNECEDOR: TStringField
+      FieldName = 'FORNECEDOR'
+      Origin = 'FORNECEDOR'
+      Size = 80
+    end
+    object tbDespesaExtraVALOR: TBCDField
+      FieldName = 'VALOR'
+      Origin = 'VALOR'
+      Precision = 15
+      Size = 2
+    end
+    object tbDespesaExtraDESCRICAO_SERVICO: TStringField
+      FieldName = 'DESCRICAO_SERVICO'
+      Origin = 'DESCRICAO_SERVICO'
+      Size = 150
+    end
+    object tbDespesaExtraLOCAL: TStringField
+      FieldName = 'LOCAL'
+      Origin = 'LOCAL'
+      Size = 80
+    end
+    object tbDespesaExtraKM_MANUTENCAO: TBCDField
+      FieldName = 'KM_MANUTENCAO'
+      Origin = 'KM_MANUTENCAO'
+      Precision = 15
+      Size = 2
+    end
+    object tbDespesaExtraCIDADE_MANUTECAO: TStringField
+      FieldName = 'CIDADE_MANUTECAO'
+      Origin = 'CIDADE_MANUTECAO'
+      Size = 80
+    end
+    object tbDespesaExtraIMAGEM_COMPROVANTE: TBlobField
       FieldName = 'IMAGEM_COMPROVANTE'
       Origin = 'IMAGEM_COMPROVANTE'
     end

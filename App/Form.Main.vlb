@@ -16,15 +16,6 @@ Coordinates=66,232,68,33
 [Layout1]
 Coordinates=277,233,53,33
 
-[ListBoxItem3]
-Coordinates=188,233,79,33
-
-[ListBoxItem4]
-Coordinates=99,233,79,33
-
-[ListBoxItem5]
-Coordinates=10,233,79,33
-
 [ToolBar1]
 Coordinates=230,10,58,33
 
@@ -67,9 +58,18 @@ Coordinates=494,105,211,33
 [ClientDataSet1CODIGO]
 Coordinates=152,80,128,33
 
-[listInstitucional]
-Coordinates=10,276,89,33
+[btnParceiros]
+Coordinates=188,233,79,33
 
-[listConfiguracao]
+[btnDespesas]
+Coordinates=99,233,79,33
+
+[btnDespesaExtra]
+Coordinates=10,233,79,33
+
+[btnConfiguracao]
 Coordinates=298,10,95,33
+
+[btnInsitucional]
+Coordinates=10,276,89,33
 

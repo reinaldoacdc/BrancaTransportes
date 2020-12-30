@@ -15,11 +15,11 @@ type
     ImageList1: TImageList;
     ListBox1: TListBox;
     btnCarregamentos: TListBoxItem;
-    listInstitucional: TListBoxItem;
-    ListBoxItem3: TListBoxItem;
-    ListBoxItem4: TListBoxItem;
-    ListBoxItem5: TListBoxItem;
-    listConfiguracao: TListBoxItem;
+    btnInsitucional: TListBoxItem;
+    btnParceiros: TListBoxItem;
+    btnDespesas: TListBoxItem;
+    btnDespesaExtra: TListBoxItem;
+    btnConfiguracao: TListBoxItem;
     FrameStand1: TFrameStand;
     Layout1: TLayout;
     ToolBar1: TToolBar;
@@ -37,11 +37,11 @@ type
     ClientDataSet1CODIGO: TIntegerField;
     procedure FormShow(Sender: TObject);
     procedure btnCarregamentosClick(Sender: TObject);
-    procedure listInstitucionalClick(Sender: TObject);
-    procedure ListBoxItem3Click(Sender: TObject);
-    procedure ListBoxItem4Click(Sender: TObject);
-    procedure ListBoxItem5Click(Sender: TObject);
-    procedure listConfiguracaoClick(Sender: TObject);
+    procedure btnInsitucionalClick(Sender: TObject);
+    procedure btnParceirosClick(Sender: TObject);
+    procedure btnDespesasClick(Sender: TObject);
+    procedure btnDespesaExtraClick(Sender: TObject);
+    procedure btnConfiguracaoClick(Sender: TObject);
     procedure FrameStand2BeforeShow(const ASender: TSubjectStand;
       const ASubjectInfo: TSubjectInfo);
     procedure FormCreate(Sender: TObject);
@@ -176,31 +176,31 @@ begin
   end;
 end;
 
-procedure TFormMain.listInstitucionalClick(Sender: TObject);
+procedure TFormMain.btnInsitucionalClick(Sender: TObject);
 begin
   LoadFrame<TFrameInstitucional>;
 end;
 
-procedure TFormMain.ListBoxItem3Click(Sender: TObject);
+procedure TFormMain.btnParceirosClick(Sender: TObject);
 begin
   LoadFrame<TFrameParceiros>;
 end;
 
-procedure TFormMain.ListBoxItem4Click(Sender: TObject);
+procedure TFormMain.btnDespesasClick(Sender: TObject);
 begin
   LoadFrame<TFrameDespesas>;
   if not LoginSucessfull then
     LoadFrame<TFrameLogin>;
 end;
 
-procedure TFormMain.ListBoxItem5Click(Sender: TObject);
+procedure TFormMain.btnDespesaExtraClick(Sender: TObject);
 begin
   LoadFrame<TFrameDespesasExtras>;
   if not LoginSucessfull then
     LoadFrame<TFrameLogin>;
 end;
 
-procedure TFormMain.listConfiguracaoClick(Sender: TObject);
+procedure TFormMain.btnConfiguracaoClick(Sender: TObject);
 begin
   LoadFrame<TFrameConfiguracoes>;
 end;

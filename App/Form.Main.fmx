@@ -112,7 +112,7 @@ object FormMain: TFormMain
         Text = 'Carregamentos'
         OnClick = btnCarregamentosClick
       end
-      object listInstitucional: TListBoxItem
+      object btnInsitucional: TListBoxItem
         ImageIndex = 1
         Position.Y = 40.000000000000000000
         Size.Width = 250.000000000000000000
@@ -120,9 +120,9 @@ object FormMain: TFormMain
         Size.PlatformDefault = False
         TabOrder = 1
         Text = 'Sobre N'#243's'
-        OnClick = listInstitucionalClick
+        OnClick = btnInsitucionalClick
       end
-      object ListBoxItem3: TListBoxItem
+      object btnParceiros: TListBoxItem
         ImageIndex = 2
         Position.Y = 80.000000000000000000
         Size.Width = 250.000000000000000000
@@ -130,9 +130,9 @@ object FormMain: TFormMain
         Size.PlatformDefault = False
         TabOrder = 2
         Text = 'Parceiros'
-        OnClick = ListBoxItem3Click
+        OnClick = btnParceirosClick
       end
-      object ListBoxItem4: TListBoxItem
+      object btnDespesas: TListBoxItem
         ImageIndex = 4
         Position.Y = 120.000000000000000000
         Size.Width = 250.000000000000000000
@@ -140,9 +140,9 @@ object FormMain: TFormMain
         Size.PlatformDefault = False
         TabOrder = 3
         Text = 'Despesas'
-        OnClick = ListBoxItem4Click
+        OnClick = btnDespesasClick
       end
-      object ListBoxItem5: TListBoxItem
+      object btnDespesaExtra: TListBoxItem
         ImageIndex = 5
         Position.Y = 160.000000000000000000
         Size.Width = 250.000000000000000000
@@ -150,9 +150,9 @@ object FormMain: TFormMain
         Size.PlatformDefault = False
         TabOrder = 4
         Text = 'Despesas Extra'
-        OnClick = ListBoxItem5Click
+        OnClick = btnDespesaExtraClick
       end
-      object listConfiguracao: TListBoxItem
+      object btnConfiguracao: TListBoxItem
         ImageIndex = 3
         Position.Y = 200.000000000000000000
         Size.Width = 250.000000000000000000
@@ -160,7 +160,7 @@ object FormMain: TFormMain
         Size.PlatformDefault = False
         TabOrder = 5
         Text = 'Configura'#231#245'es'
-        OnClick = listConfiguracaoClick
+        OnClick = btnConfiguracaoClick
       end
     end
   end

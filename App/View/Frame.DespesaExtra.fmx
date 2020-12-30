@@ -10,7 +10,7 @@ object FrameDespesasExtras: TFrameDespesasExtras
     Position.X = 5.000000000000000000
     Position.Y = 30.000000000000000000
     Size.Width = 310.000000000000000000
-    Size.Height = 347.000000000000000000
+    Size.Height = 307.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'transparentlistboxstyle'
     TabOrder = 0
@@ -20,12 +20,12 @@ object FrameDespesasExtras: TFrameDespesasExtras
     DefaultItemStyles.GroupFooterStyle = ''
     GroupingKind = Grouped
     Viewport.Width = 310.000000000000000000
-    Viewport.Height = 347.000000000000000000
+    Viewport.Height = 307.000000000000000000
     object itemFornecedor: TListBoxItem
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 4
+      TabOrder = 5
       Text = 'Fornecedor'
       object FORNECEDOR: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -45,7 +45,7 @@ object FrameDespesasExtras: TFrameDespesasExtras
       Size.Width = 310.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 5
+      TabOrder = 6
       Text = 'Valor'
       object VALOR: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -67,7 +67,7 @@ object FrameDespesasExtras: TFrameDespesasExtras
       Size.PlatformDefault = False
       TabOrder = 3
       Text = 'Servi'#231'o'
-      object Edit1: TEdit
+      object SERVICO: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
@@ -140,11 +140,22 @@ object FrameDespesasExtras: TFrameDespesasExtras
         Size.PlatformDefault = False
       end
     end
-    object SpeedButton2: TSpeedButton
-      Position.X = 88.000000000000000000
-      Position.Y = 288.000000000000000000
-      StyleLookup = 'cameratoolbuttonbordered'
-      Text = 'SpeedButton2'
+    object ListBoxItem2: TListBoxItem
+      Position.Y = 264.000000000000000000
+      Size.Width = 310.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Comprovante'
+      object SpeedButton3: TSpeedButton
+        Align = Right
+        Position.X = 230.000000000000000000
+        Size.Width = 80.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'cameratoolbutton'
+        OnClick = SpeedButton3Click
+      end
     end
   end
   object Layout1: TLayout
@@ -166,6 +177,15 @@ object FrameDespesasExtras: TFrameDespesasExtras
       Size.PlatformDefault = False
       OnClick = SpeedButton1Click
     end
+  end
+  object Image1: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Client
+    Size.Width = 320.000000000000000000
+    Size.Height = 144.000000000000000000
+    Size.PlatformDefault = False
   end
   object ImageList1: TImageList
     Source = <
@@ -209,5 +229,12 @@ object FrameDespesasExtras: TFrameDespesasExtras
       end>
     Left = 240
     Top = 264
+  end
+  object ActionList1: TActionList
+    Left = 224
+    Top = 208
+    object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+    end
   end
 end

@@ -50,6 +50,13 @@ object FrameConfiguracoes: TFrameConfiguracoes
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
     end
+    object Button1: TButton
+      Position.X = 184.000000000000000000
+      Position.Y = 88.000000000000000000
+      TabOrder = 3
+      Text = 'Button1'
+      OnClick = ItemIPClick
+    end
   end
   object ImageList1: TImageList
     Source = <

@@ -37,6 +37,9 @@ type
     ClientDataSet1CODIGO: TIntegerField;
     btnMenu: TListBoxItem;
     btnSincronizar: TListBoxItem;
+    Layout2: TLayout;
+    Label1: TLabel;
+    USUARIO: TLabel;
     procedure FormShow(Sender: TObject);
     procedure btnCarregamentosClick(Sender: TObject);
     procedure btnInsitucionalClick(Sender: TObject);
@@ -49,6 +52,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnMenuClick(Sender: TObject);
     procedure btnSincronizarClick(Sender: TObject);
+    procedure MultiView1StartShowing(Sender: TObject);
   private
     FloginSucessfull: Boolean;
     FidCarregamentoSelecionado: Integer;
@@ -76,7 +80,8 @@ implementation
 
 uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, Frame.Despesa,
   Frame.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
-  Frame.Carregamento, Frame.Configuracao, UdmMain, Frame.Sincronismo;
+  Frame.Carregamento, Frame.Configuracao, UdmMain, Frame.Sincronismo,
+  uConfigINI;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -90,9 +95,10 @@ end;
 
 procedure TFormMain.FormShow(Sender: TObject);
 begin
-  LoadFrame<TFrameMenu>;
-  if not LoginSucessfull then
-    LoadFrame<TFrameLogin>;
+  if ConfigINI.AcessoBanco.OperadorNome = '' then
+    LoadFrame<TFrameLogin>
+  else
+    LoadFrame<TFrameMenu>;
 end;
 
 procedure TFormMain.LoadDatasetModal(ClientdataSet: TClientDataSet);
@@ -129,6 +135,11 @@ begin
 
   ListarCdsCarregamentos;
   LoadDatasetModal(ClientDataSet1);
+end;
+
+procedure TFormMain.MultiView1StartShowing(Sender: TObject);
+begin
+  USUARIO.Text := ConfigINI.AcessoBanco.OperadorNome;
 end;
 
 procedure TFormMain.FrameStand2BeforeShow(const ASender: TSubjectStand;
@@ -203,15 +214,11 @@ end;
 procedure TFormMain.btnDespesasClick(Sender: TObject);
 begin
   LoadFrame<TFrameDespesas>;
-  if not LoginSucessfull then
-    LoadFrame<TFrameLogin>;
 end;
 
 procedure TFormMain.btnDespesaExtraClick(Sender: TObject);
 begin
   LoadFrame<TFrameDespesasExtras>;
-  if not LoginSucessfull then
-    LoadFrame<TFrameLogin>;
 end;
 
 procedure TFormMain.btnConfiguracaoClick(Sender: TObject);

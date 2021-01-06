@@ -35,7 +35,7 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main, Frame.Menu, System.JSON, Controller.API;
+uses Form.Main, Frame.Menu, System.JSON, Controller.API, uConfigINI;
 
 procedure TFrameLogin.PasswordEditExit(Sender: TObject);
 begin
@@ -44,14 +44,16 @@ end;
 
 procedure TFrameLogin.SignupButtonClick(Sender: TObject);
 begin
-//  if objAPI.Login(NameEdit.Text, PasswordEdit.Text) then
-//  begin
+  if objAPI.Login(NameEdit.Text, PasswordEdit.Text) then
+  begin
+    ConfigINI.AcessoBanco.OperadorNome := NameEdit.Text;
+    ConfigINI.UpdateFile;
+
     FormMain.LoginSucessfull := True;
     FormMain.LoadFrame<TFrameMenu>;
-//  end
-//  else
-//    label1.Text := 'Login ou senha inválidos.';
-
+  end
+  else
+    label1.Text := 'Login ou senha inválidos.';
 end;
 
 end.

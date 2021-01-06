@@ -16,6 +16,7 @@ type
     SpeedButton1: TSpeedButton;
     Label1: TLabel;
     URL_API: TEdit;
+    Button1: TButton;
     procedure SpeedButton1Click(Sender: TObject);
     procedure ItemIPClick(Sender: TObject);
   private
@@ -38,6 +39,7 @@ end;
 procedure TFrameConfiguracoes.SpeedButton1Click(Sender: TObject);
 begin
   ConfigINI.AcessoBanco.URL_API := URL_API.Text;
+  ConfigINI.UpdateFile;
   FormMain.LoadFrame<TFrameMenu>;///
 end;
 

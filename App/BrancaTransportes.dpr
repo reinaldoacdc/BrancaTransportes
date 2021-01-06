@@ -10,7 +10,6 @@ uses
   Frame.DespesaExtra in 'View\Frame.DespesaExtra.pas' {FrameDespesasExtras: TFrame},
   Frame.Carregamento in 'View\Frame.Carregamento.pas' {FrameCarregamento: TFrame},
   Form.Main in 'Form.Main.pas' {FormMain},
-  Frame.ListaCarregamento in 'View\Frame.ListaCarregamento.pas' {FrameListaCarregamento: TFrame},
   Frames.Dataset in 'View\Frames.Dataset.pas' {DatasetFrame: TFrame},
   Controller.API in 'Controller\Controller.API.pas',
   Frame.Login in 'View\Frame.Login.pas' {FrameLogin: TFrame},

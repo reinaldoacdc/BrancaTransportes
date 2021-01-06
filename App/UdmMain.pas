@@ -77,6 +77,8 @@ uses uConfigINI, System.IOUtils;
 
 procedure TDmMain.DataModuleCreate(Sender: TObject);
 begin
+  FDConnection1.Connected := False;
+
   FDConnection1.Params.DriverID := 'SQLite';
   {$IFDEF ANDROID}
   FDConnection1.Params.Database := TPath.Combine(TPath.GetDocumentsPath, 'DADOS.db');

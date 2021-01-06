@@ -18,7 +18,8 @@ uses
   Model.Entity.CADASTRO_DESPESAS in '..\Model\Entity\Model.Entity.CADASTRO_DESPESAS.pas',
   Frame.Configuracao in 'View\Frame.Configuracao.pas' {FrameConfiguracoes: TFrame},
   uConfigINI in '..\Classes\uConfigINI.pas',
-  UdmMain in 'UdmMain.pas' {DmMain: TDataModule};
+  UdmMain in 'UdmMain.pas' {DmMain: TDataModule},
+  Frame.Sincronismo in 'View\Frame.Sincronismo.pas' {FrameSincronismo: TFrame};
 
 {$R *.res}
 

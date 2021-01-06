@@ -13,9 +13,15 @@ type
     Layout1: TLayout;
     btnSincronismo: TSpeedButton;
     Label1: TLabel;
-    ProgressBar1: TProgressBar;
+    Layout3: TLayout;
+    ProgressCarregamento: TProgressBar;
+    Label2: TLabel;
+    Layout4: TLayout;
+    Label3: TLabel;
+    ProgressDespesas: TProgressBar;
     Layout2: TLayout;
-    lblProgress: TLabel;
+    Label4: TLabel;
+    ProgressDespesasExtra: TProgressBar;
     procedure btnSincronismoClick(Sender: TObject);
   private
     procedure Enviar;
@@ -29,16 +35,11 @@ implementation
 
 procedure TFrameSincronismo.btnSincronismoClick(Sender: TObject);
 begin
-  ProgressBar1.Value :=  0;
   Enviar;
 end;
 
 procedure TFrameSincronismo.Enviar;
 begin
-
-  ProgressBar1.Value := 50;
-  Sleep(500);
-  Progressbar1.Value := 100;
 
 end;
 

@@ -34,30 +34,70 @@ object FrameSincronismo: TFrameSincronismo
     Text = 'SINCRONISMO'
     TabOrder = 2
   end
-  object Layout2: TLayout
-    Align = Bottom
-    Position.Y = 408.000000000000000000
+  object Layout3: TLayout
+    Align = Top
+    Position.Y = 17.000000000000000000
     Size.Width = 320.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
-    object ProgressBar1: TProgressBar
-      Align = Top
+    object ProgressCarregamento: TProgressBar
       Orientation = Horizontal
-      Size.Width = 320.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 193.000000000000000000
       Size.Height = 20.000000000000000000
       Size.PlatformDefault = False
-      StyleLookup = 'progressbarstyle'
     end
-    object lblProgress: TLabel
-      Align = Bottom
-      Position.Y = 33.000000000000000000
-      Size.Width = 320.000000000000000000
-      Size.Height = 17.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.HorzAlign = Center
-      Text = '...'
+    object Label2: TLabel
+      Position.X = 10.000000000000000000
+      Position.Y = 4.000000000000000000
+      Text = 'Carregamentos'
       TabOrder = 1
+    end
+  end
+  object Layout4: TLayout
+    Align = Top
+    Position.Y = 67.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object Label3: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Text = 'Despesas'
+      TabOrder = 0
+    end
+    object ProgressDespesas: TProgressBar
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 25.000000000000000000
+      Size.Width = 193.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object Layout2: TLayout
+    Align = Top
+    Position.Y = 117.000000000000000000
+    Size.Width = 320.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object Label4: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Text = 'Despesas Extra'
+      TabOrder = 0
+    end
+    object ProgressDespesasExtra: TProgressBar
+      Orientation = Horizontal
+      Position.X = 9.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 192.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
     end
   end
   object ImageList1: TImageList

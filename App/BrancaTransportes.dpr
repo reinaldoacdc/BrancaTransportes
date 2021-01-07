@@ -18,7 +18,8 @@ uses
   Frame.Configuracao in 'View\Frame.Configuracao.pas' {FrameConfiguracoes: TFrame},
   uConfigINI in '..\Classes\uConfigINI.pas',
   UdmMain in 'UdmMain.pas' {DmMain: TDataModule},
-  Frame.Sincronismo in 'View\Frame.Sincronismo.pas' {FrameSincronismo: TFrame};
+  Frame.Sincronismo in 'View\Frame.Sincronismo.pas' {FrameSincronismo: TFrame},
+  BitmapHelper in '..\Classes\BitmapHelper.pas';
 
 {$R *.res}
 

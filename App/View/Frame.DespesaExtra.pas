@@ -36,8 +36,6 @@ type
     procedure SpeedButton3Click(Sender: TObject);
   private
     PermissaoCamera, PermissaoReadStorage, PermissaoWriteStorage : string;
-    function Base64FromBitmap(Bitmap: TBitmap): string;
-
     procedure TakePicturePermissionRequestResult(
         Sender: TObject; const APermissions: TArray<string>;
         const AGrantResults: TArray<TPermissionStatus>);
@@ -52,38 +50,12 @@ implementation
 
 {$R *.fmx}
 
-uses System.NetEncoding, Form.Main, Frame.Menu
+uses BitmapHelper, Form.Main, Frame.Menu
    , FMX.DialogService
      {$IFDEF Android}
      , Androidapi.Helpers, Androidapi.JNI.JavaTypes, Androidapi.JNI.Os
      {$ENDIF}
 , UdmMain;
-
-function TFrameDespesasExtras.Base64FromBitmap(Bitmap: TBitmap): string;
-var
-  Input: TBytesStream;
-  Output: TStringStream;
-  Encoding: TBase64Encoding;
-begin
-        Input := TBytesStream.Create;
-        try
-                Bitmap.SaveToStream(Input);
-                Input.Position := 0;
-                Output := TStringStream.Create('', TEncoding.ASCII);
-
-                try
-                    Encoding := TBase64Encoding.Create(0);
-                    Encoding.Encode(Input, Output);
-                    Result := Output.DataString;
-                finally
-                        Encoding.Free;
-                        Output.Free;
-                end;
-
-        finally
-                Input.Free;
-        end;
-end;
 
 procedure TFrameDespesasExtras.DisplayMessageCamera(Sender: TObject;
   const APermissions: TArray<string>; const APostProc: TProc);
@@ -109,8 +81,7 @@ begin
   dmMain.tbDespesaExtraLOCAL.AsString := LOCAL.Text;
   dmMain.tbDespesaExtraKM_MANUTENCAO.AsFloat := StrToFloat(KM.Text);
   dmMain.tbDespesaExtraCIDADE_MANUTECAO.AsString := CIDADE.Text;
-  dmMain.tbDespesaExtraIMAGEM_COMPROVANTE.AsBytes := BytesOf ( Base64FromBitmap( Image1.Bitmap ) );
-
+  dmMain.tbDespesaExtraIMAGEM_COMPROVANTE.AsBytes := BytesOf(Image1.Bitmap.ToBase64);
 end;
 
 procedure TFrameDespesasExtras.SpeedButton1Click(Sender: TObject);

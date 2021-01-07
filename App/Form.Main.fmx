@@ -9,7 +9,7 @@ object FormMain: TFormMain
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
   OnShow = FormShow
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
   object Layout1: TLayout
     Align = Client
     Size.Width = 509.000000000000000000

@@ -44,10 +44,6 @@ type
   private
     PermissaoCamera, PermissaoReadStorage, PermissaoWriteStorage : string;
     Fid: Integer;
-
-    function Base64FromBitmap(Bitmap: TBitmap): string;
-    function StrToByte(const Value: String): TByteArr;
-
     procedure TakePicturePermissionRequestResult(
         Sender: TObject; const APermissions: TArray<string>;
         const AGrantResults: TArray<TPermissionStatus>);
@@ -64,7 +60,7 @@ type
 
 implementation
 
-uses System.NetEncoding
+uses BitmapHelper
    , Model.Entity.CADASTRO_DESPESAS
    , FMX.DialogService
      {$IFDEF Android}
@@ -73,33 +69,6 @@ uses System.NetEncoding
      , Form.Main, Frame.Menu, Controller.API, UdmMain;
 
 {$R *.fmx}
-
-function TFrameDespesas.Base64FromBitmap(Bitmap: TBitmap): string;
-var
-  Input: TBytesStream;
-  Output: TStringStream;
-  Encoding: TBase64Encoding;
-begin
-        Input := TBytesStream.Create;
-        try
-                Bitmap.SaveToStream(Input);
-                Input.Position := 0;
-                Output := TStringStream.Create('', TEncoding.ASCII);
-
-                try
-                    Encoding := TBase64Encoding.Create(0);
-                    Encoding.Encode(Input, Output);
-                    Result := Output.DataString;
-                finally
-                        Encoding.Free;
-                        Output.Free;
-                end;
-
-        finally
-                Input.Free;
-        end;
-
-end;
 
 procedure TFrameDespesas.DisplayMessageCamera(Sender: TObject;
   const APermissions: TArray<string>; const APostProc: TProc);
@@ -136,12 +105,10 @@ begin
   dmMain.tbDespesaTOTAL_LITROS.AsFloat := StrToFloat(TOTAL_LITROS.Text);
   dmMain.tbDespesaVALOR_LITROS.AsFloat := strToFloat(VALOR_LITROS.Text);
   dmmain.tbDespesaKM_RODADOS.AsFloat := StrToFloat( KM_ABASTECIMENTO.Text );
-  dmMain.tbDespesaIMAGEM_COMPROVANTE.Value := BytesOf ( Base64FromBitmap( Image1.Bitmap ) );
+  dmMain.tbDespesaIMAGEM_COMPROVANTE.Value := BytesOf (Image1.Bitmap.ToBase64);
   dmMain.tbDespesa.Post;
 
   dmMain.FDConnection1.Commit;
-
-
 end;
 
 procedure TFrameDespesas.SpeedButton1Click(Sender: TObject);
@@ -164,21 +131,6 @@ begin
                                          DisplayMessageCamera
                                          );
   {$ENDIF}
-end;
-
-function TFrameDespesas.StrToByte(const Value: String): TByteArr;
-var
-
-    I: integer;
-
-begin
-
-    SetLength(Result, Length(Value));
-
-    for I := 0 to Length(Value) - 1 do
-
-        Result[I] := ord(Value[I + 1]) - 48;
-
 end;
 
 procedure TFrameDespesas.TakePhotoFromCameraAction1DidFinishTaking(

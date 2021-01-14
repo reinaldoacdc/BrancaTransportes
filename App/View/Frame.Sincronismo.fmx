@@ -42,16 +42,18 @@ object FrameSincronismo: TFrameSincronismo
     Size.PlatformDefault = False
     TabOrder = 3
     object ProgressCarregamento: TProgressBar
+      Align = Bottom
       Orientation = Horizontal
-      Position.X = 8.000000000000000000
-      Position.Y = 24.000000000000000000
-      Size.Width = 193.000000000000000000
+      Position.Y = 30.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 20.000000000000000000
       Size.PlatformDefault = False
     end
     object Label2: TLabel
-      Position.X = 10.000000000000000000
-      Position.Y = 4.000000000000000000
+      Align = Top
+      Size.Width = 320.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
       Text = 'Carregamentos'
       TabOrder = 1
     end
@@ -64,16 +66,18 @@ object FrameSincronismo: TFrameSincronismo
     Size.PlatformDefault = False
     TabOrder = 4
     object Label3: TLabel
-      Position.X = 8.000000000000000000
-      Position.Y = 8.000000000000000000
+      Align = Top
+      Size.Width = 320.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
       Text = 'Despesas'
       TabOrder = 0
     end
     object ProgressDespesas: TProgressBar
+      Align = Bottom
       Orientation = Horizontal
-      Position.X = 8.000000000000000000
-      Position.Y = 25.000000000000000000
-      Size.Width = 193.000000000000000000
+      Position.Y = 30.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 20.000000000000000000
       Size.PlatformDefault = False
     end
@@ -86,16 +90,18 @@ object FrameSincronismo: TFrameSincronismo
     Size.PlatformDefault = False
     TabOrder = 5
     object Label4: TLabel
-      Position.X = 8.000000000000000000
-      Position.Y = 8.000000000000000000
+      Align = Top
+      Size.Width = 320.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
       Text = 'Despesas Extra'
       TabOrder = 0
     end
     object ProgressDespesasExtra: TProgressBar
+      Align = Bottom
       Orientation = Horizontal
-      Position.X = 9.000000000000000000
-      Position.Y = 24.000000000000000000
-      Size.Width = 192.000000000000000000
+      Position.Y = 30.000000000000000000
+      Size.Width = 320.000000000000000000
       Size.Height = 20.000000000000000000
       Size.PlatformDefault = False
     end

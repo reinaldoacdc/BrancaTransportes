@@ -54,7 +54,7 @@ object FrameConfiguracoes: TFrameConfiguracoes
       Position.X = 184.000000000000000000
       Position.Y = 88.000000000000000000
       TabOrder = 3
-      Text = 'Button1'
+      Text = 'Carregar'
       OnClick = ItemIPClick
     end
   end

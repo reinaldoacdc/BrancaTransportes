@@ -9,9 +9,6 @@ uses
 
 type
   TFrameMenu = class(TFrame)
-    LogoBackgroundRect: TRectangle;
-    LogoCenterLayout: TLayout;
-    LogoImage: TImage;
     GridLayout1: TGridLayout;
     Layout1: TLayout;
     Layout2: TLayout;
@@ -27,7 +24,6 @@ type
     Label4: TLabel;
     ScaledLayout1: TScaledLayout;
     ScrollBox1: TScrollBox;
-    GestureManager1: TGestureManager;
     procedure btnNovoCarregamentoClick(Sender: TObject);
     procedure btnNovaDespesaClick(Sender: TObject);
     procedure btnNovaDespesaExtraClick(Sender: TObject);
@@ -42,35 +38,42 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main, Frame.Login, uCarregamentos, Frame.Despesa,
-  Frame.DespesaExtra, Frame.Carregamento, Frame.Configuracao;
+uses Form.Main, Form.Login, uCarregamentos, Form.Despesa,
+  Form.DespesaExtra, Frame.Carregamento, Form.Configuracao;
 
 procedure TFrameMenu.btnConfiguracoesClick(Sender: TObject);
 begin
-  FormMain.LoadFrame<TFrameConfiguracoes>;
+  if not (Assigned(FormConfiguracao)) then
+    Application.CreateForm(TFormConfiguracao, FormConfiguracao);
+  FormConfiguracao.Show;
 end;
 
 procedure TFrameMenu.btnNovaDespesaClick(Sender: TObject);
 begin
-  FormMain.LoadFrame<TFrameDespesas>;
-  if not FormMain.LoginSucessfull then
-    FormMain.LoadFrame<TFrameLogin>
-  else
-    FormMain.LoadListatem('DESPESA');
+  if not (Assigned(FormDespesa)) then
+    Application.CreateForm(TFormDespesa, FormDespesa);
+
+  FormDespesa.Show;
+  //LoadFrame<TFrameDespesas>;
+  //FormMain.LoadFrame<TFrameDespesas>;
+  //if not FormMain.LoginSucessfull then
+  //  FormMain.LoadFrame<TFrameLogin>
+  //else
+  //  FormMain.LoadListatem('DESPESA');
 end;
 
 procedure TFrameMenu.btnNovaDespesaExtraClick(Sender: TObject);
 begin
-  FormMain.LoadFrame<TFrameDespesasExtras>;
-  if not FormMain.LoginSucessfull then
-    FormMain.LoadFrame<TFrameLogin>;
+  if not (Assigned(FormDespesaExtra)) then
+    Application.CreateForm(TFormDespesaExtra, FormDespesaExtra);
+  FormDespesaExtra.Show;
 end;
 
 procedure TFrameMenu.btnNovoCarregamentoClick(Sender: TObject);
 begin
   FormMain.LoadFrame<TFrameCarregamento>;
-  if not FormMain.LoginSucessfull then
-    FormMain.LoadFrame<TFrameLogin>;
+  //if not FormMain.LoginSucessfull then
+  //  FormMain.LoadFrame<TFrameLogin>;
 end;
 
 end.

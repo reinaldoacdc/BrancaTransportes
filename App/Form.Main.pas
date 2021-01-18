@@ -37,9 +37,26 @@ type
     btnMenu: TListBoxItem;
     btnSincronizar: TListBoxItem;
     Layout2: TLayout;
-    Label1: TLabel;
     USUARIO: TLabel;
-    Layout1: TFlowLayout;
+    Rectangle1: TRectangle;
+    Image1: TImage;
+    ScrollBox1: TScrollBox;
+    ScaledLayout1: TScaledLayout;
+    ScrollBox2: TScrollBox;
+    ScaledLayout2: TScaledLayout;
+    GridLayout1: TGridLayout;
+    Layout1: TLayout;
+    btnNovoCarregamento: TRectangle;
+    lblNovoCarregamento: TLabel;
+    Layout3: TLayout;
+    btnNovaDespesa: TRectangle;
+    lblNovaDespesa: TLabel;
+    Layout4: TLayout;
+    btnNovaDespesaExtra: TRectangle;
+    lblNovaDespesaExtra: TLabel;
+    Layout5: TLayout;
+    btnConfiguracoes: TRectangle;
+    Label4: TLabel;
     procedure FormShow(Sender: TObject);
     procedure btnCarregamentosClick(Sender: TObject);
     procedure btnInsitucionalClick(Sender: TObject);
@@ -50,7 +67,6 @@ type
     procedure FrameStand2BeforeShow(const ASender: TSubjectStand;
       const ASubjectInfo: TSubjectInfo);
     procedure FormCreate(Sender: TObject);
-    procedure btnMenuClick(Sender: TObject);
     procedure btnSincronizarClick(Sender: TObject);
     procedure MultiView1StartShowing(Sender: TObject);
   private
@@ -80,10 +96,10 @@ implementation
 {$R *.XLgXhdpiTb.fmx ANDROID}
 {$R *.iPhone55in.fmx IOS}
 
-uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, Frame.Despesa,
-  Frame.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
-  Frame.Carregamento, Frame.Configuracao, UdmMain, Frame.Sincronismo,
-  uConfigINI, Form.Login;
+uses uInstitucional, uParceiros, Form.Login, Form.Despesa,
+  Form.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
+  Frame.Carregamento, Form.Configuracao, UdmMain, Form.Sincronismo,
+  uConfigINI;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -98,9 +114,12 @@ end;
 procedure TFormMain.FormShow(Sender: TObject);
 begin
   if ConfigINI.AcessoBanco.OperadorNome = '' then
-    LoadFrame<TFrameLogin>
-  else
-    LoadFrame<TFrameMenu>;
+  begin
+    if not (Assigned(frmLogin)) then
+      Application.CreateForm(TForm1, frmLogin);
+
+    frmLogin.Show;
+  end;
 end;
 
 procedure TFormMain.LoadDatasetModal(ClientdataSet: TClientDataSet);
@@ -198,11 +217,6 @@ begin
   LoadFrame<TFrameInstitucional>;
 end;
 
-procedure TFormMain.btnMenuClick(Sender: TObject);
-begin
-  LoadFrame<TFrameMenu>;
-end;
-
 procedure TFormMain.btnParceirosClick(Sender: TObject);
 begin
   if not (Assigned(frmLogin)) then
@@ -215,22 +229,34 @@ end;
 
 procedure TFormMain.btnSincronizarClick(Sender: TObject);
 begin
-  LoadFrame<TFrameSincronismo>;
+  if not (Assigned(FormSincronismo)) then
+    Application.CreateForm(TFormSincronismo, FormSincronismo);
+
+  FormSincronismo.Show;
+  //LoadFrame<TFrameSincronismo>;
 end;
 
 procedure TFormMain.btnDespesasClick(Sender: TObject);
 begin
-  LoadFrame<TFrameDespesas>;
+  if not (Assigned(FormDespesa)) then
+    Application.CreateForm(TFormDespesa, FormDespesa);
+
+  FormDespesa.Show;
+  //LoadFrame<TFrameDespesas>;
 end;
 
 procedure TFormMain.btnDespesaExtraClick(Sender: TObject);
 begin
-  LoadFrame<TFrameDespesasExtras>;
+  if not (Assigned(FormDespesaExtra)) then
+    Application.CreateForm(TFormDespesaExtra, FormDespesaExtra);
+  FormDespesaExtra.Show;
 end;
 
 procedure TFormMain.btnConfiguracaoClick(Sender: TObject);
 begin
-  LoadFrame<TFrameConfiguracoes>;
+  if not (Assigned(FormConfiguracao)) then
+    Application.CreateForm(TFormConfiguracao, FormConfiguracao);
+  FormConfiguracao.Show;
 end;
 
 end.

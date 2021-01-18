@@ -910,8 +910,8 @@ object Form1: TForm1
     end
   end
   object LayoutBody: TLayout
-    Align = Client
-    Size.Width = 640.000000000000000000
+    Align = Center
+    Size.Width = 544.000000000000000000
     Size.Height = 263.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
@@ -921,12 +921,12 @@ object Form1: TForm1
       Margins.Right = 10.000000000000000000
       Position.X = 10.000000000000000000
       Position.Y = 25.000000000000000000
-      Size.Width = 620.000000000000000000
+      Size.Width = 524.000000000000000000
       Size.Height = 192.000000000000000000
       Size.PlatformDefault = False
       object LayoutRect: TLayout
         Align = Client
-        Size.Width = 620.000000000000000000
+        Size.Width = 524.000000000000000000
         Size.Height = 137.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -934,7 +934,7 @@ object Form1: TForm1
           Align = Top
           Margins.Top = 5.000000000000000000
           Position.Y = 5.000000000000000000
-          Size.Width = 620.000000000000000000
+          Size.Width = 524.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           TextSettings.HorzAlign = Center
@@ -950,14 +950,14 @@ object Form1: TForm1
           Margins.Bottom = 10.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 96.000000000000000000
-          Size.Width = 600.000000000000000000
+          Size.Width = 504.000000000000000000
           Size.Height = 31.000000000000000000
           Size.PlatformDefault = False
           OnClick = lblLogarClick
           object lblLogar: TLabel
             Align = Client
             StyledSettings = [Family, Size, Style]
-            Size.Width = 600.000000000000000000
+            Size.Width = 504.000000000000000000
             Size.Height = 31.000000000000000000
             Size.PlatformDefault = False
             TextSettings.FontColor = claWhite
@@ -970,7 +970,7 @@ object Form1: TForm1
         object Layout4: TLayout
           Align = Top
           Position.Y = 22.000000000000000000
-          Size.Width = 620.000000000000000000
+          Size.Width = 524.000000000000000000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
@@ -979,7 +979,7 @@ object Form1: TForm1
             Fill.Color = claWhite
             Margins.Left = 10.000000000000000000
             Margins.Right = 10.000000000000000000
-            Size.Width = 600.000000000000000000
+            Size.Width = 504.000000000000000000
             Size.Height = 33.000000000000000000
             Size.PlatformDefault = False
             object PasswordEdit: TEdit
@@ -988,7 +988,7 @@ object Form1: TForm1
               StyleLookup = 'editstyle'
               TabOrder = 2
               Password = True
-              Size.Width = 600.000000000000000000
+              Size.Width = 504.000000000000000000
               Size.Height = 32.000000000000000000
               Size.PlatformDefault = False
             end
@@ -998,7 +998,7 @@ object Form1: TForm1
           Align = Bottom
           StyledSettings = [Family, Size]
           Position.Y = 63.000000000000000000
-          Size.Width = 620.000000000000000000
+          Size.Width = 524.000000000000000000
           Size.Height = 23.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -1009,7 +1009,7 @@ object Form1: TForm1
       object Layout1: TLayout
         Align = Top
         Position.Y = 22.000000000000000000
-        Size.Width = 620.000000000000000000
+        Size.Width = 524.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -1018,7 +1018,7 @@ object Form1: TForm1
           Fill.Color = claWhite
           Margins.Left = 10.000000000000000000
           Margins.Right = 10.000000000000000000
-          Size.Width = 600.000000000000000000
+          Size.Width = 504.000000000000000000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
           object NameEdit: TEdit
@@ -1027,7 +1027,7 @@ object Form1: TForm1
             TabOrder = 1
             Padding.Top = 5.000000000000000000
             Padding.Bottom = 5.000000000000000000
-            Size.Width = 600.000000000000000000
+            Size.Width = 504.000000000000000000
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
             CharCase = ecUpperCase
@@ -1040,7 +1040,7 @@ object Form1: TForm1
         Align = Top
         Margins.Top = 5.000000000000000000
         Position.Y = 5.000000000000000000
-        Size.Width = 620.000000000000000000
+        Size.Width = 524.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         TextSettings.HorzAlign = Center
@@ -1051,7 +1051,7 @@ object Form1: TForm1
     object lblLOGIN: TLabel
       Align = Top
       StyledSettings = [Family, FontColor]
-      Size.Width = 640.000000000000000000
+      Size.Width = 544.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 18.000000000000000000

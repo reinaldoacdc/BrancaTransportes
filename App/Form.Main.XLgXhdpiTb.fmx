@@ -5,14 +5,39 @@ inherited FormMain_XLgXhdpiTb: TFormMain_XLgXhdpiTb
   inherited ToolBar1: TToolBar
     Size.Width = 800.000000000000000000
   end
-  inherited MultiView1: TMultiView [2]
-    inherited ListBox1: TListBox
-      Viewport.Width = 249.000000000000000000
-      Viewport.Height = 295.000000000000000000
-    end
-  end
-  inherited Layout1: TFlowLayout [3]
+  inherited ScrollBox1: TScrollBox
     Size.Width = 800.000000000000000000
     Size.Height = 1207.000000000000000000
+    Viewport.Width = 800.000000000000000000
+    Viewport.Height = 1207.000000000000000000
+    inherited ScaledLayout1: TScaledLayout
+      Size.Width = 800.000000000000000000
+      Size.Height = 1207.000000000000000000
+      inherited ScrollBox2: TScrollBox
+        Size.Width = 800.000000000000000000
+        Size.Height = 1207.000000000000000000
+        Viewport.Width = 800.000000000000000000
+        Viewport.Height = 1207.000000000000000000
+        inherited ScaledLayout2: TScaledLayout
+          OriginalHeight = 1207.000000000000000000
+          Size.Width = 800.000000000000000000
+          Size.Height = 1207.000000000000000000
+        end
+      end
+    end
+  end
+  inherited MultiView1: TMultiView
+    inherited ListBox1: TListBox
+      Viewport.Width = 250.000000000000000000
+      Viewport.Height = 473.000000000000000000
+    end
+    inherited Layout2: TLayout
+      inherited Rectangle1: TRectangle
+        inherited Image1: TImage
+          MultiResBitmap.Height = 36
+          MultiResBitmap.Width = 36
+        end
+      end
+    end
   end
 end

@@ -1,28 +1,28 @@
-unit Frame.Despesa;
+unit Form.Despesa;
 
 interface
 
 uses
-  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
-  FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.DateTimeCtrls, FMX.Controls.Presentation, FMX.Edit, FMX.ListBox,
-  FMX.Layouts, System.Math.Vectors, FMX.Controls3D, FMX.Layers3D, FMX.Objects,
-  System.Actions, FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions,
-  System.Permissions, System.ImageList, FMX.ImgList;
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
+  System.Math.Vectors, System.ImageList, FMX.ImgList, System.Actions, System.Permissions,
+  FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions, FMX.Objects,
+  FMX.Controls3D, FMX.Layers3D, FMX.Layouts, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Edit, FMX.DateTimeCtrls, FMX.ListBox;
 
 type
-  TByteArr = array of byte;
-
-  TFrameDespesas = class(TFrame)
+  TFormDespesa = class(TForm)
     PersonalInfoList: TListBox;
+    ItemData: TListBoxItem;
+    DATA: TDateEdit;
     ItemKM: TListBoxItem;
     KM_ABASTECIMENTO: TEdit;
     ItemLitros: TListBoxItem;
     TOTAL_LITROS: TEdit;
     ItemValor: TListBoxItem;
     VALOR_LITROS: TEdit;
-    ItemData: TListBoxItem;
-    DATA: TDateEdit;
+    ListBoxItem2: TListBoxItem;
+    SpeedButton2: TSpeedButton;
     Layout1: TLayout;
     SpeedButton1: TSpeedButton;
     Layout3D1: TLayout3D;
@@ -32,15 +32,12 @@ type
     KM_ULTIMO_ABASTECIMENTO: TEdit;
     ItemTotal: TListBoxItem;
     Edit1: TEdit;
-    ListBoxItem2: TListBoxItem;
-    SpeedButton2: TSpeedButton;
+    Image1: TImage;
     ActionList1: TActionList;
     TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
-    Image1: TImage;
     ImageList1: TImageList;
-    procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure SpeedButton2Click(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
   private
     PermissaoCamera, PermissaoReadStorage, PermissaoWriteStorage : string;
     Fid: Integer;
@@ -50,13 +47,15 @@ type
     procedure DisplayMessageCamera(Sender: TObject;
                 const APermissions: TArray<string>;
                 const APostProc: TProc);
-
     procedure Salvar;
   public
     { Public declarations }
   published
     property Id :Integer read Fid write Fid;
   end;
+
+var
+  FormDespesa: TFormDespesa;
 
 implementation
 
@@ -66,11 +65,13 @@ uses BitmapHelper
      {$IFDEF Android}
      , Androidapi.Helpers, Androidapi.JNI.JavaTypes, Androidapi.JNI.Os
      {$ENDIF}
-     , Form.Main, Frame.Menu, Controller.API, UdmMain;
+     , Form.Main, Controller.API, UdmMain;
 
 {$R *.fmx}
 
-procedure TFrameDespesas.DisplayMessageCamera(Sender: TObject;
+{ TFormDespesa }
+
+procedure TFormDespesa.DisplayMessageCamera(Sender: TObject;
   const APermissions: TArray<string>; const APostProc: TProc);
 begin
   TDialogService.ShowMessage('O app precisa acessar a câmera e as fotos do seu dispositivo',
@@ -80,20 +81,8 @@ begin
           end);
 end;
 
-procedure TFrameDespesas.Salvar;
-var
-  despesa :TCADASTRO_DESPESAS;
-  MemStream: TMemoryStream;
+procedure TFormDespesa.Salvar;
 begin
-//  despesa := TCADASTRO_DESPESAS.Create;
-//  despesa.DATA_ABASTECIMENTO :=  StrToDate( DATA.Text );
-//  DESPESA.KM_ABASTECIMENTO := StrToFloat( KM_ABASTECIMENTO.Text );
-//  despesa.TOTAL_LITROS := StrToFloat(TOTAL_LITROS.Text);
-//  DESPESA.VALOR_LITROS := strToFloat(VALOR_LITROS.Text);
-//  //DESPESA.IMAGEM_COMPROVANTE := Base64FromBitmap( Image1.Bitmap );
-//  objAPI.postDespesa(despesa);
-
-
   if not(DmMain.tbDespesa.Active) then
     dmMain.tbDespesa.Open;
 
@@ -109,15 +98,10 @@ begin
   dmMain.tbDespesa.Post;
 
   dmMain.FDConnection1.Commit;
+  Self.Close;
 end;
 
-procedure TFrameDespesas.SpeedButton1Click(Sender: TObject);
-begin
-  Salvar;
-  FormMain.LoadFrame<TFrameMenu>;
-end;
-
-procedure TFrameDespesas.SpeedButton2Click(Sender: TObject);
+procedure TFormDespesa.SpeedButton2Click(Sender: TObject);
 begin
   {$IFDEF Android}
   PermissaoCamera := JStringToString(TJManifest_permission.JavaClass.CAMERA);
@@ -133,13 +117,13 @@ begin
   {$ENDIF}
 end;
 
-procedure TFrameDespesas.TakePhotoFromCameraAction1DidFinishTaking(
+procedure TFormDespesa.TakePhotoFromCameraAction1DidFinishTaking(
   Image: TBitmap);
 begin
   Image1.Bitmap.Assign(Image);
 end;
 
-procedure TFrameDespesas.TakePicturePermissionRequestResult(Sender: TObject;
+procedure TFormDespesa.TakePicturePermissionRequestResult(Sender: TObject;
   const APermissions: TArray<string>;
   const AGrantResults: TArray<TPermissionStatus>);
 begin

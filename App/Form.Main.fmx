@@ -14,7 +14,7 @@ object FormMain: TFormMain
     Size.Width = 425.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 4
+    TabOrder = 5
     object SpeedButton1: TSpeedButton
       Align = Left
       Size.Width = 48.000000000000000000
@@ -73,29 +73,187 @@ object FormMain: TFormMain
     Left = 264
     Top = 56
   end
-  object Layout1: TFlowLayout
+  object ScrollBox1: TScrollBox
     Align = Client
     Size.Width = 425.000000000000000000
     Size.Height = 578.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 11
-    Justify = Left
-    JustifyLastLine = Left
-    FlowDirection = LeftToRight
+    TabOrder = 1
+    Viewport.Width = 425.000000000000000000
+    Viewport.Height = 578.000000000000000000
+    object ScaledLayout1: TScaledLayout
+      Align = Client
+      OriginalWidth = 425.000000000000000000
+      OriginalHeight = 578.000000000000000000
+      Size.Width = 425.000000000000000000
+      Size.Height = 578.000000000000000000
+      Size.PlatformDefault = False
+      object ScrollBox2: TScrollBox
+        Align = Client
+        Size.Width = 425.000000000000000000
+        Size.Height = 578.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Viewport.Width = 425.000000000000000000
+        Viewport.Height = 578.000000000000000000
+        object ScaledLayout2: TScaledLayout
+          Align = Client
+          OriginalWidth = 425.000000000000000000
+          OriginalHeight = 578.000000000000000000
+          Size.Width = 425.000000000000000000
+          Size.Height = 578.000000000000000000
+          Size.PlatformDefault = False
+          object GridLayout1: TGridLayout
+            Align = Center
+            ItemHeight = 70.000000000000000000
+            ItemWidth = 150.000000000000000000
+            Padding.Left = 20.000000000000000000
+            Padding.Top = 20.000000000000000000
+            Padding.Right = 5.000000000000000000
+            Orientation = Horizontal
+            Size.Width = 351.000000000000000000
+            Size.Height = 209.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Layout1: TLayout
+              Align = FitLeft
+              Position.X = 20.000000000000000000
+              Position.Y = 20.000000000000000000
+              Size.Width = 150.000000000000000000
+              Size.Height = 70.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object btnNovoCarregamento: TRectangle
+                Align = Client
+                Fill.Color = claFirebrick
+                Margins.Left = 10.000000000000000000
+                Margins.Top = 10.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Margins.Bottom = 10.000000000000000000
+                Size.Width = 130.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                object lblNovoCarregamento: TLabel
+                  Align = Client
+                  StyledSettings = [Family, Size, Style]
+                  Size.Width = 130.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.FontColor = claWhite
+                  TextSettings.HorzAlign = Center
+                  Text = 'Novo Carregamento'
+                  TabOrder = 0
+                end
+              end
+            end
+            object Layout3: TLayout
+              Position.X = 170.000000000000000000
+              Position.Y = 20.000000000000000000
+              Size.Width = 150.000000000000000000
+              Size.Height = 70.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              object btnNovaDespesa: TRectangle
+                Align = Client
+                Fill.Color = claFirebrick
+                Margins.Left = 10.000000000000000000
+                Margins.Top = 10.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Margins.Bottom = 10.000000000000000000
+                Size.Width = 130.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                object lblNovaDespesa: TLabel
+                  Align = Client
+                  StyledSettings = [Family, Size, Style]
+                  Size.Width = 130.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.FontColor = claWhite
+                  TextSettings.HorzAlign = Center
+                  Text = 'Nova Despesa'
+                  TabOrder = 0
+                end
+              end
+            end
+            object Layout4: TLayout
+              Position.X = 20.000000000000000000
+              Position.Y = 90.000000000000000000
+              Size.Width = 150.000000000000000000
+              Size.Height = 70.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 2
+              object btnNovaDespesaExtra: TRectangle
+                Align = Client
+                Fill.Color = claFirebrick
+                Margins.Left = 10.000000000000000000
+                Margins.Top = 10.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Margins.Bottom = 10.000000000000000000
+                Size.Width = 130.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                object lblNovaDespesaExtra: TLabel
+                  Align = Client
+                  StyledSettings = [Family, Size, Style]
+                  Size.Width = 130.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.FontColor = claWhite
+                  TextSettings.HorzAlign = Center
+                  Text = 'Nova Despesa Extra'
+                  TabOrder = 0
+                end
+              end
+            end
+            object Layout5: TLayout
+              Position.X = 170.000000000000000000
+              Position.Y = 90.000000000000000000
+              Size.Width = 150.000000000000000000
+              Size.Height = 70.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 3
+              object btnConfiguracoes: TRectangle
+                Align = Client
+                Fill.Color = claFirebrick
+                Margins.Left = 10.000000000000000000
+                Margins.Top = 10.000000000000000000
+                Margins.Right = 10.000000000000000000
+                Margins.Bottom = 10.000000000000000000
+                Size.Width = 130.000000000000000000
+                Size.Height = 50.000000000000000000
+                Size.PlatformDefault = False
+                object Label4: TLabel
+                  Align = Client
+                  StyledSettings = [Family, Size, Style]
+                  Size.Width = 130.000000000000000000
+                  Size.Height = 50.000000000000000000
+                  Size.PlatformDefault = False
+                  TextSettings.FontColor = claWhite
+                  TextSettings.HorzAlign = Center
+                  Text = 'Configura'#231#245'es'
+                  TabOrder = 0
+                end
+              end
+            end
+          end
+        end
+      end
+    end
   end
   object MultiView1: TMultiView
     MasterButton = SpeedButton1
-    NavigationPaneOptions.CollapsedWidth = 81.000000000000000000
+    NavigationPaneOptions.CollapsedWidth = 250.000000000000000000
     OnStartShowing = MultiView1StartShowing
-    Size.Width = 249.000000000000000000
-    Size.Height = 400.000000000000000000
+    Size.Width = 250.000000000000000000
+    Size.Height = 578.000000000000000000
     Size.PlatformDefault = False
     Visible = False
-    TabOrder = 1
+    TabOrder = 2
     object ListBox1: TListBox
       Align = Client
-      Size.Width = 249.000000000000000000
-      Size.Height = 295.000000000000000000
+      Size.Width = 250.000000000000000000
+      Size.Height = 473.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'transparentlistboxstyle'
       TabOrder = 0
@@ -105,11 +263,11 @@ object FormMain: TFormMain
       DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 244.000000000000000000
-      Viewport.Height = 295.000000000000000000
+      Viewport.Width = 250.000000000000000000
+      Viewport.Height = 473.000000000000000000
       object btnCarregamentos: TListBoxItem
         ImageIndex = 0
-        Size.Width = 244.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -119,7 +277,7 @@ object FormMain: TFormMain
       object btnInsitucional: TListBoxItem
         ImageIndex = 1
         Position.Y = 40.000000000000000000
-        Size.Width = 244.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -129,7 +287,7 @@ object FormMain: TFormMain
       object btnParceiros: TListBoxItem
         ImageIndex = 2
         Position.Y = 80.000000000000000000
-        Size.Width = 244.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
@@ -139,7 +297,7 @@ object FormMain: TFormMain
       object btnDespesas: TListBoxItem
         ImageIndex = 4
         Position.Y = 120.000000000000000000
-        Size.Width = 244.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
@@ -149,7 +307,7 @@ object FormMain: TFormMain
       object btnDespesaExtra: TListBoxItem
         ImageIndex = 5
         Position.Y = 160.000000000000000000
-        Size.Width = 244.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
@@ -159,7 +317,7 @@ object FormMain: TFormMain
       object btnConfiguracao: TListBoxItem
         ImageIndex = 3
         Position.Y = 200.000000000000000000
-        Size.Width = 244.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 5
@@ -169,17 +327,17 @@ object FormMain: TFormMain
       object btnMenu: TListBoxItem
         ImageIndex = 6
         Position.Y = 240.000000000000000000
-        Size.Width = 244.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 6
         Text = 'Menu'
-        OnClick = btnMenuClick
+        Visible = False
       end
       object btnSincronizar: TListBoxItem
         ImageIndex = 7
-        Position.Y = 280.000000000000000000
-        Size.Width = 244.000000000000000000
+        Position.Y = 240.000000000000000000
+        Size.Width = 250.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
@@ -189,21 +347,66 @@ object FormMain: TFormMain
     end
     object Layout2: TLayout
       Align = Top
-      Size.Width = 249.000000000000000000
+      Size.Width = 250.000000000000000000
       Size.Height = 105.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      object Label1: TLabel
-        Position.X = 8.000000000000000000
-        Position.Y = 40.000000000000000000
-        Text = 'Usu'#225'rio:'
-        TabOrder = 0
-      end
-      object USUARIO: TLabel
-        Position.X = 8.000000000000000000
-        Position.Y = 56.000000000000000000
-        Text = 'USUARIO'
-        TabOrder = 1
+      object Rectangle1: TRectangle
+        Align = Client
+        Fill.Color = claFirebrick
+        Size.Width = 250.000000000000000000
+        Size.Height = 105.000000000000000000
+        Size.PlatformDefault = False
+        object USUARIO: TLabel
+          Align = Bottom
+          StyledSettings = [Family, Size, Style]
+          Position.Y = 82.000000000000000000
+          Size.Width = 250.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = claWhite
+          Text = 'USUARIO'
+          TabOrder = 0
+        end
+        object Image1: TImage
+          MultiResBitmap.Height = 36
+          MultiResBitmap.Width = 36
+          MultiResBitmap = <
+            item
+              Width = 36
+              Height = 36
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+                98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                0280494441545847ED983168154110869F626191C2C2C2C22E16292C2C2C2C12
+                102C52A450B1095858686769913285A545CA9429B4332182296327282844B050
+                0841444121450211222824FF77B7EF65BD37BB37771793261F7CEC15D97D7BB3
+                B3BB73E99D50C3A9D036655CDE9497E485207C973FE567B9243FC8FFC6793927
+                37E59ED36F72568EC843E38C64D02D69FDA8C71FF2A1EC0C4BF1465A3FD2C697
+                B275B4C62421B706EEE247D9CF39377420CCD68055D7E573B92CBD2FC0A4DC91
+                3A2BDF496BA0D81D794FC6906F8FE41F69F58965F95C3C91D60055EFC8144CCA
+                EA53B536D12FCA5D69758E25D1731029CFF29116FF2CDDE9D0F6792C59B23ADE
+                8636C55FF9BE7CCC42AE12CD01F18498E974F9580B3F58C7EFD0D6F120B405F1
+                846E484F74E04A68735C0D6D1DA48939DE5369AD73CAEB3205BBCFEA93925419
+                C2B3D56349486B52EC3E8E04AB4F4ACEB182F8B6675710BEA6AC4A6E7576D6B5
+                60535ECB89F2F1006BE647E5175950DDF6C705D12D88274461755C50D815C439
+                B4263DDB195873E480DC90BF249C93A3928A9284F78EF742DE2E1F0F20D3ADF5
+                EDCB8549C548D9EA85092D486BBC58EECF21EE4AEB8F912DEE3DE82C2665AE02
+                20A24310EE54A729D99579698D4D8D3E204EEA6DB9523E0EF135B45D580C6D95
+                67A135A16CB5A2F449362E3B23E8CB59531D970F07BE66B2A492905DD8E624BF
+                2C2973AD31F99AA9855C4A0DC01BDD9783832C0395C38C4C157C14799E710A58
+                BADC0549F8B9A1B9B7E28A8F97E1FCE178C87D24706F364E01B662D35BDB2313
+                E5855B41C7D4F2B59112A7CBE62860194874CFA74D4AF288D3D85B91BA205A7C
+                0C36991813E165DCBBB3CDBF63881827F72D99FB770C07E12BD9BF784F38047A
+                BD7DA961BDD06FDCAD8C0000000049454E44AE426082}
+              FileName = 
+                'C:\Projetos\BrancaTransportes\App\res\Material\baseline_account_' +
+                'circle_black_18dp.png'
+            end>
+          Size.Width = 65.000000000000000000
+          Size.Height = 65.000000000000000000
+          Size.PlatformDefault = False
+        end
       end
     end
   end

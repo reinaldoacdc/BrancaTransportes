@@ -5,17 +5,42 @@ inherited FormMain_LgXhdpiPh: TFormMain_LgXhdpiPh
   inherited ToolBar1: TToolBar
     Size.Width = 450.000000000000000000
   end
-  inherited MultiView1: TMultiView [2]
+  inherited ScrollBox1: TScrollBox
+    Size.Width = 450.000000000000000000
+    Size.Height = 647.000000000000000000
+    Viewport.Width = 450.000000000000000000
+    Viewport.Height = 647.000000000000000000
+    inherited ScaledLayout1: TScaledLayout
+      Size.Width = 450.000000000000000000
+      Size.Height = 647.000000000000000000
+      inherited ScrollBox2: TScrollBox
+        Size.Width = 450.000000000000000000
+        Size.Height = 647.000000000000000000
+        Viewport.Width = 450.000000000000000000
+        Viewport.Height = 647.000000000000000000
+        inherited ScaledLayout2: TScaledLayout
+          OriginalHeight = 647.000000000000000000
+          Size.Width = 450.000000000000000000
+          Size.Height = 647.000000000000000000
+        end
+      end
+    end
+  end
+  inherited MultiView1: TMultiView
     Size.Height = 647.000000000000000000
     inherited ListBox1: TListBox
       Size.Height = 542.000000000000000000
-      Viewport.Width = 249.000000000000000000
+      Viewport.Width = 250.000000000000000000
       Viewport.Height = 542.000000000000000000
     end
-  end
-  inherited Layout1: TFlowLayout [3]
-    Size.Width = 450.000000000000000000
-    Size.Height = 647.000000000000000000
+    inherited Layout2: TLayout
+      inherited Rectangle1: TRectangle
+        inherited Image1: TImage
+          MultiResBitmap.Height = 36
+          MultiResBitmap.Width = 36
+        end
+      end
+    end
   end
   inherited FrameStand2: TFrameStand
     StyleBook = StyleBook1

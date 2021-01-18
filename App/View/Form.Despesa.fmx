@@ -1,7 +1,13 @@
-object FrameDespesas: TFrameDespesas
-  Size.Width = 365.000000000000000000
-  Size.Height = 489.000000000000000000
-  Size.PlatformDefault = False
+object FormDespesa: TFormDespesa
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
   object PersonalInfoList: TListBox
     Align = Top
     Margins.Left = 5.000000000000000000
@@ -9,7 +15,7 @@ object FrameDespesas: TFrameDespesas
     Margins.Right = 5.000000000000000000
     Position.X = 5.000000000000000000
     Position.Y = 30.000000000000000000
-    Size.Width = 355.000000000000000000
+    Size.Width = 630.000000000000000000
     Size.Height = 211.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'transparentlistboxstyle'
@@ -19,10 +25,10 @@ object FrameDespesas: TFrameDespesas
     DefaultItemStyles.GroupHeaderStyle = ''
     DefaultItemStyles.GroupFooterStyle = ''
     GroupingKind = Grouped
-    Viewport.Width = 355.000000000000000000
+    Viewport.Width = 630.000000000000000000
     Viewport.Height = 211.000000000000000000
     object ItemData: TListBoxItem
-      Size.Width = 355.000000000000000000
+      Size.Width = 630.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
@@ -34,7 +40,7 @@ object FrameDespesas: TFrameDespesas
         Margins.Right = 10.000000000000000000
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
-        Size.Width = 195.000000000000000000
+        Size.Width = 470.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -42,7 +48,7 @@ object FrameDespesas: TFrameDespesas
     end
     object ItemKM: TListBoxItem
       Position.Y = 44.000000000000000000
-      Size.Width = 355.000000000000000000
+      Size.Width = 630.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
@@ -55,14 +61,14 @@ object FrameDespesas: TFrameDespesas
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
         Margins.Right = 10.000000000000000000
-        Size.Width = 195.000000000000000000
+        Size.Width = 470.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
       end
     end
     object ItemLitros: TListBoxItem
       Position.Y = 88.000000000000000000
-      Size.Width = 355.000000000000000000
+      Size.Width = 630.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -76,14 +82,14 @@ object FrameDespesas: TFrameDespesas
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
         Margins.Right = 10.000000000000000000
-        Size.Width = 195.000000000000000000
+        Size.Width = 470.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
       end
     end
     object ItemValor: TListBoxItem
       Position.Y = 132.000000000000000000
-      Size.Width = 355.000000000000000000
+      Size.Width = 630.000000000000000000
       Size.Height = 44.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 2
@@ -97,14 +103,14 @@ object FrameDespesas: TFrameDespesas
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
         Margins.Right = 10.000000000000000000
-        Size.Width = 195.000000000000000000
+        Size.Width = 470.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
       end
     end
     object ListBoxItem2: TListBoxItem
       Position.Y = 176.000000000000000000
-      Size.Width = 355.000000000000000000
+      Size.Width = 630.000000000000000000
       Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 4
@@ -114,7 +120,7 @@ object FrameDespesas: TFrameDespesas
         Align = Right
         Enabled = True
         ImageIndex = -1
-        Position.X = 275.000000000000000000
+        Position.X = 550.000000000000000000
         Size.Width = 80.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
@@ -125,8 +131,8 @@ object FrameDespesas: TFrameDespesas
   end
   object Layout1: TLayout
     Align = Bottom
-    Position.Y = 439.000000000000000000
-    Size.Width = 365.000000000000000000
+    Position.Y = 430.000000000000000000
+    Size.Width = 640.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
@@ -134,13 +140,12 @@ object FrameDespesas: TFrameDespesas
       Align = Right
       Images = ImageList1
       ImageIndex = 0
-      Position.X = 325.000000000000000000
+      Position.X = 600.000000000000000000
       Scale.X = 2.000000000000000000
       Scale.Y = 2.000000000000000000
       Size.Width = 20.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
-      OnClick = SpeedButton1Click
     end
   end
   object Layout3D1: TLayout3D
@@ -149,14 +154,14 @@ object FrameDespesas: TFrameDespesas
   end
   object Layout2: TLayout
     Align = Bottom
-    Position.Y = 344.000000000000000000
-    Size.Width = 365.000000000000000000
+    Position.Y = 335.000000000000000000
+    Size.Width = 640.000000000000000000
     Size.Height = 95.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
     object ListBox1: TListBox
       Align = Client
-      Size.Width = 365.000000000000000000
+      Size.Width = 640.000000000000000000
       Size.Height = 95.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -164,10 +169,10 @@ object FrameDespesas: TFrameDespesas
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 361.000000000000000000
+      Viewport.Width = 636.000000000000000000
       Viewport.Height = 91.000000000000000000
       object ListBoxItem1: TListBoxItem
-        Size.Width = 361.000000000000000000
+        Size.Width = 636.000000000000000000
         Size.Height = 44.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -181,14 +186,14 @@ object FrameDespesas: TFrameDespesas
           Position.Y = 6.000000000000000000
           Margins.Left = 150.000000000000000000
           Margins.Right = 10.000000000000000000
-          Size.Width = 201.000000000000000000
+          Size.Width = 476.000000000000000000
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
         end
       end
       object ItemTotal: TListBoxItem
         Position.Y = 44.000000000000000000
-        Size.Width = 361.000000000000000000
+        Size.Width = 636.000000000000000000
         Size.Height = 44.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
@@ -202,7 +207,7 @@ object FrameDespesas: TFrameDespesas
           Position.Y = 6.000000000000000000
           Margins.Left = 150.000000000000000000
           Margins.Right = 10.000000000000000000
-          Size.Width = 201.000000000000000000
+          Size.Width = 476.000000000000000000
           Size.Height = 32.000000000000000000
           Size.PlatformDefault = False
         end
@@ -215,7 +220,7 @@ object FrameDespesas: TFrameDespesas
       end>
     Align = Top
     Position.Y = 241.000000000000000000
-    Size.Width = 365.000000000000000000
+    Size.Width = 640.000000000000000000
     Size.Height = 96.000000000000000000
     Size.PlatformDefault = False
   end

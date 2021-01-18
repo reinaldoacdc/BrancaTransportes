@@ -54,7 +54,7 @@ implementation
 
 {$R *.fmx}
 
-uses Controller.API, Form.Main, Frame.Menu, Model.Entity.CADASTRO_CARREGAMENTO,
+uses Controller.API, Form.Main, Model.Entity.CADASTRO_CARREGAMENTO,
   UdmMain;
 
 procedure TFrameCarregamento.Carregar;
@@ -169,7 +169,7 @@ end;
 procedure TFrameCarregamento.SpeedButton1Click(Sender: TObject);
 begin
   Salvar;
-  FormMain.LoadFrame<TFrameMenu>;
+//  FormMain.LoadFrame<TFrameMenu>;
 end;
 
 end.

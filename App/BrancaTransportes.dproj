@@ -6,7 +6,7 @@
         <MainSource>BrancaTransportes.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>33881</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -395,21 +395,6 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="View\Frame.Menu.pas">
-            <Form>FrameMenu</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="View\Frame.Despesa.pas">
-            <Form>FrameDespesas</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
-        <DCCReference Include="View\Frame.DespesaExtra.pas">
-            <Form>FrameDespesasExtras</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="View\Frame.Carregamento.pas">
             <Form>FrameCarregamento</Form>
             <FormType>fmx</FormType>
@@ -425,32 +410,32 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Controller\Controller.API.pas"/>
-        <DCCReference Include="View\Frame.Login.pas">
-            <Form>FrameLogin</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\Model\Entity\Model.Entity.CADASTRO_CARREGAMENTO.pas"/>
         <DCCReference Include="..\Model\Entity\Model.Entity.CADASTRO_DESPESAS.pas"/>
-        <DCCReference Include="View\Frame.Configuracao.pas">
-            <Form>FrameConfiguracoes</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\Classes\uConfigINI.pas"/>
         <DCCReference Include="UdmMain.pas">
             <Form>DmMain</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="View\Frame.Sincronismo.pas">
-            <Form>FrameSincronismo</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="..\Classes\BitmapHelper.pas"/>
-        <DCCReference Include="Form.Login.pas">
+        <DCCReference Include="View\Form.Login.pas">
             <Form>Form1</Form>
+        </DCCReference>
+        <DCCReference Include="View\Form.Sincronismo.pas">
+            <Form>FormSincronismo</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form.Despesa.pas">
+            <Form>FormDespesa</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form.Configuracao.pas">
+            <Form>FormConfiguracao</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form.DespesaExtra.pas">
+            <Form>FormDespesaExtra</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -1649,4 +1634,5 @@
     <ProjectExtensions/>
     <ProjectExtensions/>
     <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <ProjectExtensions/>
 </Project>

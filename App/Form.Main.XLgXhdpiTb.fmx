@@ -1,0 +1,18 @@
+inherited FormMain_XLgXhdpiTb: TFormMain_XLgXhdpiTb
+  ClientHeight = 1255
+  ClientWidth = 800
+  DesignerMasterStyle = 3
+  inherited ToolBar1: TToolBar
+    Size.Width = 800.000000000000000000
+  end
+  inherited MultiView1: TMultiView [2]
+    inherited ListBox1: TListBox
+      Viewport.Width = 249.000000000000000000
+      Viewport.Height = 295.000000000000000000
+    end
+  end
+  inherited Layout1: TFlowLayout [3]
+    Size.Width = 800.000000000000000000
+    Size.Height = 1207.000000000000000000
+  end
+end

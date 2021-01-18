@@ -21,7 +21,6 @@ type
     btnDespesaExtra: TListBoxItem;
     btnConfiguracao: TListBoxItem;
     FrameStand1: TFrameStand;
-    Layout1: TLayout;
     ToolBar1: TToolBar;
     SpeedButton1: TSpeedButton;
     FrameStand2: TFrameStand;
@@ -40,6 +39,7 @@ type
     Layout2: TLayout;
     Label1: TLabel;
     USUARIO: TLabel;
+    Layout1: TFlowLayout;
     procedure FormShow(Sender: TObject);
     procedure btnCarregamentosClick(Sender: TObject);
     procedure btnInsitucionalClick(Sender: TObject);
@@ -77,11 +77,13 @@ implementation
 
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.XLgXhdpiTb.fmx ANDROID}
+{$R *.iPhone55in.fmx IOS}
 
 uses Frame.Menu, uInstitucional, uParceiros, Frame.Login, Frame.Despesa,
   Frame.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
   Frame.Carregamento, Frame.Configuracao, UdmMain, Frame.Sincronismo,
-  uConfigINI;
+  uConfigINI, Form.Login;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -203,7 +205,12 @@ end;
 
 procedure TFormMain.btnParceirosClick(Sender: TObject);
 begin
-  LoadFrame<TFrameParceiros>;
+  if not (Assigned(frmLogin)) then
+    Application.CreateForm(TForm1, frmLogin);
+
+  frmLogin.Show;
+  //LoadFrame<TFrameLogin>;
+  //LoadFrame<TFrameParceiros>;
 end;
 
 procedure TFormMain.btnSincronizarClick(Sender: TObject);

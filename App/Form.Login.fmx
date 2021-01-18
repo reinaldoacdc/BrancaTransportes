@@ -1,10 +1,16 @@
-object FrameLogin: TFrameLogin
-  Size.Width = 333.000000000000000000
-  Size.Height = 583.000000000000000000
-  Size.PlatformDefault = False
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
   object LayoutTop: TLayout
     Align = Top
-    Size.Width = 333.000000000000000000
+    Size.Width = 640.000000000000000000
     Size.Height = 217.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
@@ -898,15 +904,15 @@ object FrameLogin: TFrameLogin
           FileName = 'C:\Projetos\BrancaTransportes\App\res\Launcher\ICON.jpg'
         end>
       Align = Client
-      Size.Width = 333.000000000000000000
+      Size.Width = 640.000000000000000000
       Size.Height = 217.000000000000000000
       Size.PlatformDefault = False
     end
   end
   object LayoutBody: TLayout
     Align = Client
-    Size.Width = 333.000000000000000000
-    Size.Height = 366.000000000000000000
+    Size.Width = 640.000000000000000000
+    Size.Height = 263.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 3
     object rectLogin: TRectangle
@@ -915,18 +921,20 @@ object FrameLogin: TFrameLogin
       Margins.Right = 10.000000000000000000
       Position.X = 10.000000000000000000
       Position.Y = 25.000000000000000000
-      Size.Width = 313.000000000000000000
+      Size.Width = 620.000000000000000000
       Size.Height = 192.000000000000000000
       Size.PlatformDefault = False
       object LayoutRect: TLayout
         Align = Client
-        Size.Width = 313.000000000000000000
+        Size.Width = 620.000000000000000000
         Size.Height = 137.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         object Label3: TLabel
           Align = Top
-          Size.Width = 313.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 620.000000000000000000
           Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           TextSettings.HorzAlign = Center
@@ -942,25 +950,27 @@ object FrameLogin: TFrameLogin
           Margins.Bottom = 10.000000000000000000
           Position.X = 10.000000000000000000
           Position.Y = 96.000000000000000000
-          Size.Width = 293.000000000000000000
+          Size.Width = 600.000000000000000000
           Size.Height = 31.000000000000000000
           Size.PlatformDefault = False
+          OnClick = lblLogarClick
           object lblLogar: TLabel
             Align = Client
             StyledSettings = [Family, Size, Style]
-            Size.Width = 293.000000000000000000
+            Size.Width = 600.000000000000000000
             Size.Height = 31.000000000000000000
             Size.PlatformDefault = False
             TextSettings.FontColor = claWhite
             TextSettings.HorzAlign = Center
             Text = 'Login'
-            TabOrder = 0
+            TabOrder = 3
+            OnClick = lblLogarClick
           end
         end
         object Layout4: TLayout
           Align = Top
-          Position.Y = 17.000000000000000000
-          Size.Width = 313.000000000000000000
+          Position.Y = 22.000000000000000000
+          Size.Width = 620.000000000000000000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 2
@@ -969,29 +979,37 @@ object FrameLogin: TFrameLogin
             Fill.Color = claWhite
             Margins.Left = 10.000000000000000000
             Margins.Right = 10.000000000000000000
-            Size.Width = 293.000000000000000000
+            Size.Width = 600.000000000000000000
             Size.Height = 33.000000000000000000
             Size.PlatformDefault = False
-            object NameEdit: TEdit
+            object PasswordEdit: TEdit
               Touch.InteractiveGestures = [LongTap, DoubleTap]
               Align = Client
               StyleLookup = 'editstyle'
-              TabOrder = 0
-              Margins.Left = 10.000000000000000000
-              Margins.Top = 5.000000000000000000
-              Margins.Right = 10.000000000000000000
-              Margins.Bottom = 5.000000000000000000
-              Size.Width = 273.000000000000000000
-              Size.Height = 23.000000000000000000
+              TabOrder = 2
+              Password = True
+              Size.Width = 600.000000000000000000
+              Size.Height = 32.000000000000000000
               Size.PlatformDefault = False
             end
           end
+        end
+        object Label1: TLabel
+          Align = Bottom
+          StyledSettings = [Family, Size]
+          Position.Y = 63.000000000000000000
+          Size.Width = 620.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claRed
+          TabOrder = 3
         end
       end
       object Layout1: TLayout
         Align = Top
         Position.Y = 22.000000000000000000
-        Size.Width = 313.000000000000000000
+        Size.Width = 620.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -1000,22 +1018,21 @@ object FrameLogin: TFrameLogin
           Fill.Color = claWhite
           Margins.Left = 10.000000000000000000
           Margins.Right = 10.000000000000000000
-          Size.Width = 293.000000000000000000
+          Size.Width = 600.000000000000000000
           Size.Height = 33.000000000000000000
           Size.PlatformDefault = False
-          object Edit2: TEdit
+          object NameEdit: TEdit
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             Align = Client
-            TabOrder = 0
+            TabOrder = 1
             Padding.Top = 5.000000000000000000
             Padding.Bottom = 5.000000000000000000
-            Margins.Left = 10.000000000000000000
-            Margins.Top = 5.000000000000000000
-            Margins.Right = 10.000000000000000000
-            Margins.Bottom = 5.000000000000000000
-            Size.Width = 273.000000000000000000
-            Size.Height = 23.000000000000000000
+            Size.Width = 600.000000000000000000
+            Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
+            CharCase = ecUpperCase
+            OnKeyDown = NameEditKeyDown
+            OnKeyUp = NameEditKeyUp
           end
         end
       end
@@ -1023,7 +1040,7 @@ object FrameLogin: TFrameLogin
         Align = Top
         Margins.Top = 5.000000000000000000
         Position.Y = 5.000000000000000000
-        Size.Width = 313.000000000000000000
+        Size.Width = 620.000000000000000000
         Size.Height = 17.000000000000000000
         Size.PlatformDefault = False
         TextSettings.HorzAlign = Center
@@ -1034,7 +1051,7 @@ object FrameLogin: TFrameLogin
     object lblLOGIN: TLabel
       Align = Top
       StyledSettings = [Family, FontColor]
-      Size.Width = 333.000000000000000000
+      Size.Width = 640.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 18.000000000000000000

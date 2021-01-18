@@ -10,19 +10,22 @@ uses
 
 type
   TFrameLogin = class(TFrame)
-    LogoBackgroundRect: TRectangle;
-    LogoCenterLayout: TLayout;
-    LogoImage: TImage;
-    FormLayout: TLayout;
-    FormBackgroundRect: TRectangle;
+    LayoutTop: TLayout;
+    Image1: TImage;
+    LayoutBody: TLayout;
+    rectLogin: TRectangle;
+    lblLOGIN: TLabel;
+    LayoutRect: TLayout;
+    Label2: TLabel;
     NameEdit: TEdit;
-    PasswordEdit: TEdit;
-    SignupButton: TButton;
-    FormShadowEffect: TShadowEffect;
-    FooterSpaceLayout: TLayout;
-    NetHTTPClient1: TNetHTTPClient;
-    NetHTTPRequest1: TNetHTTPRequest;
-    Label1: TLabel;
+    Label3: TLabel;
+    Edit2: TEdit;
+    btnLogin: TRectangle;
+    lblLogar: TLabel;
+    Layout4: TLayout;
+    Rectangle2: TRectangle;
+    Layout1: TLayout;
+    Rectangle1: TRectangle;
     procedure SignupButtonClick(Sender: TObject);
     procedure PasswordEditExit(Sender: TObject);
   private
@@ -44,16 +47,16 @@ end;
 
 procedure TFrameLogin.SignupButtonClick(Sender: TObject);
 begin
-  if objAPI.Login(NameEdit.Text, PasswordEdit.Text) then
-  begin
-    ConfigINI.AcessoBanco.OperadorNome := NameEdit.Text;
-    ConfigINI.UpdateFile;
-
-    FormMain.LoginSucessfull := True;
-    FormMain.LoadFrame<TFrameMenu>;
-  end
-  else
-    label1.Text := 'Login ou senha inválidos.';
+//  if objAPI.Login(NameEdit.Text, PasswordEdit.Text) then
+//  begin
+//    ConfigINI.AcessoBanco.OperadorNome := NameEdit.Text;
+//    ConfigINI.UpdateFile;
+//
+//    FormMain.LoginSucessfull := True;
+//    FormMain.LoadFrame<TFrameMenu>;
+//  end
+//  else
+//    label1.Text := 'Login ou senha inválidos.';
 end;
 
 end.

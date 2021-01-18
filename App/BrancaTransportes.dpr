@@ -19,7 +19,8 @@ uses
   uConfigINI in '..\Classes\uConfigINI.pas',
   UdmMain in 'UdmMain.pas' {DmMain: TDataModule},
   Frame.Sincronismo in 'View\Frame.Sincronismo.pas' {FrameSincronismo: TFrame},
-  BitmapHelper in '..\Classes\BitmapHelper.pas';
+  BitmapHelper in '..\Classes\BitmapHelper.pas',
+  Form.Login in 'Form.Login.pas' {Form1};
 
 {$R *.res}
 
@@ -27,5 +28,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TDmMain, DmMain);
+
   Application.Run;
 end.

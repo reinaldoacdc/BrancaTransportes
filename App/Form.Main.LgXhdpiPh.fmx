@@ -2,21 +2,20 @@ inherited FormMain_LgXhdpiPh: TFormMain_LgXhdpiPh
   ClientHeight = 695
   ClientWidth = 450
   DesignerMasterStyle = 3
-  inherited Layout1: TLayout
-    Size.Width = 450.000000000000000000
-    Size.Height = 647.000000000000000000
-  end
   inherited ToolBar1: TToolBar
     Size.Width = 450.000000000000000000
   end
-  inherited MultiView1: TMultiView
+  inherited MultiView1: TMultiView [2]
     Size.Height = 647.000000000000000000
-    Visible = False
     inherited ListBox1: TListBox
       Size.Height = 542.000000000000000000
-      Viewport.Width = 81.000000000000000000
+      Viewport.Width = 249.000000000000000000
       Viewport.Height = 542.000000000000000000
     end
+  end
+  inherited Layout1: TFlowLayout [3]
+    Size.Width = 450.000000000000000000
+    Size.Height = 647.000000000000000000
   end
   inherited FrameStand2: TFrameStand
     StyleBook = StyleBook1

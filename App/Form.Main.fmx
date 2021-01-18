@@ -2,7 +2,7 @@ object FormMain: TFormMain
   Left = 0
   Top = 0
   ClientHeight = 626
-  ClientWidth = 509
+  ClientWidth = 425
   Fill.Kind = Solid
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -10,18 +10,11 @@ object FormMain: TFormMain
   OnCreate = FormCreate
   OnShow = FormShow
   DesignerMasterStyle = 3
-  object Layout1: TLayout
-    Align = Client
-    Size.Width = 509.000000000000000000
-    Size.Height = 578.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 4
-  end
   object ToolBar1: TToolBar
-    Size.Width = 509.000000000000000000
+    Size.Width = 425.000000000000000000
     Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 5
+    TabOrder = 4
     object SpeedButton1: TSpeedButton
       Align = Left
       Size.Width = 48.000000000000000000
@@ -80,18 +73,29 @@ object FormMain: TFormMain
     Left = 264
     Top = 56
   end
+  object Layout1: TFlowLayout
+    Align = Client
+    Size.Width = 425.000000000000000000
+    Size.Height = 578.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    Justify = Left
+    JustifyLastLine = Left
+    FlowDirection = LeftToRight
+  end
   object MultiView1: TMultiView
     MasterButton = SpeedButton1
     NavigationPaneOptions.CollapsedWidth = 81.000000000000000000
     OnStartShowing = MultiView1StartShowing
-    Size.Width = 81.000000000000000000
+    Size.Width = 249.000000000000000000
     Size.Height = 400.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 1
     object ListBox1: TListBox
       Align = Client
-      Size.Width = 81.000000000000000000
-      Size.Height = 473.000000000000000000
+      Size.Width = 249.000000000000000000
+      Size.Height = 295.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'transparentlistboxstyle'
       TabOrder = 0
@@ -101,11 +105,11 @@ object FormMain: TFormMain
       DefaultItemStyles.ItemStyle = 'listboxitemnodetail'
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 81.000000000000000000
-      Viewport.Height = 473.000000000000000000
+      Viewport.Width = 244.000000000000000000
+      Viewport.Height = 295.000000000000000000
       object btnCarregamentos: TListBoxItem
         ImageIndex = 0
-        Size.Width = 81.000000000000000000
+        Size.Width = 244.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
@@ -115,7 +119,7 @@ object FormMain: TFormMain
       object btnInsitucional: TListBoxItem
         ImageIndex = 1
         Position.Y = 40.000000000000000000
-        Size.Width = 81.000000000000000000
+        Size.Width = 244.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -125,7 +129,7 @@ object FormMain: TFormMain
       object btnParceiros: TListBoxItem
         ImageIndex = 2
         Position.Y = 80.000000000000000000
-        Size.Width = 81.000000000000000000
+        Size.Width = 244.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 2
@@ -135,7 +139,7 @@ object FormMain: TFormMain
       object btnDespesas: TListBoxItem
         ImageIndex = 4
         Position.Y = 120.000000000000000000
-        Size.Width = 81.000000000000000000
+        Size.Width = 244.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
@@ -145,7 +149,7 @@ object FormMain: TFormMain
       object btnDespesaExtra: TListBoxItem
         ImageIndex = 5
         Position.Y = 160.000000000000000000
-        Size.Width = 81.000000000000000000
+        Size.Width = 244.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
@@ -155,7 +159,7 @@ object FormMain: TFormMain
       object btnConfiguracao: TListBoxItem
         ImageIndex = 3
         Position.Y = 200.000000000000000000
-        Size.Width = 81.000000000000000000
+        Size.Width = 244.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 5
@@ -165,7 +169,7 @@ object FormMain: TFormMain
       object btnMenu: TListBoxItem
         ImageIndex = 6
         Position.Y = 240.000000000000000000
-        Size.Width = 81.000000000000000000
+        Size.Width = 244.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 6
@@ -175,7 +179,7 @@ object FormMain: TFormMain
       object btnSincronizar: TListBoxItem
         ImageIndex = 7
         Position.Y = 280.000000000000000000
-        Size.Width = 81.000000000000000000
+        Size.Width = 244.000000000000000000
         Size.Height = 40.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
@@ -185,7 +189,7 @@ object FormMain: TFormMain
     end
     object Layout2: TLayout
       Align = Top
-      Size.Width = 81.000000000000000000
+      Size.Width = 249.000000000000000000
       Size.Height = 105.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
@@ -538,7 +542,6 @@ object FormMain: TFormMain
     DefaultHideAndCloseDeferTimeMS = 100
     DefaultStyleName = 'lightbox'
     DefaultStandName = 'lightbox'
-    DefaultParent = Layout1
     OnBeforeShow = FrameStand2BeforeShow
     Left = 192
     Top = 56

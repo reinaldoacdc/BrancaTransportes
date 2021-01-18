@@ -1,0 +1,69 @@
+inherited frmLogin: TfrmLogin
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited LayoutTop: TLayout
+    Size.Width = 450.000000000000000000
+    inherited Image1: TImage
+      MultiResBitmap.Height = 95
+      MultiResBitmap.Width = 190
+      Size.Width = 450.000000000000000000
+    end
+  end
+  inherited LayoutBody: TLayout
+    Size.Width = 450.000000000000000000
+    Size.Height = 478.000000000000000000
+    inherited rectLogin: TRectangle
+      Size.Width = 430.000000000000000000
+      inherited LayoutRect: TLayout
+        Size.Width = 430.000000000000000000
+        inherited Label3: TLabel
+          Size.Width = 430.000000000000000000
+        end
+        inherited btnLogin: TRectangle
+          Size.Width = 410.000000000000000000
+          inherited lblLogar: TLabel
+            Size.Width = 410.000000000000000000
+          end
+        end
+        inherited Layout4: TLayout
+          Size.Width = 430.000000000000000000
+          inherited Rectangle2: TRectangle
+            Size.Width = 410.000000000000000000
+            inherited PasswordEdit: TEdit
+              Margins.Left = 10.000000000000000000
+              Margins.Top = 5.000000000000000000
+              Margins.Right = 10.000000000000000000
+              Margins.Bottom = 5.000000000000000000
+              Size.Width = 390.000000000000000000
+            end
+          end
+        end
+        inherited Label1: TLabel
+          Size.Width = 430.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited Layout1: TLayout
+        Size.Width = 430.000000000000000000
+        inherited Rectangle1: TRectangle
+          Size.Width = 410.000000000000000000
+          inherited NameEdit: TEdit
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Size.Width = 390.000000000000000000
+          end
+        end
+      end
+      inherited Label2: TLabel
+        Size.Width = 430.000000000000000000
+      end
+    end
+    inherited lblLOGIN: TLabel
+      Size.Width = 450.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end

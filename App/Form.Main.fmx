@@ -133,6 +133,7 @@ object FormMain: TFormMain
                 Size.Width = 130.000000000000000000
                 Size.Height = 50.000000000000000000
                 Size.PlatformDefault = False
+                OnClick = btnNovoCarregamentoClick
                 object lblNovoCarregamento: TLabel
                   Align = Client
                   StyledSettings = [Family, Size, Style]
@@ -163,6 +164,7 @@ object FormMain: TFormMain
                 Size.Width = 130.000000000000000000
                 Size.Height = 50.000000000000000000
                 Size.PlatformDefault = False
+                OnClick = btnNovaDespesaClick
                 object lblNovaDespesa: TLabel
                   Align = Client
                   StyledSettings = [Family, Size, Style]
@@ -193,6 +195,7 @@ object FormMain: TFormMain
                 Size.Width = 130.000000000000000000
                 Size.Height = 50.000000000000000000
                 Size.PlatformDefault = False
+                OnClick = btnNovaDespesaExtraClick
                 object lblNovaDespesaExtra: TLabel
                   Align = Client
                   StyledSettings = [Family, Size, Style]
@@ -223,6 +226,7 @@ object FormMain: TFormMain
                 Size.Width = 130.000000000000000000
                 Size.Height = 50.000000000000000000
                 Size.PlatformDefault = False
+                OnClick = btnConfiguracoesClick
                 object Label4: TLabel
                   Align = Client
                   StyledSettings = [Family, Size, Style]
@@ -750,8 +754,8 @@ object FormMain: TFormMain
     Top = 56
   end
   object ActionList1: TActionList
-    Left = 240
-    Top = 224
+    Left = 320
+    Top = 56
   end
   object ClientDataSet1: TClientDataSet
     Aggregates = <>

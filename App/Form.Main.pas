@@ -69,6 +69,10 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnSincronizarClick(Sender: TObject);
     procedure MultiView1StartShowing(Sender: TObject);
+    procedure btnNovoCarregamentoClick(Sender: TObject);
+    procedure btnNovaDespesaClick(Sender: TObject);
+    procedure btnNovaDespesaExtraClick(Sender: TObject);
+    procedure btnConfiguracoesClick(Sender: TObject);
   private
     FloginSucessfull: Boolean;
     FidCarregamentoSelecionado: Integer;
@@ -98,7 +102,7 @@ implementation
 
 uses uInstitucional, uParceiros, Form.Login, Form.Despesa,
   Form.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
-  Frame.Carregamento, Form.Configuracao, UdmMain, Form.Sincronismo,
+  Form.Carregamento, Form.Configuracao, UdmMain, Form.Sincronismo,
   uConfigINI;
 
 procedure TFormMain.FormCreate(Sender: TObject);
@@ -217,6 +221,28 @@ begin
   LoadFrame<TFrameInstitucional>;
 end;
 
+procedure TFormMain.btnNovaDespesaClick(Sender: TObject);
+begin
+  if not (Assigned(FormDespesa)) then
+    Application.CreateForm(TFormDespesa, FormDespesa);
+
+  FormDespesa.Show;
+end;
+
+procedure TFormMain.btnNovaDespesaExtraClick(Sender: TObject);
+begin
+  if not (Assigned(FormDespesaExtra)) then
+    Application.CreateForm(TFormDespesaExtra, FormDespesaExtra);
+  FormDespesaExtra.Show;
+end;
+
+procedure TFormMain.btnNovoCarregamentoClick(Sender: TObject);
+begin
+  if not (Assigned(FormCarregamento)) then
+    Application.CreateForm(TFormCarregamento, FormCarregamento);
+  FormCarregamento.Show;
+end;
+
 procedure TFormMain.btnParceirosClick(Sender: TObject);
 begin
   if not (Assigned(frmLogin)) then
@@ -253,6 +279,13 @@ begin
 end;
 
 procedure TFormMain.btnConfiguracaoClick(Sender: TObject);
+begin
+  if not (Assigned(FormConfiguracao)) then
+    Application.CreateForm(TFormConfiguracao, FormConfiguracao);
+  FormConfiguracao.Show;
+end;
+
+procedure TFormMain.btnConfiguracoesClick(Sender: TObject);
 begin
   if not (Assigned(FormConfiguracao)) then
     Application.CreateForm(TFormConfiguracao, FormConfiguracao);

@@ -11,6 +11,8 @@ inherited FormMain_XLgXhdpiTb: TFormMain_XLgXhdpiTb
     Viewport.Width = 800.000000000000000000
     Viewport.Height = 1207.000000000000000000
     inherited ScaledLayout1: TScaledLayout
+      OriginalWidth = 800.000000000000000000
+      OriginalHeight = 1207.000000000000000000
       Size.Width = 800.000000000000000000
       Size.Height = 1207.000000000000000000
       inherited ScrollBox2: TScrollBox
@@ -19,6 +21,7 @@ inherited FormMain_XLgXhdpiTb: TFormMain_XLgXhdpiTb
         Viewport.Width = 800.000000000000000000
         Viewport.Height = 1207.000000000000000000
         inherited ScaledLayout2: TScaledLayout
+          OriginalWidth = 800.000000000000000000
           OriginalHeight = 1207.000000000000000000
           Size.Width = 800.000000000000000000
           Size.Height = 1207.000000000000000000

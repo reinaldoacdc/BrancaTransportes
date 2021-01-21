@@ -37,7 +37,7 @@ implementation
 
 {$R *.fmx}
 
-uses Form.Main, Frame.Carregamento, Form.Despesa;
+uses Form.Main, Form.Carregamento, Form.Despesa;
 
 { TDatasetFrame }
 
@@ -64,8 +64,8 @@ begin
   FormMain.IdCarregamentoSelecionado := FormMain.ClientDataSet1CODIGO.AsInteger;
   FormMain.FrameStand2.HideAndCloseAll();
 
-  if FormMain.FrameSelecionado = 'CARREGAMENTO' then
-    FormMain.LoadFrame<TFrameCarregamento>
+//  if FormMain.FrameSelecionado = 'CARREGAMENTO' then
+//    FormMain.LoadFrame<TFrameCarregamento>
 //  else if FormMain.FrameSelecionado = 'DESPESA' then
 //     FormMain.LoadFrame<TFrameDespesas>
 end;

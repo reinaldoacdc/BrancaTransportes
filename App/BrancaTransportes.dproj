@@ -6,7 +6,7 @@
         <MainSource>BrancaTransportes.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <Platform Condition="'$(Platform)'==''">Android</Platform>
         <TargetedPlatforms>33881</TargetedPlatforms>
         <AppType>Application</AppType>
     </PropertyGroup>
@@ -395,11 +395,6 @@
             <FormType>fmx</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="View\Frame.Carregamento.pas">
-            <Form>FrameCarregamento</Form>
-            <FormType>fmx</FormType>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="Form.Main.pas">
             <Form>FormMain</Form>
             <FormType>fmx</FormType>
@@ -436,6 +431,10 @@
         </DCCReference>
         <DCCReference Include="View\Form.DespesaExtra.pas">
             <Form>FormDespesaExtra</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form.Carregamento.pas">
+            <Form>FormCarregamento</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

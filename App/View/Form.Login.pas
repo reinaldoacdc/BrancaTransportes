@@ -10,7 +10,6 @@ uses
 type
   TForm1 = class(TForm)
     LayoutTop: TLayout;
-    Image1: TImage;
     LayoutBody: TLayout;
     rectLogin: TRectangle;
     LayoutRect: TLayout;
@@ -26,6 +25,7 @@ type
     Label2: TLabel;
     lblLOGIN: TLabel;
     Label1: TLabel;
+    Label4: TLabel;
     procedure lblLogarClick(Sender: TObject);
     procedure NameEditKeyDown(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);

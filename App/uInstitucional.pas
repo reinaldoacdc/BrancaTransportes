@@ -11,6 +11,7 @@ type
   TFrameInstitucional = class(TFrame)
     Label1: TLabel;
     Memo1: TMemo;
+//procedure Memo1Change(Sender: TObject);
   private
     { Private declarations }
   public

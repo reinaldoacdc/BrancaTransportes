@@ -131,16 +131,15 @@ object FormDespesa: TFormDespesa
   end
   object Layout1: TLayout
     Align = Bottom
-    Position.Y = 430.000000000000000000
+    Position.Y = 384.000000000000000000
     Size.Width = 640.000000000000000000
-    Size.Height = 50.000000000000000000
+    Size.Height = 96.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object SpeedButton1: TSpeedButton
-      Align = Right
+      Align = Center
       Images = ImageList1
       ImageIndex = 0
-      Position.X = 600.000000000000000000
       Scale.X = 2.000000000000000000
       Scale.Y = 2.000000000000000000
       Size.Width = 20.000000000000000000
@@ -154,7 +153,7 @@ object FormDespesa: TFormDespesa
   end
   object Layout2: TLayout
     Align = Bottom
-    Position.Y = 335.000000000000000000
+    Position.Y = 289.000000000000000000
     Size.Width = 640.000000000000000000
     Size.Height = 95.000000000000000000
     Size.PlatformDefault = False
@@ -221,7 +220,7 @@ object FormDespesa: TFormDespesa
     Align = Top
     Position.Y = 241.000000000000000000
     Size.Width = 640.000000000000000000
-    Size.Height = 96.000000000000000000
+    Size.Height = 72.000000000000000000
     Size.PlatformDefault = False
   end
   object ActionList1: TActionList

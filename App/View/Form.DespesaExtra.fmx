@@ -166,16 +166,15 @@ object FormDespesaExtra: TFormDespesaExtra
   end
   object Layout1: TLayout
     Align = Bottom
-    Position.Y = 430.000000000000000000
+    Position.Y = 400.000000000000000000
     Size.Width = 640.000000000000000000
-    Size.Height = 50.000000000000000000
+    Size.Height = 80.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
     object SpeedButton1: TSpeedButton
-      Align = Right
+      Align = Center
       Images = ImageList1
       ImageIndex = 0
-      Position.X = 600.000000000000000000
       Scale.X = 2.000000000000000000
       Scale.Y = 2.000000000000000000
       Size.Width = 20.000000000000000000
@@ -189,7 +188,7 @@ object FormDespesaExtra: TFormDespesaExtra
       end>
     Align = Client
     Size.Width = 640.000000000000000000
-    Size.Height = 93.000000000000000000
+    Size.Height = 63.000000000000000000
     Size.PlatformDefault = False
   end
   object ImageList1: TImageList

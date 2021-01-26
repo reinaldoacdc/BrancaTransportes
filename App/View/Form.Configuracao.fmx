@@ -23,10 +23,9 @@ object FormConfiguracao: TFormConfiguracao
       Size.PlatformDefault = False
       TabOrder = 1
       object SpeedButton1: TSpeedButton
-        Align = Right
+        Align = Center
         Images = ImageList1
         ImageIndex = 0
-        Position.X = 259.000000000000000000
         Scale.X = 2.000000000000000000
         Scale.Y = 2.000000000000000000
         Size.Width = 20.000000000000000000

@@ -23,6 +23,7 @@ type
     Label4: TLabel;
     ProgressDespesasExtra: TProgressBar;
     ImageList1: TImageList;
+    procedure btnSincronismoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -35,5 +36,10 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TFormSincronismo.btnSincronismoClick(Sender: TObject);
+begin
+  //
+end;
 
 end.

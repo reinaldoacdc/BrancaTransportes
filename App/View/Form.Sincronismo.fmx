@@ -25,6 +25,7 @@ object FormSincronismo: TFormSincronismo
       Size.Width = 20.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
+      OnClick = btnSincronismoClick
     end
   end
   object Label1: TLabel

@@ -78,7 +78,7 @@ object FormCarregamento: TFormCarregamento
       TabOrder = 2
       Text = 'Data'
       object DATA: TDateEdit
-        Date = 44214.000000000000000000
+        Date = 44217.000000000000000000
         TodayDefault = True
         Align = VertCenter
         Margins.Left = 150.000000000000000000
@@ -198,8 +198,8 @@ object FormCarregamento: TFormCarregamento
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 636.000000000000000000
-      Viewport.Height = 94.000000000000000000
+      Viewport.Width = 640.000000000000000000
+      Viewport.Height = 98.000000000000000000
       object ItemTotalKm: TListBoxItem
         Size.Width = 636.000000000000000000
         Size.Height = 44.000000000000000000
@@ -247,20 +247,19 @@ object FormCarregamento: TFormCarregamento
   end
   object Layout2: TLayout
     Align = Bottom
-    Position.Y = 488.000000000000000000
+    Position.Y = 472.000000000000000000
     Size.Width = 640.000000000000000000
-    Size.Height = 50.000000000000000000
+    Size.Height = 66.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 2
     object SpeedButton2: TSpeedButton
-      Align = Right
+      Align = Center
       Images = ImageList1
       ImageIndex = 0
-      Position.X = 600.000000000000000000
       Scale.X = 2.000000000000000000
       Scale.Y = 2.000000000000000000
-      Size.Width = 20.000000000000000000
-      Size.Height = 25.000000000000000000
+      Size.Width = 22.000000000000000000
+      Size.Height = 33.000000000000000000
       Size.PlatformDefault = False
       OnClick = SpeedButton2Click
     end

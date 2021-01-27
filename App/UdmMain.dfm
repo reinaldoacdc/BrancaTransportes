@@ -7,6 +7,7 @@ object DmMain: TDmMain
     Params.Strings = (
       'DriverID=SQLite'
       'Database=C:\Projetos\BrancaTransportes\App\DADOS.db')
+    Connected = True
     LoginPrompt = False
     Left = 88
     Top = 48
@@ -75,6 +76,11 @@ object DmMain: TDmMain
       FieldName = 'PRODUTO_CARREGADO'
       Origin = 'PRODUTO_CARREGADO'
       Size = 32767
+    end
+    object tbCarregamentoSINCRONIZZADO: TStringField
+      FieldName = 'SINCRONIZZADO'
+      Origin = 'SINCRONIZZADO'
+      Size = 1
     end
   end
   object FDQuery1: TFDQuery
@@ -258,6 +264,24 @@ object DmMain: TDmMain
     object tbDespesaExtraIMAGEM_COMPROVANTE: TBlobField
       FieldName = 'IMAGEM_COMPROVANTE'
       Origin = 'IMAGEM_COMPROVANTE'
+    end
+  end
+  object qrSincronismo: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from CADASTRO_CARREGAMENTO'
+      'where SINCRONIZZADO = '#39'N'#39)
+    Left = 88
+    Top = 224
+    object qrSincronismoSINCRONIZZADO: TStringField
+      FieldName = 'SINCRONIZZADO'
+      Origin = 'SINCRONIZZADO'
+      Size = 1
+    end
+    object qrSincronismoCODIGO: TIntegerField
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      Required = True
     end
   end
 end

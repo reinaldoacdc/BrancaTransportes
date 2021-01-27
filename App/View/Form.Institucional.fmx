@@ -1,7 +1,13 @@
-object FrameInstitucional: TFrameInstitucional
-  Size.Width = 378.000000000000000000
-  Size.Height = 559.000000000000000000
-  Size.PlatformDefault = False
+object FormInstitucional: TFormInstitucional
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 499
+  ClientWidth = 387
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
   object Label1: TLabel
     StyledSettings = [Family, FontColor]
     Position.X = 112.000000000000000000
@@ -35,7 +41,7 @@ object FrameInstitucional: TFrameInstitucional
     Size.Height = 305.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Viewport.Width = 321.000000000000000000
-    Viewport.Height = 305.000000000000000000
+    Viewport.Width = 317.000000000000000000
+    Viewport.Height = 285.000000000000000000
   end
 end

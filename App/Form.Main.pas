@@ -100,10 +100,10 @@ implementation
 {$R *.XLgXhdpiTb.fmx ANDROID}
 {$R *.iPhone55in.fmx IOS}
 
-uses uInstitucional, uParceiros, Form.Login, Form.Despesa,
+uses uParceiros, Form.Login, Form.Despesa,
   Form.DespesaExtra, Frame.ListaCarregamento, Frames.Dataset, Controller.API,
   Form.Carregamento, Form.Configuracao, UdmMain, Form.Sincronismo,
-  uConfigINI;
+  uConfigINI, Form.Institucional, Form.Parceiros;
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
@@ -218,7 +218,10 @@ end;
 
 procedure TFormMain.btnInsitucionalClick(Sender: TObject);
 begin
-  LoadFrame<TFrameInstitucional>;
+  if not (Assigned(FormInstitucional)) then
+    Application.CreateForm(TFormInstitucional, FormInstitucional);
+
+  FormInstitucional.Show;
 end;
 
 procedure TFormMain.btnNovaDespesaClick(Sender: TObject);
@@ -245,12 +248,10 @@ end;
 
 procedure TFormMain.btnParceirosClick(Sender: TObject);
 begin
-  if not (Assigned(frmLogin)) then
-    Application.CreateForm(TForm1, frmLogin);
+  if not (Assigned(FormParceiros)) then
+    Application.CreateForm(TFormParceiros, FormParceiros);
 
-  frmLogin.Show;
-  //LoadFrame<TFrameLogin>;
-  //LoadFrame<TFrameParceiros>;
+  FormParceiros.Show;
 end;
 
 procedure TFormMain.btnSincronizarClick(Sender: TObject);

@@ -57,6 +57,10 @@ type
     tbDespesaExtraKM_MANUTENCAO: TBCDField;
     tbDespesaExtraCIDADE_MANUTECAO: TStringField;
     tbDespesaExtraIMAGEM_COMPROVANTE: TBlobField;
+    qrSincronismo: TFDQuery;
+    qrSincronismoSINCRONIZZADO: TStringField;
+    tbCarregamentoSINCRONIZZADO: TStringField;
+    qrSincronismoCODIGO: TIntegerField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

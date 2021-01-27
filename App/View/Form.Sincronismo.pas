@@ -7,6 +7,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   System.ImageList, FMX.ImgList, FMX.StdCtrls, FMX.Controls.Presentation,
   FMX.Layouts;
+  //Model.Entity.CADASTRO_CARREGAMENTO, Model.DaoGeneric, SimpleInterface;
 
 type
   TFormSincronismo = class(TForm)
@@ -24,8 +25,10 @@ type
     ProgressDespesasExtra: TProgressBar;
     ImageList1: TImageList;
     procedure btnSincronismoClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-    { Private declarations }
+    //Conn : iSimpleQuery;
+    //DAOCarregamento : iSimpleDAO<TCADASTRO_CARREGAMENTO>;
   public
     { Public declarations }
   end;
@@ -37,9 +40,33 @@ implementation
 
 {$R *.fmx}
 
+//uses SimpleQueryFiredac, SimpleDAO, UdmMain, Controller.API;
+
 procedure TFormSincronismo.btnSincronismoClick(Sender: TObject);
+//var carregamento :TCADASTRO_CARREGAMENTO;
 begin
   //
+//  DmMain.qrSincronismo.Close;
+//  DmMain.qrSincronismo.Open;
+//
+//  ProgressCarregamento.Max := DmMain.qrSincronismo.RecordCount;
+//  ProgressCarregamento.Position.X := 0;
+//
+//  while not DmMain.qrSincronismo.EOF do
+//  begin
+//    //objAPI.postCarregamento( DAOCarregamento.Find( DmMain.qrSincronismoCODIGO.AsInteger ) );
+//
+//    ProgressCarregamento.Position.X := ProgressCarregamento.Position.X +1;
+//    DmMain.qrSincronismo.Next;
+//  end;
+
+end;
+
+procedure TFormSincronismo.FormCreate(Sender: TObject);
+begin
+//  Conn := TSimpleQueryFiredac.New(DmMain.FDConnection1);
+//  DAOCarregamento := TSimpleDAO<TCADASTRO_CARREGAMENTO>
+//                  .New(Conn)
 end;
 
 end.

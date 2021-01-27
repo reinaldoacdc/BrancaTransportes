@@ -100,6 +100,7 @@ begin
   DMMAIN.tbCarregamento.Insert;
 
   DmMain.tbCarregamentoCODIGO.AsInteger := DmMain.Maximo('CADASTRO_CARREGAMENTO')+1;
+  DmMain.tbCarregamentoSINCRONIZZADO.AsString       := 'N';
   DMmAIN.tbCarregamentoDATA_CARREGAMENTO.AsDateTime := data.Date;
   DMmAIN.tbCarregamentoLOCAL_CARREGAMENTO.AsString  := LOCAL.Text;
   DmMain.tbCarregamentoPESO_LIQ_CARGA.AsFloat       := StrToFloat( PESO.Text );

@@ -357,7 +357,7 @@ object FormMain: TFormMain
       TabOrder = 1
       object Rectangle1: TRectangle
         Align = Client
-        Fill.Color = claFirebrick
+        Fill.Color = claWhite
         Size.Width = 250.000000000000000000
         Size.Height = 105.000000000000000000
         Size.PlatformDefault = False
@@ -368,7 +368,7 @@ object FormMain: TFormMain
           Size.Width = 250.000000000000000000
           Size.Height = 23.000000000000000000
           Size.PlatformDefault = False
-          TextSettings.FontColor = claWhite
+          TextSettings.FontColor = claFirebrick
           Text = 'USUARIO'
           TabOrder = 0
         end
@@ -410,6 +410,7 @@ object FormMain: TFormMain
           Size.Width = 65.000000000000000000
           Size.Height = 65.000000000000000000
           Size.PlatformDefault = False
+          Visible = False
         end
       end
     end

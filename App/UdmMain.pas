@@ -59,7 +59,6 @@ type
     tbDespesaExtraIMAGEM_COMPROVANTE: TBlobField;
     qrSincronismo: TFDQuery;
     qrSincronismoSINCRONIZZADO: TStringField;
-    tbCarregamentoSINCRONIZZADO: TStringField;
     qrSincronismoCODIGO: TIntegerField;
     procedure DataModuleCreate(Sender: TObject);
   private

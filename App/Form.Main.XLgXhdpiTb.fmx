@@ -36,6 +36,9 @@ inherited FormMain_XLgXhdpiTb: TFormMain_XLgXhdpiTb
     end
     inherited Layout2: TLayout
       inherited Rectangle1: TRectangle
+        inherited USUARIO: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
         inherited Image1: TImage
           MultiResBitmap.Height = 36
           MultiResBitmap.Width = 36

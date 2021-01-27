@@ -363,11 +363,12 @@ object FormMain: TFormMain
         Size.PlatformDefault = False
         object USUARIO: TLabel
           Align = Bottom
-          StyledSettings = [Family, Size, Style]
+          StyledSettings = [Family, Size]
           Position.Y = 82.000000000000000000
           Size.Width = 250.000000000000000000
           Size.Height = 23.000000000000000000
           Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
           TextSettings.FontColor = claFirebrick
           Text = 'USUARIO'
           TabOrder = 0

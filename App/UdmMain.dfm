@@ -7,7 +7,6 @@ object DmMain: TDmMain
     Params.Strings = (
       'DriverID=SQLite'
       'Database=C:\Projetos\BrancaTransportes\App\DADOS.db')
-    Connected = True
     LoginPrompt = False
     Left = 88
     Top = 48
@@ -76,11 +75,6 @@ object DmMain: TDmMain
       FieldName = 'PRODUTO_CARREGADO'
       Origin = 'PRODUTO_CARREGADO'
       Size = 32767
-    end
-    object tbCarregamentoSINCRONIZZADO: TStringField
-      FieldName = 'SINCRONIZZADO'
-      Origin = 'SINCRONIZZADO'
-      Size = 1
     end
   end
   object FDQuery1: TFDQuery

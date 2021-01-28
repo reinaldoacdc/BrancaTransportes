@@ -17,7 +17,6 @@ type
     tbCarregamento: TFDQuery;
     tbCarregamentoCODIGO: TIntegerField;
     tbCarregamentoDATA_CARREGAMENTO: TDateField;
-    tbCarregamentoLOCAL_CARREGAMENTO: TWideStringField;
     tbCarregamentoPESO_LIQ_CARGA: TBCDField;
     tbCarregamentoFRETE_TONELADA: TBCDField;
     tbCarregamentoTOTAL_FRETE: TBCDField;
@@ -60,6 +59,7 @@ type
     qrSincronismo: TFDQuery;
     qrSincronismoSINCRONIZZADO: TStringField;
     qrSincronismoCODIGO: TIntegerField;
+    tbCarregamentoLOCAL_CARREGAMENTO: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

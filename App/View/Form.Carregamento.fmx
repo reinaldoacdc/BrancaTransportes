@@ -78,7 +78,7 @@ object FormCarregamento: TFormCarregamento
       TabOrder = 2
       Text = 'Data'
       object DATA: TDateEdit
-        Date = 44217.000000000000000000
+        Date = 44224.000000000000000000
         TodayDefault = True
         Align = VertCenter
         Margins.Left = 150.000000000000000000
@@ -133,6 +133,7 @@ object FormCarregamento: TFormCarregamento
         Size.Width = 470.000000000000000000
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
+        OnExit = PESOExit
       end
     end
     object ItemKmInicio: TListBoxItem
@@ -178,6 +179,7 @@ object FormCarregamento: TFormCarregamento
         Size.Height = 32.000000000000000000
         Size.PlatformDefault = False
         KillFocusByReturn = True
+        OnExit = KM_CHEGADAExit
       end
     end
   end
@@ -198,8 +200,8 @@ object FormCarregamento: TFormCarregamento
       DefaultItemStyles.ItemStyle = ''
       DefaultItemStyles.GroupHeaderStyle = ''
       DefaultItemStyles.GroupFooterStyle = ''
-      Viewport.Width = 640.000000000000000000
-      Viewport.Height = 98.000000000000000000
+      Viewport.Width = 636.000000000000000000
+      Viewport.Height = 94.000000000000000000
       object ItemTotalKm: TListBoxItem
         Size.Width = 636.000000000000000000
         Size.Height = 44.000000000000000000

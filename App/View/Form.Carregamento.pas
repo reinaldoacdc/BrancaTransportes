@@ -35,6 +35,8 @@ type
     SpeedButton2: TSpeedButton;
     ImageList1: TImageList;
     procedure SpeedButton2Click(Sender: TObject);
+    procedure KM_CHEGADAExit(Sender: TObject);
+    procedure PESOExit(Sender: TObject);
   private
     Fid: Integer;
     procedure Carregar;
@@ -82,11 +84,23 @@ begin
   Carregar;
 end;
 
+procedure TFormCarregamento.KM_CHEGADAExit(Sender: TObject);
+var valor :Double;
+begin
+  valor :=  StrToFloat(KM_CHEGADA.Text) - StrToFloat(KM_INICIO.Text);
+  TOTAL_KM.Text := FloatToStr(valor);
+end;
+
+procedure TFormCarregamento.PESOExit(Sender: TObject);
+var valor :Double;
+begin
+  valor := StrToFloat( PESO.Text ) * StrToFloat(FRETE.Text) ;
+  TOTAL_FRETE.Text := FloatToStr(valor);
+end;
+
 procedure TFormCarregamento.Salvar;
 var valor :Double;
 begin
-
-
   valor := StrToFloat( PESO.Text ) * StrToFloat(FRETE.Text) ;
   TOTAL_FRETE.Text := FloatToStr(valor);
 

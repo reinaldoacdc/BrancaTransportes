@@ -77,7 +77,7 @@ object FormDespesa: TFormDespesa
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
-        KeyboardType = PhonePad
+        KeyboardType = NumberPad
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
@@ -98,7 +98,7 @@ object FormDespesa: TFormDespesa
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
-        KeyboardType = EmailAddress
+        KeyboardType = NumberPad
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000
@@ -145,6 +145,7 @@ object FormDespesa: TFormDespesa
       Size.Width = 20.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
+      OnClick = SpeedButton1Click
     end
   end
   object Layout3D1: TLayout3D
@@ -180,7 +181,7 @@ object FormDespesa: TFormDespesa
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = VertCenter
           TabOrder = 0
-          KeyboardType = PhonePad
+          KeyboardType = NumberPad
           Position.X = 150.000000000000000000
           Position.Y = 6.000000000000000000
           Margins.Left = 150.000000000000000000
@@ -201,7 +202,7 @@ object FormDespesa: TFormDespesa
           Touch.InteractiveGestures = [LongTap, DoubleTap]
           Align = VertCenter
           TabOrder = 0
-          KeyboardType = EmailAddress
+          KeyboardType = NumberPad
           Position.X = 150.000000000000000000
           Position.Y = 6.000000000000000000
           Margins.Left = 150.000000000000000000

@@ -7,6 +7,7 @@ object DmMain: TDmMain
     Params.Strings = (
       'DriverID=SQLite'
       'Database=C:\Projetos\BrancaTransportes\App\DADOS.db')
+    Connected = True
     LoginPrompt = False
     Left = 88
     Top = 48
@@ -29,11 +30,6 @@ object DmMain: TDmMain
     object tbCarregamentoDATA_CARREGAMENTO: TDateField
       FieldName = 'DATA_CARREGAMENTO'
       Origin = 'DATA_CARREGAMENTO'
-    end
-    object tbCarregamentoLOCAL_CARREGAMENTO: TWideStringField
-      FieldName = 'LOCAL_CARREGAMENTO'
-      Origin = 'LOCAL_CARREGAMENTO'
-      Size = 32767
     end
     object tbCarregamentoPESO_LIQ_CARGA: TBCDField
       FieldName = 'PESO_LIQ_CARGA'
@@ -75,6 +71,11 @@ object DmMain: TDmMain
       FieldName = 'PRODUTO_CARREGADO'
       Origin = 'PRODUTO_CARREGADO'
       Size = 32767
+    end
+    object tbCarregamentoLOCAL_CARREGAMENTO: TStringField
+      FieldName = 'LOCAL_CARREGAMENTO'
+      Origin = 'LOCAL_CARREGAMENTO'
+      Size = 25
     end
   end
   object FDQuery1: TFDQuery

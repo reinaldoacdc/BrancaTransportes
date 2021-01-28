@@ -38,6 +38,7 @@ type
     ImageList1: TImageList;
     procedure SpeedButton2Click(Sender: TObject);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     PermissaoCamera, PermissaoReadStorage, PermissaoWriteStorage : string;
     Fid: Integer;
@@ -98,6 +99,12 @@ begin
   dmMain.tbDespesa.Post;
 
   dmMain.FDConnection1.Commit;
+  Self.Close;
+end;
+
+procedure TFormDespesa.SpeedButton1Click(Sender: TObject);
+begin
+  Salvar;
   Self.Close;
 end;
 

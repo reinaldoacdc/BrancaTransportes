@@ -57,6 +57,7 @@ object FormDespesa: TFormDespesa
         Touch.InteractiveGestures = [LongTap, DoubleTap]
         Align = VertCenter
         TabOrder = 0
+        KeyboardType = NumberPad
         Position.X = 150.000000000000000000
         Position.Y = 6.000000000000000000
         Margins.Left = 150.000000000000000000

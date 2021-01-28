@@ -23,7 +23,6 @@ type
     tbCarregamentoKM_INICIO: TBCDField;
     tbCarregamentoKM_CHEGADA: TBCDField;
     tbCarregamentoTOTAL_KM_RODADOS: TBCDField;
-    tbCarregamentoPRODUTO_CARREGADO: TWideStringField;
     FDQuery1: TFDQuery;
     qrCarregamento: TFDQuery;
     qrCarregamentoCODIGO: TIntegerField;
@@ -60,6 +59,7 @@ type
     qrSincronismoSINCRONIZZADO: TStringField;
     qrSincronismoCODIGO: TIntegerField;
     tbCarregamentoLOCAL_CARREGAMENTO: TStringField;
+    tbCarregamentoPRODUTO_CARREGADO: TStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

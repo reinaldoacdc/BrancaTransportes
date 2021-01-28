@@ -66,14 +66,14 @@ object DmMain: TDmMain
       Precision = 8
       Size = 1
     end
-    object tbCarregamentoPRODUTO_CARREGADO: TWideStringField
-      FieldName = 'PRODUTO_CARREGADO'
-      Origin = 'PRODUTO_CARREGADO'
-      Size = 32767
-    end
     object tbCarregamentoLOCAL_CARREGAMENTO: TStringField
       FieldName = 'LOCAL_CARREGAMENTO'
       Origin = 'LOCAL_CARREGAMENTO'
+      Size = 25
+    end
+    object tbCarregamentoPRODUTO_CARREGADO: TStringField
+      FieldName = 'PRODUTO_CARREGADO'
+      Origin = 'PRODUTO_CARREGADO'
       Size = 25
     end
   end

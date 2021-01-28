@@ -7,7 +7,6 @@ object DmMain: TDmMain
     Params.Strings = (
       'DriverID=SQLite'
       'Database=C:\Projetos\BrancaTransportes\App\DADOS.db')
-    Connected = True
     LoginPrompt = False
     Left = 88
     Top = 48

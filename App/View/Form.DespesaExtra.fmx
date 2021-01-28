@@ -154,13 +154,15 @@ object FormDespesaExtra: TFormDespesaExtra
       TabOrder = 4
       Text = 'Comprovante'
       object SpeedButton3: TSpeedButton
+        Action = TakePhotoFromCameraAction1
         Align = Right
+        Enabled = True
+        ImageIndex = -1
         Position.X = 550.000000000000000000
         Size.Width = 80.000000000000000000
         Size.Height = 33.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'cameratoolbutton'
-        OnClick = SpeedButton3Click
       end
     end
   end
@@ -239,6 +241,7 @@ object FormDespesaExtra: TFormDespesaExtra
     Top = 208
     object TakePhotoFromCameraAction1: TTakePhotoFromCameraAction
       Category = 'Media Library'
+      OnDidFinishTaking = TakePhotoFromCameraAction1DidFinishTaking
     end
   end
 end

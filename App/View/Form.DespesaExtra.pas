@@ -33,6 +33,7 @@ type
     ActionList1: TActionList;
     TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
     procedure SpeedButton3Click(Sender: TObject);
+    procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
   private
     PermissaoCamera, PermissaoReadStorage, PermissaoWriteStorage : string;
     procedure TakePicturePermissionRequestResult(
@@ -107,6 +108,12 @@ begin
                                          DisplayMessageCamera
                                          );
   {$ENDIF}
+end;
+
+procedure TFormDespesaExtra.TakePhotoFromCameraAction1DidFinishTaking(
+  Image: TBitmap);
+begin
+  Image1.Bitmap.Assign(Image);
 end;
 
 procedure TFormDespesaExtra.TakePicturePermissionRequestResult(Sender: TObject;

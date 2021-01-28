@@ -57,7 +57,6 @@ type
     Layout5: TLayout;
     btnConfiguracoes: TRectangle;
     Label4: TLabel;
-    procedure FormShow(Sender: TObject);
     procedure btnCarregamentosClick(Sender: TObject);
     procedure btnInsitucionalClick(Sender: TObject);
     procedure btnParceirosClick(Sender: TObject);
@@ -113,17 +112,6 @@ begin
       AInfo.Hide();
     end
   );
-end;
-
-procedure TFormMain.FormShow(Sender: TObject);
-begin
-  if ConfigINI.AcessoBanco.OperadorNome = '' then
-  begin
-    if not (Assigned(frmLogin)) then
-      Application.CreateForm(TForm1, frmLogin);
-
-    frmLogin.Show;
-  end;
 end;
 
 procedure TFormMain.LoadDatasetModal(ClientdataSet: TClientDataSet);
@@ -241,9 +229,19 @@ end;
 
 procedure TFormMain.btnNovoCarregamentoClick(Sender: TObject);
 begin
-  if not (Assigned(FormCarregamento)) then
-    Application.CreateForm(TFormCarregamento, FormCarregamento);
-  FormCarregamento.Show;
+  if ConfigINI.AcessoBanco.OperadorNome = '' then
+  begin
+    if not (Assigned(frmLogin)) then
+      Application.CreateForm(TForm1, frmLogin);
+
+    frmLogin.Show;
+  end
+  else
+  begin
+    if not (Assigned(FormCarregamento)) then
+      Application.CreateForm(TFormCarregamento, FormCarregamento);
+    FormCarregamento.Show;
+  end;
 end;
 
 procedure TFormMain.btnParceirosClick(Sender: TObject);
@@ -260,7 +258,6 @@ begin
     Application.CreateForm(TFormSincronismo, FormSincronismo);
 
   FormSincronismo.Show;
-  //LoadFrame<TFrameSincronismo>;
 end;
 
 procedure TFormMain.btnDespesasClick(Sender: TObject);
@@ -269,7 +266,6 @@ begin
     Application.CreateForm(TFormDespesa, FormDespesa);
 
   FormDespesa.Show;
-  //LoadFrame<TFrameDespesas>;
 end;
 
 procedure TFormMain.btnDespesaExtraClick(Sender: TObject);

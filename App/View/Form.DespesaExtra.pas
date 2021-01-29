@@ -34,6 +34,7 @@ type
     TakePhotoFromCameraAction1: TTakePhotoFromCameraAction;
     procedure SpeedButton3Click(Sender: TObject);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     PermissaoCamera, PermissaoReadStorage, PermissaoWriteStorage : string;
     procedure TakePicturePermissionRequestResult(
@@ -71,6 +72,12 @@ begin
           begin
                   APostProc;
           end);
+end;
+
+procedure TFormDespesaExtra.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action := TCloseAction.caFree;
 end;
 
 procedure TFormDespesaExtra.Salvar;

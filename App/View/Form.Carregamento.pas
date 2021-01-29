@@ -37,6 +37,7 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure KM_CHEGADAExit(Sender: TObject);
     procedure PESOExit(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     Fid: Integer;
     procedure Carregar;
@@ -82,6 +83,12 @@ begin
   inherited;
   Self.Id := FormMain.IdCarregamentoSelecionado;
   Carregar;
+end;
+
+procedure TFormCarregamento.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action := TCloseAction.caFree;
 end;
 
 procedure TFormCarregamento.KM_CHEGADAExit(Sender: TObject);

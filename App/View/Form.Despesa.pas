@@ -39,6 +39,7 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure TakePhotoFromCameraAction1DidFinishTaking(Image: TBitmap);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     PermissaoCamera, PermissaoReadStorage, PermissaoWriteStorage : string;
     Fid: Integer;
@@ -80,6 +81,11 @@ begin
           begin
                   APostProc;
           end);
+end;
+
+procedure TFormDespesa.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action := TCloseAction.caFree;
 end;
 
 procedure TFormDespesa.Salvar;

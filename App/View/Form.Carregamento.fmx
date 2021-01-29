@@ -7,6 +7,7 @@ object FormCarregamento: TFormCarregamento
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnClose = FormClose
   DesignerMasterStyle = 0
   object PersonalInfoList: TListBox
     Align = Top
@@ -78,7 +79,7 @@ object FormCarregamento: TFormCarregamento
       TabOrder = 2
       Text = 'Data'
       object DATA: TDateEdit
-        Date = 44224.000000000000000000
+        Date = 44225.000000000000000000
         TodayDefault = True
         Align = VertCenter
         Margins.Left = 150.000000000000000000

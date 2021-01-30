@@ -20,6 +20,7 @@ uses
   Model.Entity.CADASTRO_DESPESAS in 'Model\Entity\Model.Entity.CADASTRO_DESPESAS.pas',
   Form.Institucional in 'View\Form.Institucional.pas' {FormInstitucional},
   Form.Parceiros in 'View\Form.Parceiros.pas' {FormParceiros};
+  //Model.Connection in 'Model\Connection\Model.Connection.pas';
 
 {$R *.res}
 

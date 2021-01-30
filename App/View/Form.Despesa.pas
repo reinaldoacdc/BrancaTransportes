@@ -95,6 +95,7 @@ begin
 
   dmMain.tbDespesa.Insert;
   dmMain.tbDespesaCODIGO.AsInteger := DmMain.Maximo('CADASTRO_DESPESAS')+1;
+  dmMain.tbDespesaSINCRONIZADO.AsString := 'N';
   dmMain.tbDespesaDATA_ABASTECIMENTO.AsDateTime := data.Date;
   dmmain.tbDespesaKM_ULTIMO_ABASTECIMENTO.AsFloat := StrToFloat(KM_ULTIMO_ABASTECIMENTO.text);
   dmMain.tbDespesaKM_ABASTECIMENTO.AsFloat := StrToFloat( KM_ABASTECIMENTO.Text );

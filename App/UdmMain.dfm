@@ -76,6 +76,11 @@ object DmMain: TDmMain
       Origin = 'PRODUTO_CARREGADO'
       Size = 25
     end
+    object tbCarregamentoSINCRONIZADO: TStringField
+      FieldName = 'SINCRONIZADO'
+      Origin = 'SINCRONIZADO'
+      Size = 1
+    end
   end
   object FDQuery1: TFDQuery
     Connection = FDConnection1
@@ -211,6 +216,11 @@ object DmMain: TDmMain
       FieldName = 'IMAGEM_COMPROVANTE'
       Origin = 'IMAGEM_COMPROVANTE'
     end
+    object tbDespesaSINCRONIZADO: TWideStringField
+      FieldName = 'SINCRONIZADO'
+      Origin = 'SINCRONIZADO'
+      Size = 1
+    end
   end
   object tbDespesaExtra: TFDQuery
     Connection = FDConnection1
@@ -263,19 +273,130 @@ object DmMain: TDmMain
   object qrSincronismo: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'select * from CADASTRO_CARREGAMENTO'
-      'where SINCRONIZZADO = '#39'N'#39)
+      'select * from CADASTRO_CARREGAMENTO')
     Left = 88
     Top = 224
-    object qrSincronismoSINCRONIZZADO: TStringField
-      FieldName = 'SINCRONIZZADO'
-      Origin = 'SINCRONIZZADO'
-      Size = 1
-    end
     object qrSincronismoCODIGO: TIntegerField
       FieldName = 'CODIGO'
       Origin = 'CODIGO'
       Required = True
+    end
+    object qrSincronismoDATA_CARREGAMENTO: TDateField
+      FieldName = 'DATA_CARREGAMENTO'
+      Origin = 'DATA_CARREGAMENTO'
+    end
+    object qrSincronismoLOCAL_CARREGAMENTO: TStringField
+      FieldName = 'LOCAL_CARREGAMENTO'
+      Origin = 'LOCAL_CARREGAMENTO'
+      Size = 25
+    end
+    object qrSincronismoPESO_LIQ_CARGA: TBCDField
+      FieldName = 'PESO_LIQ_CARGA'
+      Origin = 'PESO_LIQ_CARGA'
+      Precision = 8
+      Size = 1
+    end
+    object qrSincronismoFRETE_TONELADA: TBCDField
+      FieldName = 'FRETE_TONELADA'
+      Origin = 'FRETE_TONELADA'
+      Precision = 8
+      Size = 1
+    end
+    object qrSincronismoTOTAL_FRETE: TBCDField
+      FieldName = 'TOTAL_FRETE'
+      Origin = 'TOTAL_FRETE'
+      Precision = 8
+      Size = 1
+    end
+    object qrSincronismoKM_INICIO: TBCDField
+      FieldName = 'KM_INICIO'
+      Origin = 'KM_INICIO'
+      Precision = 8
+      Size = 1
+    end
+    object qrSincronismoKM_CHEGADA: TBCDField
+      FieldName = 'KM_CHEGADA'
+      Origin = 'KM_CHEGADA'
+      Precision = 8
+      Size = 1
+    end
+    object qrSincronismoTOTAL_KM_RODADOS: TBCDField
+      FieldName = 'TOTAL_KM_RODADOS'
+      Origin = 'TOTAL_KM_RODADOS'
+      Precision = 8
+      Size = 1
+    end
+    object qrSincronismoPRODUTO_CARREGADO: TStringField
+      FieldName = 'PRODUTO_CARREGADO'
+      Origin = 'PRODUTO_CARREGADO'
+      Size = 25
+    end
+  end
+  object qrSincronismoDespesa: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from CADASTRO_DESPESAS')
+    Left = 160
+    Top = 224
+    object qrSincronismoDespesaCODIGO: TIntegerField
+      FieldName = 'CODIGO'
+      Origin = 'CODIGO'
+      Required = True
+    end
+    object qrSincronismoDespesaDATA_ABASTECIMENTO: TDateField
+      FieldName = 'DATA_ABASTECIMENTO'
+      Origin = 'DATA_ABASTECIMENTO'
+    end
+    object qrSincronismoDespesaKM_ULTIMO_ABASTECIMENTO: TBCDField
+      FieldName = 'KM_ULTIMO_ABASTECIMENTO'
+      Origin = 'KM_ULTIMO_ABASTECIMENTO'
+      Precision = 15
+      Size = 2
+    end
+    object qrSincronismoDespesaKM_ABASTECIMENTO: TBCDField
+      FieldName = 'KM_ABASTECIMENTO'
+      Origin = 'KM_ABASTECIMENTO'
+      Precision = 15
+      Size = 2
+    end
+    object qrSincronismoDespesaTOTAL_LITROS: TBCDField
+      FieldName = 'TOTAL_LITROS'
+      Origin = 'TOTAL_LITROS'
+      Precision = 15
+      Size = 2
+    end
+    object qrSincronismoDespesaVALOR_LITROS: TBCDField
+      FieldName = 'VALOR_LITROS'
+      Origin = 'VALOR_LITROS'
+      Precision = 15
+      Size = 2
+    end
+    object qrSincronismoDespesaVALOR_TOTAL: TBCDField
+      FieldName = 'VALOR_TOTAL'
+      Origin = 'VALOR_TOTAL'
+      Precision = 15
+      Size = 2
+    end
+    object qrSincronismoDespesaKM_RODADOS: TBCDField
+      FieldName = 'KM_RODADOS'
+      Origin = 'KM_RODADOS'
+      Precision = 15
+      Size = 2
+    end
+    object qrSincronismoDespesaMEDIA: TBCDField
+      FieldName = 'MEDIA'
+      Origin = 'MEDIA'
+      Precision = 15
+      Size = 2
+    end
+    object qrSincronismoDespesaIMAGEM_COMPROVANTE: TBlobField
+      FieldName = 'IMAGEM_COMPROVANTE'
+      Origin = 'IMAGEM_COMPROVANTE'
+    end
+    object qrSincronismoDespesaSINCRONIZADO: TWideStringField
+      FieldName = 'SINCRONIZADO'
+      Origin = 'SINCRONIZADO'
+      Size = 1
     end
   end
 end

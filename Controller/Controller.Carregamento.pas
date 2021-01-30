@@ -76,6 +76,8 @@ var
   json_str :String;
   carga :TCADASTRO_CARREGAMENTO;
 begin
+  WriteLn('--insert--');
+
   FDAO := TDAOGeneric<TCADASTRO_CARREGAMENTO>.New;
   carga := Req.Body<TCADASTRO_CARREGAMENTO>;
 

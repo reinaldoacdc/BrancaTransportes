@@ -56,10 +56,32 @@ type
     tbDespesaExtraCIDADE_MANUTECAO: TStringField;
     tbDespesaExtraIMAGEM_COMPROVANTE: TBlobField;
     qrSincronismo: TFDQuery;
-    qrSincronismoSINCRONIZZADO: TStringField;
-    qrSincronismoCODIGO: TIntegerField;
     tbCarregamentoLOCAL_CARREGAMENTO: TStringField;
     tbCarregamentoPRODUTO_CARREGADO: TStringField;
+    qrSincronismoCODIGO: TIntegerField;
+    qrSincronismoDATA_CARREGAMENTO: TDateField;
+    qrSincronismoLOCAL_CARREGAMENTO: TStringField;
+    qrSincronismoPESO_LIQ_CARGA: TBCDField;
+    qrSincronismoFRETE_TONELADA: TBCDField;
+    qrSincronismoTOTAL_FRETE: TBCDField;
+    qrSincronismoKM_INICIO: TBCDField;
+    qrSincronismoKM_CHEGADA: TBCDField;
+    qrSincronismoTOTAL_KM_RODADOS: TBCDField;
+    qrSincronismoPRODUTO_CARREGADO: TStringField;
+    tbCarregamentoSINCRONIZADO: TStringField;
+    tbDespesaSINCRONIZADO: TWideStringField;
+    qrSincronismoDespesa: TFDQuery;
+    qrSincronismoDespesaCODIGO: TIntegerField;
+    qrSincronismoDespesaDATA_ABASTECIMENTO: TDateField;
+    qrSincronismoDespesaKM_ULTIMO_ABASTECIMENTO: TBCDField;
+    qrSincronismoDespesaKM_ABASTECIMENTO: TBCDField;
+    qrSincronismoDespesaTOTAL_LITROS: TBCDField;
+    qrSincronismoDespesaVALOR_LITROS: TBCDField;
+    qrSincronismoDespesaVALOR_TOTAL: TBCDField;
+    qrSincronismoDespesaKM_RODADOS: TBCDField;
+    qrSincronismoDespesaMEDIA: TBCDField;
+    qrSincronismoDespesaIMAGEM_COMPROVANTE: TBlobField;
+    qrSincronismoDespesaSINCRONIZADO: TWideStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

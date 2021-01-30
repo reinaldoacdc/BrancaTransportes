@@ -19,10 +19,14 @@ public
 
   function ListaCarregamentos :TCADASTRO_CARREGAMENTO;
   function getCarregamento(id :Integer) :TCADASTRO_CARREGAMENTO;
+
   procedure postCarregamento(carregamento :TCADASTRO_CARREGAMENTO);
+  procedure postCarregamento2(carregamento :String);
+
   procedure putCarregamento(carregamento :TCADASTRO_CARREGAMENTO);
 
   procedure postDespesa(despesa :TCADASTRO_DESPESAS);
+  procedure postDespesa2(despesa :String);
 
 
   constructor Create; overload;
@@ -123,6 +127,20 @@ begin
   FNetHTTPRequest.Post( Url, TStringStream.Create(carregamento.ToJsonString)  );
 end;
 
+procedure TApi.postCarregamento2(carregamento :String);
+var
+  Url, JSonData   : String;
+  str :TStringStream;
+begin
+  str := TStringStream.Create(carregamento);
+  str.Position := 0;
+
+  Url := ConfigINI.AcessoBanco.URL_API + '/carregamento';
+  FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
+  FNetHTTPRequest.Post( Url, str  );
+
+end;
+
 procedure TApi.postDespesa(despesa: TCADASTRO_DESPESAS);
 var
   Url, JSonData   : String;
@@ -130,6 +148,19 @@ begin
   Url := ConfigINI.AcessoBanco.URL_API + '/despesa';
   FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
   FNetHTTPRequest.Post( Url, TStringStream.Create(despesa.ToJsonString)  );
+end;
+
+procedure TApi.postDespesa2(despesa: String);
+var
+  Url, JSonData   : String;
+  str :TStringStream;
+begin
+  str := TStringStream.Create(despesa);
+  str.Position := 0;
+
+  Url := ConfigINI.AcessoBanco.URL_API + '/despesa';
+  FNetHTTPClient.ContentType := 'application/json; charset=UTF-8';
+  FNetHTTPRequest.Post( Url, str  );
 end;
 
 procedure TApi.putCarregamento(carregamento: TCADASTRO_CARREGAMENTO);

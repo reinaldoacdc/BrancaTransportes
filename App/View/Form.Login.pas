@@ -31,6 +31,7 @@ type
       Shift: TShiftState);
     procedure NameEditKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -47,6 +48,11 @@ implementation
 uses Controller.API, uConfigINI, Form.Main;
 {$R *.LgXhdpiPh.fmx ANDROID}
 
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  //Action := TCloseAction.caFree;
+end;
+
 procedure TForm1.lblLogarClick(Sender: TObject);
 begin
   if objAPI.Login(NameEdit.Text, PasswordEdit.Text) then
@@ -55,7 +61,6 @@ begin
     ConfigINI.UpdateFile;
 
     FormMain.LoginSucessfull := True;
-    //FormMain.LoadFrame<TFrameMenu>;
     Self.close;
   end
   else

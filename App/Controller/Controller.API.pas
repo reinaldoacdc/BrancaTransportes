@@ -44,7 +44,8 @@ var
 
 implementation
 
-uses REST.Json, System.Classes, System.SysUtils, Form.Main,  Data.DB,
+uses FMX.Dialogs,
+     REST.Json, System.Classes, System.SysUtils, Form.Main,  Data.DB,
      REST.Response.Adapter, uConfigINI;
 
 { TApi }
@@ -112,10 +113,14 @@ var
   Url, JSonData   : String;
 begin
   Url := Format(ConfigINI.AcessoBanco.URL_API + '/login?user=%s&password=%s', [username, password]);
+  try
   JSonData := FNetHTTPRequest.Get(Url).ContentAsString;
   FJSonObject := TJSonObject.ParseJSONValue(JSonData) as TJSonObject;
 
   Result := StrToBool(FJSonObject.GetValue('access').Value);
+  except on E :Exception do
+    ShowMessage('Erro: ' + E.Message);
+  end;
 end;
 
 procedure TApi.postCarregamento(carregamento: TCADASTRO_CARREGAMENTO);
